@@ -4,6 +4,8 @@ use_frameworks!
 
 #HTTP Requests/File uploads
 pod 'Alamofire', '~> 2.0.2'
+#JSON Parsing
+pod 'SwiftyJSON', '~> 2.3.0'
 #Auto scrolling for keyboard
 #pod 'AutoKeyboardScrollView'
 #Pull to refresh indicator

@@ -15,6 +15,8 @@
 		EA897C7B1BB0C138001D3326 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA897C791BB0C138001D3326 /* LaunchScreen.storyboard */; };
 		EA897C861BB0C138001D3326 /* PantherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C851BB0C138001D3326 /* PantherTests.swift */; };
 		EA897C911BB0C138001D3326 /* PantherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C901BB0C138001D3326 /* PantherUITests.swift */; };
+		EA897CA01BB0C540001D3326 /* Panther.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C9F1BB0C540001D3326 /* Panther.swift */; settings = {ASSET_TAGS = (); }; };
+		EA897CA21BB0C704001D3326 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897CA11BB0C704001D3326 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		EA897C8C1BB0C138001D3326 /* PantherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PantherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA897C901BB0C138001D3326 /* PantherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantherUITests.swift; sourceTree = "<group>"; };
 		EA897C921BB0C138001D3326 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA897C9F1BB0C540001D3326 /* Panther.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Panther.swift; sourceTree = "<group>"; };
+		EA897CA11BB0C704001D3326 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EEA65EDA0DCA7EC750B6CC46 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +125,7 @@
 		EA897C6F1BB0C138001D3326 /* Panther */ = {
 			isa = PBXGroup;
 			children = (
+				EA897C9E1BB0C512001D3326 /* PantherRequests */,
 				EA897C701BB0C138001D3326 /* AppDelegate.swift */,
 				EA897C721BB0C138001D3326 /* ViewController.swift */,
 				EA897C741BB0C138001D3326 /* Main.storyboard */,
@@ -147,6 +152,15 @@
 				EA897C921BB0C138001D3326 /* Info.plist */,
 			);
 			path = PantherUITests;
+			sourceTree = "<group>";
+		};
+		EA897C9E1BB0C512001D3326 /* PantherRequests */ = {
+			isa = PBXGroup;
+			children = (
+				EA897C9F1BB0C540001D3326 /* Panther.swift */,
+				EA897CA11BB0C704001D3326 /* Constants.swift */,
+			);
+			name = PantherRequests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,8 +344,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA897CA01BB0C540001D3326 /* Panther.swift in Sources */,
 				EA897C731BB0C138001D3326 /* ViewController.swift in Sources */,
 				EA897C711BB0C138001D3326 /* AppDelegate.swift in Sources */,
+				EA897CA21BB0C704001D3326 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
