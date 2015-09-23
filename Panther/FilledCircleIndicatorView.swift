@@ -25,7 +25,13 @@ import UIKit
     override func layoutSubviews() {
         super.layoutSubviews()
 //        self.setNeedsDisplay()
+        for circleLayer in self.layer.sublayers!{
+            if(circleLayer.name == "circle"){
+                circleLayer.removeFromSuperlayer()
+            }
+        }
     }
+    
     
     func setCapacityLevel(currentCapacity : CGFloat, outOfTotalCapacity totalCapacity : CGFloat){
         let percentage = currentCapacity / totalCapacity
@@ -79,6 +85,7 @@ import UIKit
         // Set the stroke line width
         circleLayer.lineWidth = 1
         circleLayer.fillColor = UIColor.clearColor().CGColor
+        circleLayer.name = "circle"
         
         // Add the sublayer to the image view's layer tree
         self.layer.addSublayer(circleLayer)
