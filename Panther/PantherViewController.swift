@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class PantherViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var parkingStructures : [ParkingStructure] = []
 

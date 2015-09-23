@@ -45,14 +45,14 @@ class PantherParser {
         if let json = data {
             //implement when data is altered
         }
-        let lastingerLevels : [ParkingLevel] = [ParkingLevel(number: 1, available: 34, total: 401), ParkingLevel(number: 2, available: 38, total: 470)]
-        let barreraLevels : [ParkingLevel] = [ParkingLevel(number: 1, available: 15, total: 86), ParkingLevel(number: 2, available: 40, total: 146), ParkingLevel(number: 3, available: 56, total: 150), ParkingLevel(number: 4, available: 79, total: 150), ParkingLevel(number: 5, available: 80, total: 163)]
-        let westCampusLevels : [ParkingLevel] = [ParkingLevel(number: 1, available: 11, total: 77), ParkingLevel(number: 2, available: 20, total: 77), ParkingLevel(number: 3, available: 28, total: 69), ParkingLevel(number: 4, available: 40, total: 74), ParkingLevel(number: 5, available: 45, total: 64)]
+        let lastingerLevels : [ParkingLevel] = [ParkingLevel(number: 1, available: 9, total: 401), ParkingLevel(number: 2, available: 6, total: 470)]
+        let barreraLevels : [ParkingLevel] = [ParkingLevel(number: 1, available: 5, total: 86), ParkingLevel(number: 2, available: 8, total: 146), ParkingLevel(number: 3, available: 0, total: 150), ParkingLevel(number: 4, available: 5, total: 150), ParkingLevel(number: 5, available: 12, total: 163)]
+        let westCampusLevels : [ParkingLevel] = [ParkingLevel(number: 1, available: 6, total: 77), ParkingLevel(number: 2, available: 20, total: 77), ParkingLevel(number: 3, available: 15, total: 69), ParkingLevel(number: 4, available: 25, total: 74), ParkingLevel(number: 5, available: 30, total: 64)]
         
         completion( result: [
-            ParkingStructure(name: "Lastinger", available: 852, total: 871, totalLevels: 2, levels: lastingerLevels),
-            ParkingStructure(name: "Barrera", available: 694, total: 695, totalLevels: 5, levels: barreraLevels),
-            ParkingStructure(name: "West Campus", available: 345, total: 360, totalLevels: 5, levels: westCampusLevels)
+            ParkingStructure(name: "Lastinger", available: 18, total: 871, totalLevels: 2, levels: lastingerLevels),
+            ParkingStructure(name: "Barrera", available: 13, total: 695, totalLevels: 5, levels: barreraLevels),
+            ParkingStructure(name: "West Campus", available: 58, total: 360, totalLevels: 5, levels: westCampusLevels)
         ], error: nil)
         
     }

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		710AB3B64942BACA8088EAE6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 899B00B332544EC49D5C361B /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		EA897C711BB0C138001D3326 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C701BB0C138001D3326 /* AppDelegate.swift */; };
-		EA897C731BB0C138001D3326 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C721BB0C138001D3326 /* ViewController.swift */; };
+		EA897C731BB0C138001D3326 /* PantherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C721BB0C138001D3326 /* PantherViewController.swift */; };
 		EA897C781BB0C138001D3326 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA897C771BB0C138001D3326 /* Assets.xcassets */; };
 		EA897C7B1BB0C138001D3326 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA897C791BB0C138001D3326 /* LaunchScreen.storyboard */; };
 		EA897C861BB0C138001D3326 /* PantherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C851BB0C138001D3326 /* PantherTests.swift */; };
@@ -28,6 +28,7 @@
 		EAA9298C1BB34F2A0031315B /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAA929821BB34EDF0031315B /* OpenSans-Regular.ttf */; };
 		EAA9298D1BB34F2A0031315B /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAA929831BB34EDF0031315B /* OpenSans-Semibold.ttf */; };
 		EAA9298E1BB34F2A0031315B /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAA929841BB34EDF0031315B /* OpenSans-SemiboldItalic.ttf */; };
+		EAA929901BB355AD0031315B /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA9298F1BB355AD0031315B /* AlertsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		EACA6B9E1BB0DEF800ACBBEB /* PantherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACA6B9D1BB0DEF800ACBBEB /* PantherTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		EACA6BA41BB0EE2100ACBBEB /* FilledCircleIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACA6BA31BB0EE2100ACBBEB /* FilledCircleIndicatorView.swift */; settings = {ASSET_TAGS = (); }; };
 		EACA6BA61BB0EEC400ACBBEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACA6BA51BB0EEC400ACBBEB /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
@@ -57,7 +58,7 @@
 		8E162CCE87B8D346E919B24F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		EA897C6D1BB0C138001D3326 /* Panther.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Panther.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA897C701BB0C138001D3326 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EA897C721BB0C138001D3326 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EA897C721BB0C138001D3326 /* PantherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantherViewController.swift; sourceTree = "<group>"; };
 		EA897C771BB0C138001D3326 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA897C7A1BB0C138001D3326 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA897C7C1BB0C138001D3326 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,6 +82,7 @@
 		EAA929821BB34EDF0031315B /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Regular.ttf"; path = "Fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		EAA929831BB34EDF0031315B /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Semibold.ttf"; path = "Fonts/OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		EAA929841BB34EDF0031315B /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-SemiboldItalic.ttf"; path = "Fonts/OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		EAA9298F1BB355AD0031315B /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
 		EACA6B9D1BB0DEF800ACBBEB /* PantherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantherTableViewCell.swift; sourceTree = "<group>"; };
 		EACA6BA31BB0EE2100ACBBEB /* FilledCircleIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledCircleIndicatorView.swift; sourceTree = "<group>"; };
 		EACA6BA51BB0EEC400ACBBEB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -179,7 +181,8 @@
 				EA897CA11BB0C704001D3326 /* Constants.swift */,
 				EA897C701BB0C138001D3326 /* AppDelegate.swift */,
 				EACA6BA51BB0EEC400ACBBEB /* Main.storyboard */,
-				EA897C721BB0C138001D3326 /* ViewController.swift */,
+				EA897C721BB0C138001D3326 /* PantherViewController.swift */,
+				EAA9298F1BB355AD0031315B /* AlertsViewController.swift */,
 				EACA6B9D1BB0DEF800ACBBEB /* PantherTableViewCell.swift */,
 				EA897C771BB0C138001D3326 /* Assets.xcassets */,
 				EA897C791BB0C138001D3326 /* LaunchScreen.storyboard */,
@@ -415,8 +418,9 @@
 			files = (
 				EACC21501BB1DC2900B912B6 /* CircleDataCollectionViewCell.swift in Sources */,
 				EA897CA01BB0C540001D3326 /* Panther.swift in Sources */,
-				EA897C731BB0C138001D3326 /* ViewController.swift in Sources */,
+				EA897C731BB0C138001D3326 /* PantherViewController.swift in Sources */,
 				EACA6B9E1BB0DEF800ACBBEB /* PantherTableViewCell.swift in Sources */,
+				EAA929901BB355AD0031315B /* AlertsViewController.swift in Sources */,
 				EA897C711BB0C138001D3326 /* AppDelegate.swift in Sources */,
 				EA8DC4241BB1DABC0056ACC1 /* CircleDataView.swift in Sources */,
 				EA897CA21BB0C704001D3326 /* Constants.swift in Sources */,

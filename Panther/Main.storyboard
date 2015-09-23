@@ -19,7 +19,7 @@
         <!--Chapman Parking-->
         <scene sceneID="6CW-BC-yLx">
             <objects>
-                <tableViewController id="Ntc-Lu-dm0" customClass="ViewController" customModule="Panther" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Ntc-Lu-dm0" customClass="PantherViewController" customModule="Panther" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" id="blo-MO-zBj">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,6 +123,9 @@
                     <navigationItem key="navigationItem" title="Chapman Parking" id="O5F-pi-PVa">
                         <barButtonItem key="rightBarButtonItem" image="bell" style="plain" id="IM4-b6-M6R">
                             <color key="tintColor" red="0.82745098039215681" green="0.8901960784313725" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="6uh-C2-9CL" kind="push" id="5gk-a9-rM4"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -130,6 +133,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9pq-mq-R2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="248"/>
+        </scene>
+        <!--Alerts-->
+        <scene sceneID="Kdl-yR-6OT">
+            <objects>
+                <tableViewController id="6uh-C2-9CL" customClass="AlertsViewController" customModule="Panther" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xph-aM-jlA">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AlertCell" id="9zv-5f-lnx">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9zv-5f-lnx" id="VNS-e5-U2f">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6uh-C2-9CL" id="bv6-Xz-wPC"/>
+                            <outlet property="delegate" destination="6uh-C2-9CL" id="eN0-oT-3Pi"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Alerts" id="4h5-HV-sNH"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a6j-Ew-pRP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1147" y="248"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MfI-zr-UI3">

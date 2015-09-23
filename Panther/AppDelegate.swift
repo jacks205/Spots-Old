@@ -26,6 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         gradient.colors = [top.CGColor, bottom.CGColor]
         self.window!.layer.insertSublayer(gradient, atIndex: 0)
         
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [UIUserNotificationType.Sound,
+            UIUserNotificationType.Alert, UIUserNotificationType.Badge], categories: nil))
+        
         
         return true
     }
