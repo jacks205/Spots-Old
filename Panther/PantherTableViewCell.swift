@@ -19,6 +19,10 @@ class PantherIndexedCollectionView: UICollectionView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
 }
 
 class PantherTableViewCell: UITableViewCell {
@@ -37,6 +41,15 @@ class PantherTableViewCell: UITableViewCell {
         self.collectionView.delegate = delegate
         self.collectionView.indexPath = indexPath
         self.collectionView.reloadData()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+//        self.setNeedsDisplay()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
     }
     
 //    

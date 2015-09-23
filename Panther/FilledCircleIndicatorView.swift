@@ -22,6 +22,11 @@ import UIKit
         super.init(coder: aDecoder)
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+//        self.setNeedsDisplay()
+    }
+    
     func setCapacityLevel(currentCapacity : CGFloat, outOfTotalCapacity totalCapacity : CGFloat){
         let percentage = currentCapacity / totalCapacity
         angleOffset = percentage * 179.9

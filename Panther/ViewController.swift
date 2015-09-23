@@ -18,6 +18,18 @@ class ViewController: UITableViewController, UICollectionViewDelegate, UICollect
         
         navigationController!.navigationBar.barTintColor = Constants.Colors.NAVIGATION_BAR_COLOR
         
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action: "reloadData:", forControlEvents: UIControlEvents.ValueChanged)
+        
+        reloadData(self)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func reloadData(sender : AnyObject){
         Panther.sharedInstance.fetchParkingData { (data, error) -> Void in
             if let err = error{
                 //alert
@@ -25,14 +37,8 @@ class ViewController: UITableViewController, UICollectionViewDelegate, UICollect
                 self.parkingStructures = data!
                 self.tableView.reloadData()
             }
-            
+            self.refreshControl?.endRefreshing()
         }
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     //MARK: Table view data source/delegate methods
@@ -42,14 +48,12 @@ class ViewController: UITableViewController, UICollectionViewDelegate, UICollect
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell : PantherTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PantherTableViewCell
+        let cell : PantherTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! PantherTableViewCell
         
         if let structure : ParkingStructure = parkingStructures.get(indexPath.row){
             cell.title.text = structure.name
             cell.totalSpots.text = "\(structure.available)"
         }
-        
-        print("!\(indexPath.row)!")
         
         return cell
     }
@@ -78,6 +82,8 @@ class ViewController: UITableViewController, UICollectionViewDelegate, UICollect
         cell.circleDataView.circleIndicatorView.setCapacityLevel(CGFloat(level.available), outOfTotalCapacity: CGFloat(level.total))
         cell.circleDataView.titleLabel.text = "Level \(level.number)"
         cell.circleDataView.countLabel.text = "\(level.available)"
+        cell.circleDataView.circleIndicatorView.setNeedsDisplay()
+        print("\(indexPath.row)")
         return cell
     }
 
