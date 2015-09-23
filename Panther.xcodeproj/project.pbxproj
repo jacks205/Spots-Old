@@ -8,15 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		710AB3B64942BACA8088EAE6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 899B00B332544EC49D5C361B /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		EA7C97E61BB1EA1E00FA562E /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA7C97DC1BB1EA1300FA562E /* OpenSans-Bold.ttf */; };
+		EA7C97E71BB1EA1E00FA562E /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA7C97DD1BB1EA1300FA562E /* OpenSans-BoldItalic.ttf */; };
+		EA7C97E81BB1EA1E00FA562E /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA7C97DE1BB1EA1300FA562E /* OpenSans-ExtraBold.ttf */; };
+		EA7C97E91BB1EA1E00FA562E /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA7C97DF1BB1EA1300FA562E /* OpenSans-ExtraBoldItalic.ttf */; };
+		EA7C97EA1BB1EA1E00FA562E /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA7C97E01BB1EA1300FA562E /* OpenSans-Italic.ttf */; };
+		EA7C97EB1BB1EA1E00FA562E /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA7C97E11BB1EA1300FA562E /* OpenSans-Light.ttf */; };
+		EA7C97EC1BB1EA1E00FA562E /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA7C97E21BB1EA1300FA562E /* OpenSans-LightItalic.ttf */; };
+		EA7C97ED1BB1EA1E00FA562E /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA7C97E31BB1EA1300FA562E /* OpenSans-Regular.ttf */; };
+		EA7C97EE1BB1EA1E00FA562E /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA7C97E41BB1EA1300FA562E /* OpenSans-Semibold.ttf */; };
+		EA7C97EF1BB1EA1E00FA562E /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA7C97E51BB1EA1300FA562E /* OpenSans-SemiboldItalic.ttf */; };
 		EA897C711BB0C138001D3326 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C701BB0C138001D3326 /* AppDelegate.swift */; };
 		EA897C731BB0C138001D3326 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C721BB0C138001D3326 /* ViewController.swift */; };
-		EA897C761BB0C138001D3326 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA897C741BB0C138001D3326 /* Main.storyboard */; };
 		EA897C781BB0C138001D3326 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA897C771BB0C138001D3326 /* Assets.xcassets */; };
 		EA897C7B1BB0C138001D3326 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA897C791BB0C138001D3326 /* LaunchScreen.storyboard */; };
 		EA897C861BB0C138001D3326 /* PantherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C851BB0C138001D3326 /* PantherTests.swift */; };
 		EA897C911BB0C138001D3326 /* PantherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C901BB0C138001D3326 /* PantherUITests.swift */; };
 		EA897CA01BB0C540001D3326 /* Panther.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C9F1BB0C540001D3326 /* Panther.swift */; settings = {ASSET_TAGS = (); }; };
 		EA897CA21BB0C704001D3326 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897CA11BB0C704001D3326 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
+		EA8DC4221BB1DA9A0056ACC1 /* CircleDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA8DC4211BB1DA9A0056ACC1 /* CircleDataView.xib */; settings = {ASSET_TAGS = (); }; };
+		EA8DC4241BB1DABC0056ACC1 /* CircleDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8DC4231BB1DABC0056ACC1 /* CircleDataView.swift */; settings = {ASSET_TAGS = (); }; };
+		EACA6B9E1BB0DEF800ACBBEB /* PantherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACA6B9D1BB0DEF800ACBBEB /* PantherTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		EACA6BA41BB0EE2100ACBBEB /* FilledCircleIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACA6BA31BB0EE2100ACBBEB /* FilledCircleIndicatorView.swift */; settings = {ASSET_TAGS = (); }; };
+		EACA6BA61BB0EEC400ACBBEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACA6BA51BB0EEC400ACBBEB /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		EACA6BA81BB1D6B900ACBBEB /* CircleDataCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EACA6BA71BB1D6B900ACBBEB /* CircleDataCollectionViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		EACC21501BB1DC2900B912B6 /* CircleDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC214F1BB1DC2900B912B6 /* CircleDataCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,10 +55,19 @@
 /* Begin PBXFileReference section */
 		899B00B332544EC49D5C361B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E162CCE87B8D346E919B24F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		EA7C97DC1BB1EA1300FA562E /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		EA7C97DD1BB1EA1300FA562E /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		EA7C97DE1BB1EA1300FA562E /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		EA7C97DF1BB1EA1300FA562E /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		EA7C97E01BB1EA1300FA562E /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		EA7C97E11BB1EA1300FA562E /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		EA7C97E21BB1EA1300FA562E /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		EA7C97E31BB1EA1300FA562E /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		EA7C97E41BB1EA1300FA562E /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		EA7C97E51BB1EA1300FA562E /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		EA897C6D1BB0C138001D3326 /* Panther.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Panther.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA897C701BB0C138001D3326 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA897C721BB0C138001D3326 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EA897C751BB0C138001D3326 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA897C771BB0C138001D3326 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA897C7A1BB0C138001D3326 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA897C7C1BB0C138001D3326 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +79,13 @@
 		EA897C921BB0C138001D3326 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA897C9F1BB0C540001D3326 /* Panther.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Panther.swift; sourceTree = "<group>"; };
 		EA897CA11BB0C704001D3326 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EA8DC4211BB1DA9A0056ACC1 /* CircleDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleDataView.xib; sourceTree = "<group>"; };
+		EA8DC4231BB1DABC0056ACC1 /* CircleDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleDataView.swift; sourceTree = "<group>"; };
+		EACA6B9D1BB0DEF800ACBBEB /* PantherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantherTableViewCell.swift; sourceTree = "<group>"; };
+		EACA6BA31BB0EE2100ACBBEB /* FilledCircleIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledCircleIndicatorView.swift; sourceTree = "<group>"; };
+		EACA6BA51BB0EEC400ACBBEB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		EACA6BA71BB1D6B900ACBBEB /* CircleDataCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleDataCollectionViewCell.xib; sourceTree = "<group>"; };
+		EACC214F1BB1DC2900B912B6 /* CircleDataCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleDataCollectionViewCell.swift; sourceTree = "<group>"; };
 		EEA65EDA0DCA7EC750B6CC46 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +132,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EA7C97DB1BB1EA0700FA562E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EA7C97DC1BB1EA1300FA562E /* OpenSans-Bold.ttf */,
+				EA7C97DD1BB1EA1300FA562E /* OpenSans-BoldItalic.ttf */,
+				EA7C97DE1BB1EA1300FA562E /* OpenSans-ExtraBold.ttf */,
+				EA7C97DF1BB1EA1300FA562E /* OpenSans-ExtraBoldItalic.ttf */,
+				EA7C97E01BB1EA1300FA562E /* OpenSans-Italic.ttf */,
+				EA7C97E11BB1EA1300FA562E /* OpenSans-Light.ttf */,
+				EA7C97E21BB1EA1300FA562E /* OpenSans-LightItalic.ttf */,
+				EA7C97E31BB1EA1300FA562E /* OpenSans-Regular.ttf */,
+				EA7C97E41BB1EA1300FA562E /* OpenSans-Semibold.ttf */,
+				EA7C97E51BB1EA1300FA562E /* OpenSans-SemiboldItalic.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		EA897C641BB0C138001D3326 = {
 			isa = PBXGroup;
 			children = (
@@ -125,13 +174,20 @@
 		EA897C6F1BB0C138001D3326 /* Panther */ = {
 			isa = PBXGroup;
 			children = (
+				EA7C97DB1BB1EA0700FA562E /* Fonts */,
 				EA897C9E1BB0C512001D3326 /* PantherRequests */,
 				EA897C701BB0C138001D3326 /* AppDelegate.swift */,
+				EACA6BA51BB0EEC400ACBBEB /* Main.storyboard */,
 				EA897C721BB0C138001D3326 /* ViewController.swift */,
-				EA897C741BB0C138001D3326 /* Main.storyboard */,
+				EACA6B9D1BB0DEF800ACBBEB /* PantherTableViewCell.swift */,
 				EA897C771BB0C138001D3326 /* Assets.xcassets */,
 				EA897C791BB0C138001D3326 /* LaunchScreen.storyboard */,
 				EA897C7C1BB0C138001D3326 /* Info.plist */,
+				EACA6BA31BB0EE2100ACBBEB /* FilledCircleIndicatorView.swift */,
+				EACA6BA71BB1D6B900ACBBEB /* CircleDataCollectionViewCell.xib */,
+				EACC214F1BB1DC2900B912B6 /* CircleDataCollectionViewCell.swift */,
+				EA8DC4211BB1DA9A0056ACC1 /* CircleDataView.xib */,
+				EA8DC4231BB1DABC0056ACC1 /* CircleDataView.swift */,
 			);
 			path = Panther;
 			sourceTree = "<group>";
@@ -233,6 +289,7 @@
 				TargetAttributes = {
 					EA897C6C1BB0C138001D3326 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 23KKLX956K;
 					};
 					EA897C801BB0C138001D3326 = {
 						CreatedOnToolsVersion = 7.0;
@@ -269,9 +326,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA7C97E61BB1EA1E00FA562E /* OpenSans-Bold.ttf in Resources */,
+				EA7C97E71BB1EA1E00FA562E /* OpenSans-BoldItalic.ttf in Resources */,
+				EA7C97E81BB1EA1E00FA562E /* OpenSans-ExtraBold.ttf in Resources */,
+				EA7C97E91BB1EA1E00FA562E /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				EA7C97EA1BB1EA1E00FA562E /* OpenSans-Italic.ttf in Resources */,
+				EA7C97EB1BB1EA1E00FA562E /* OpenSans-Light.ttf in Resources */,
+				EA7C97EC1BB1EA1E00FA562E /* OpenSans-LightItalic.ttf in Resources */,
+				EA7C97ED1BB1EA1E00FA562E /* OpenSans-Regular.ttf in Resources */,
+				EA7C97EE1BB1EA1E00FA562E /* OpenSans-Semibold.ttf in Resources */,
+				EA7C97EF1BB1EA1E00FA562E /* OpenSans-SemiboldItalic.ttf in Resources */,
 				EA897C7B1BB0C138001D3326 /* LaunchScreen.storyboard in Resources */,
+				EACA6BA81BB1D6B900ACBBEB /* CircleDataCollectionViewCell.xib in Resources */,
 				EA897C781BB0C138001D3326 /* Assets.xcassets in Resources */,
-				EA897C761BB0C138001D3326 /* Main.storyboard in Resources */,
+				EACA6BA61BB0EEC400ACBBEB /* Main.storyboard in Resources */,
+				EA8DC4221BB1DA9A0056ACC1 /* CircleDataView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,10 +413,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EACC21501BB1DC2900B912B6 /* CircleDataCollectionViewCell.swift in Sources */,
 				EA897CA01BB0C540001D3326 /* Panther.swift in Sources */,
 				EA897C731BB0C138001D3326 /* ViewController.swift in Sources */,
+				EACA6B9E1BB0DEF800ACBBEB /* PantherTableViewCell.swift in Sources */,
 				EA897C711BB0C138001D3326 /* AppDelegate.swift in Sources */,
+				EA8DC4241BB1DABC0056ACC1 /* CircleDataView.swift in Sources */,
 				EA897CA21BB0C704001D3326 /* Constants.swift in Sources */,
+				EACA6BA41BB0EE2100ACBBEB /* FilledCircleIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,14 +456,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EA897C741BB0C138001D3326 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EA897C751BB0C138001D3326 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EA897C791BB0C138001D3326 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -488,7 +553,9 @@
 			baseConfigurationReference = 8E162CCE87B8D346E919B24F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Panther/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jacks205.Panther;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -500,7 +567,9 @@
 			baseConfigurationReference = EEA65EDA0DCA7EC750B6CC46 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Panther/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jacks205.Panther;
 				PRODUCT_NAME = "$(TARGET_NAME)";
