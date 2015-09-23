@@ -12,6 +12,9 @@ import UIKit
     
     private var angleOffset : CGFloat = 0.1
     
+    private let circleLineWidth : CGFloat = 0.5
+    
+    
     var color : UIColor = UIColor.blackColor()
     
     override init(frame: CGRect) {
@@ -60,7 +63,7 @@ import UIKit
         let chosenColor : UIColor = color
         chosenColor.setFill()
         
-        let path : UIBezierPath = UIBezierPath(arcCenter: CGPointMake(self.frame.width / 2, self.frame.height / 2), radius: (self.frame.width / 2) - 4, startAngle: degreesToRadians(270 + angleOffset), endAngle: degreesToRadians(270 - angleOffset), clockwise: true)
+        let path : UIBezierPath = UIBezierPath(arcCenter: CGPointMake(self.frame.width / 2, self.frame.height / 2), radius: (self.frame.width / 2) - 3, startAngle: degreesToRadians(270 + angleOffset), endAngle: degreesToRadians(270 - angleOffset), clockwise: true)
         
         
 //        let path : UIBezierPath = UIBezierPath()
@@ -83,7 +86,7 @@ import UIKit
         // Set the stroke color
         circleLayer.strokeColor = chosenColor.CGColor
         // Set the stroke line width
-        circleLayer.lineWidth = 1
+        circleLayer.lineWidth = circleLineWidth
         circleLayer.fillColor = UIColor.clearColor().CGColor
         circleLayer.name = "circle"
         

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var parkingStructures : [ParkingStructure] = []
 
@@ -69,6 +69,13 @@ class ViewController: UITableViewController, UICollectionViewDelegate, UICollect
     
     //MARK: CollectionView Data source methods
     
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let ratioSmallWidth : CGFloat = 40/273
+        let ratioSmallHeight : CGFloat = 40/62
+        let newWidth : CGFloat = ratioSmallWidth * collectionView.frame.width
+        return CGSize(width: newWidth, height: newWidth / ratioSmallHeight)
+    }
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let structure = parkingStructures.get((collectionView as! PantherIndexedCollectionView).indexPath.row){
             return structure.levels.count
@@ -86,6 +93,7 @@ class ViewController: UITableViewController, UICollectionViewDelegate, UICollect
         print("\(indexPath.row)")
         return cell
     }
+    
 
 
 }
