@@ -13,6 +13,11 @@ import UIKit
     // Our custom view from the XIB file
     var view: UIView!
     
+    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var circleIndicatorView: FilledCircleIndicatorView!
+    
     override init(frame: CGRect) {
         // 1. setup any properties here
         

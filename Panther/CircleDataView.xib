@@ -13,7 +13,13 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CircleDataView" customModule="Panther" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CircleDataView" customModule="Panther" customModuleProvider="target">
+            <connections>
+                <outlet property="circleIndicatorView" destination="xSf-58-bLm" id="t4j-ou-Tgt"/>
+                <outlet property="countLabel" destination="p2T-Kp-hSV" id="WEv-Jx-we1"/>
+                <outlet property="titleLabel" destination="jgT-hC-4Id" id="KHi-PC-v7a"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="40" height="62"/>
@@ -32,19 +38,15 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="p2T-Kp-hSV" secondAttribute="bottom" constant="10" id="3pe-pW-UTy"/>
-                        <constraint firstAttribute="trailing" secondItem="p2T-Kp-hSV" secondAttribute="trailing" id="9D0-6W-sop"/>
-                        <constraint firstItem="p2T-Kp-hSV" firstAttribute="top" secondItem="xSf-58-bLm" secondAttribute="top" constant="9" id="eZ4-jH-Mh2"/>
-                        <constraint firstItem="p2T-Kp-hSV" firstAttribute="centerY" secondItem="xSf-58-bLm" secondAttribute="centerY" id="wUW-Ec-88R"/>
-                        <constraint firstItem="p2T-Kp-hSV" firstAttribute="leading" secondItem="xSf-58-bLm" secondAttribute="leading" id="yIQ-3H-85o"/>
+                        <constraint firstAttribute="trailing" secondItem="p2T-Kp-hSV" secondAttribute="trailing" id="4xA-ek-mmi"/>
+                        <constraint firstItem="p2T-Kp-hSV" firstAttribute="leading" secondItem="xSf-58-bLm" secondAttribute="leading" id="Bye-bo-Llr"/>
+                        <constraint firstAttribute="bottom" secondItem="p2T-Kp-hSV" secondAttribute="bottom" constant="10" id="E17-Ve-idL"/>
+                        <constraint firstItem="p2T-Kp-hSV" firstAttribute="top" secondItem="xSf-58-bLm" secondAttribute="top" constant="9" id="unE-zo-ZYL"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.81999999999999995" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEVEL 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgT-hC-4Id">
                     <rect key="frame" x="0.0" y="41" width="40" height="21"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="kHm-cQ-wEF"/>
-                    </constraints>
                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -52,13 +54,15 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="jgT-hC-4Id" secondAttribute="trailing" id="RKe-Ju-yWe"/>
-                <constraint firstItem="jgT-hC-4Id" firstAttribute="top" secondItem="xSf-58-bLm" secondAttribute="bottom" constant="1" id="ZSO-9O-dy2"/>
-                <constraint firstAttribute="bottom" secondItem="jgT-hC-4Id" secondAttribute="bottom" id="dEU-FE-WY8"/>
-                <constraint firstAttribute="trailing" secondItem="xSf-58-bLm" secondAttribute="trailing" id="gON-yi-3br"/>
-                <constraint firstItem="xSf-58-bLm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qFh-Yc-B4K"/>
-                <constraint firstItem="xSf-58-bLm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rQ0-kS-J1y"/>
-                <constraint firstItem="jgT-hC-4Id" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yDt-7Z-6sM"/>
+                <constraint firstAttribute="bottom" secondItem="xSf-58-bLm" secondAttribute="bottom" constant="22" id="0Ur-u6-YkC"/>
+                <constraint firstItem="jgT-hC-4Id" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="22c-nt-gFw"/>
+                <constraint firstItem="jgT-hC-4Id" firstAttribute="top" secondItem="xSf-58-bLm" secondAttribute="bottom" constant="1" id="Axc-5e-xP0"/>
+                <constraint firstAttribute="trailing" secondItem="xSf-58-bLm" secondAttribute="trailing" id="J5b-Wu-94N"/>
+                <constraint firstItem="xSf-58-bLm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UO6-4w-eMg"/>
+                <constraint firstItem="xSf-58-bLm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="aZU-g7-txj"/>
+                <constraint firstAttribute="trailing" secondItem="jgT-hC-4Id" secondAttribute="trailing" id="k6U-j9-Eaq"/>
+                <constraint firstAttribute="bottom" secondItem="jgT-hC-4Id" secondAttribute="bottom" id="uaM-V2-Nej"/>
+                <constraint firstItem="xSf-58-bLm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vAU-d8-OpX"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

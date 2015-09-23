@@ -10,12 +10,32 @@ import UIKit
 
 @IBDesignable class FilledCircleIndicatorView: UIView {
     
+    private var angleOffset : CGFloat = 0.1
+    
+    var color : UIColor = UIColor.blackColor()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    func setCapacityLevel(currentCapacity : CGFloat, outOfTotalCapacity totalCapacity : CGFloat){
+        let percentage = currentCapacity / totalCapacity
+        angleOffset = percentage * 179.9
+        //TODO: Fix so that the colors are customizable
+        if(angleOffset < 0.1){
+            angleOffset = 0.1
+        } else if (angleOffset > 179.9){
+            angleOffset = 179.9
+        }
+        if(angleOffset > (0.2 * 179.9)){
+            color = Constants.Colors.GREEN_COLOR
+        }else{
+            color = Constants.Colors.RED_COLOR
+        }
     }
 
     
@@ -26,10 +46,10 @@ import UIKit
         let ref  = UIGraphicsGetCurrentContext()
         CGContextSaveGState(ref)
         
-        let color : UIColor = UIColor(CGColor: UIColor(red:0.16, green:0.93, blue:0.70, alpha:1.0).CGColor)
-        color.setFill()
+        let chosenColor : UIColor = color
+        chosenColor.setFill()
         
-        let path : UIBezierPath = UIBezierPath(arcCenter: CGPointMake(self.frame.width / 2, self.frame.height / 2), radius: (self.frame.width / 2) - 4, startAngle: degreesToRadians(45), endAngle: degreesToRadians(180 - 45), clockwise: true)
+        let path : UIBezierPath = UIBezierPath(arcCenter: CGPointMake(self.frame.width / 2, self.frame.height / 2), radius: (self.frame.width / 2) - 4, startAngle: degreesToRadians(270 + angleOffset), endAngle: degreesToRadians(270 - angleOffset), clockwise: true)
         
         
 //        let path : UIBezierPath = UIBezierPath()
@@ -50,7 +70,7 @@ import UIKit
         // Set the path on the layer
         circleLayer.path = circlePath.CGPath
         // Set the stroke color
-        circleLayer.strokeColor = UIColor(red:0.16, green:0.93, blue:0.70, alpha:1.0).CGColor
+        circleLayer.strokeColor = chosenColor.CGColor
         // Set the stroke line width
         circleLayer.lineWidth = 1
         circleLayer.fillColor = UIColor.clearColor().CGColor

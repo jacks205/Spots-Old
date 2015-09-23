@@ -21,9 +21,18 @@ class PantherTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testFetchData() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        Panther.sharedInstance.fetchParkingData { (structures, err) -> Void in
+            if let error = err{
+                print(error)
+                XCTAssert(false)
+            }
+            print(structures)
+            XCTAssert((structures != nil), "Parking information received")
+        }
+        
     }
     
     func testPerformanceExample() {

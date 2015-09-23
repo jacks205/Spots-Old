@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+        
         let top : UIColor = UIColor(red:0.14, green:0.18, blue:0.25, alpha:1.0)
         let bottom : UIColor = UIColor(red:0.45, green:0.51, blue:0.59, alpha:1.0)
         
@@ -23,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         gradient.frame = self.window!.bounds
         gradient.colors = [top.CGColor, bottom.CGColor]
         self.window!.layer.insertSublayer(gradient, atIndex: 0)
+        
         
         return true
     }

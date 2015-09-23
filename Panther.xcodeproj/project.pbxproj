@@ -176,6 +176,7 @@
 			children = (
 				EA7C97DB1BB1EA0700FA562E /* Fonts */,
 				EA897C9E1BB0C512001D3326 /* PantherRequests */,
+				EA897CA11BB0C704001D3326 /* Constants.swift */,
 				EA897C701BB0C138001D3326 /* AppDelegate.swift */,
 				EACA6BA51BB0EEC400ACBBEB /* Main.storyboard */,
 				EA897C721BB0C138001D3326 /* ViewController.swift */,
@@ -214,7 +215,6 @@
 			isa = PBXGroup;
 			children = (
 				EA897C9F1BB0C540001D3326 /* Panther.swift */,
-				EA897CA11BB0C704001D3326 /* Constants.swift */,
 			);
 			name = PantherRequests;
 			sourceTree = "<group>";

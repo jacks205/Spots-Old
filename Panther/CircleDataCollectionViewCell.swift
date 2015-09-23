@@ -11,6 +11,7 @@ import UIKit
 @IBDesignable class CircleDataCollectionViewCell: UICollectionViewCell {
     // Our custom view from the XIB file
     var view: UIView!
+    @IBOutlet weak var circleDataView: CircleDataView!
     
     override init(frame: CGRect) {
         // 1. setup any properties here

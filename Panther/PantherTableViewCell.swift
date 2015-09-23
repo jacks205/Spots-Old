@@ -8,9 +8,24 @@
 
 import UIKit
 
+class PantherIndexedCollectionView: UICollectionView {
+    
+    var indexPath: NSIndexPath!
+    
+    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
+        super.init(frame: frame, collectionViewLayout: layout)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+}
+
 class PantherTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    var row : Int = 0
+    
+    @IBOutlet weak var collectionView: PantherIndexedCollectionView!
     
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var totalSpots: UILabel!
@@ -20,6 +35,7 @@ class PantherTableViewCell: UITableViewCell {
     func setCollectionViewDataSourceDelegate(dataSource : UICollectionViewDataSource, withDelegate delegate : UICollectionViewDelegate, atIndexPath indexPath : NSIndexPath){
         self.collectionView.dataSource = dataSource
         self.collectionView.delegate = delegate
+        self.collectionView.indexPath = indexPath
         self.collectionView.reloadData()
     }
     
