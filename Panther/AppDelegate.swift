@@ -26,9 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         gradient.colors = [top.CGColor, bottom.CGColor]
         self.window!.layer.insertSublayer(gradient, atIndex: 0)
         
+        
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [UIUserNotificationType.Sound,
             UIUserNotificationType.Alert, UIUserNotificationType.Badge], categories: nil))
-        
         
         return true
     }
@@ -53,6 +53,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        print("Token: \(deviceToken)")
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        print("Error: \(error)")
     }
 
 

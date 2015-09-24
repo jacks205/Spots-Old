@@ -90,7 +90,6 @@ class PantherViewController: UITableViewController, UICollectionViewDelegate, UI
         cell.circleDataView.titleLabel.text = "Level \(level.number)"
         cell.circleDataView.countLabel.text = "\(level.available)"
         cell.circleDataView.circleIndicatorView.setNeedsDisplay()
-        print("\(indexPath.row)")
         return cell
     }
     

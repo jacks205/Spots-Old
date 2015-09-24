@@ -73,25 +73,31 @@ import UIKit
         
         path.fill()
         
-        let circleLayer : CAShapeLayer = CAShapeLayer()
-        // Give the layer the same bounds as your image view
-        circleLayer.bounds = CGRectMake(2, 2, self.frame.width - 4, self.frame.height - 4)
-        // Position the circle anywhere you like, but this will center it
-        // In the parent layer, which will be your image view's root layer
-        circleLayer.position = CGPointMake(self.frame.width / 2, self.frame.height / 2)
-        // Create a circle path.
-        let circlePath : UIBezierPath = UIBezierPath(ovalInRect: CGRectMake(2, 2, self.frame.width - 4, self.frame.height - 4))
-        // Set the path on the layer
-        circleLayer.path = circlePath.CGPath
-        // Set the stroke color
-        circleLayer.strokeColor = chosenColor.CGColor
-        // Set the stroke line width
-        circleLayer.lineWidth = circleLineWidth
-        circleLayer.fillColor = UIColor.clearColor().CGColor
-        circleLayer.name = "circle"
+        let strokePath : UIBezierPath = UIBezierPath(roundedRect: CGRectMake(2, 2, self.frame.width - 4, self.frame.height - 4), cornerRadius: 100)
         
-        // Add the sublayer to the image view's layer tree
-        self.layer.addSublayer(circleLayer)
+        chosenColor.setStroke()
+        strokePath.stroke()
+        
+        //Old way
+//        let circleLayer : CAShapeLayer = CAShapeLayer()
+//        // Give the layer the same bounds as your image view
+//        circleLayer.bounds = CGRectMake(2, 2, self.frame.width - 4, self.frame.height - 4)
+//        // Position the circle anywhere you like, but this will center it
+//        // In the parent layer, which will be your image view's root layer
+//        circleLayer.position = CGPointMake(self.frame.width / 2, self.frame.height / 2)
+//        // Create a circle path.
+//        let circlePath : UIBezierPath = UIBezierPath(ovalInRect: CGRectMake(2, 2, self.frame.width - 4, self.frame.height - 4))
+//        // Set the path on the layer
+//        circleLayer.path = circlePath.CGPath
+//        // Set the stroke color
+//        circleLayer.strokeColor = chosenColor.CGColor
+//        // Set the stroke line width
+//        circleLayer.lineWidth = circleLineWidth
+//        circleLayer.fillColor = UIColor.clearColor().CGColor
+//        circleLayer.name = "circle"
+//        
+//        // Add the sublayer to the image view's layer tree
+//        self.layer.addSublayer(circleLayer)
         
         CGContextRestoreGState(ref)
     }
