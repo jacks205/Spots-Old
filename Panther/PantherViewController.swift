@@ -16,7 +16,7 @@ class PantherViewController: UITableViewController, UICollectionViewDelegate, UI
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        navigationController!.navigationBar.barTintColor = Constants.Colors.NAVIGATION_BAR_COLOR
+        navigationController!.navigationBar.barTintColor = Constants.Colors.DARK_BLUE_COLOR
         
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.addTarget(self, action: "reloadData:", forControlEvents: UIControlEvents.ValueChanged)

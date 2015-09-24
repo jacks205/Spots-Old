@@ -16,9 +16,9 @@ import UIKit
     override func drawRect(rect: CGRect) {
         // Drawing code
         
-        let path : UIBezierPath = UIBezierPath(roundedRect: self.frame, cornerRadius: 200)
+        let path : UIBezierPath = UIBezierPath(roundedRect: CGRectInset(self.bounds, 0.5, 0.5), cornerRadius: 40)
         path.lineWidth = 1
-        UIColor.blackColor().setStroke()
+        UIColor.whiteColor().setStroke()
         path.stroke()
         
     }

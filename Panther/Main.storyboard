@@ -14,6 +14,7 @@
             <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
+            <string>OpenSans</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -24,10 +25,10 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" id="blo-MO-zBj">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="separatorColor" white="1" alpha="0.22" colorSpace="calibratedWhite"/>
-                        <inset key="separatorInset" minX="15" minY="0.0" maxX="5" maxY="0.0"/>
-                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.086274509803921567" green="0.10980392156862745" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="1" green="1" blue="1" alpha="0.22" colorSpace="calibratedRGB"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <color key="sectionIndexBackgroundColor" red="0.086274509803921567" green="0.10980392156862745" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                         <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" alpha="0.47999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PARKING STRUCTURES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yQT-EB-ZiV">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -123,7 +124,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Chapman Parking" id="O5F-pi-PVa">
                         <barButtonItem key="rightBarButtonItem" image="bell" style="plain" id="IM4-b6-M6R">
-                            <color key="tintColor" red="0.82745098039215681" green="0.8901960784313725" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="SZp-G5-4QB" kind="push" id="34Z-bM-Ya2"/>
                             </connections>
@@ -147,15 +148,37 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqz-OP-0EI" customClass="UINotificationButton" customModule="Panther" customModuleProvider="target">
-                                <rect key="frame" x="20" y="79" width="200" height="200"/>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="0.1450980392" green="0.18823529410000001" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setup notifications to have Panther let you know what lots are open at a certain time." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xqy-zP-hcB">
+                                <rect key="frame" x="16" y="160" width="288" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="4pl-pG-TDm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqz-OP-0EI" customClass="UINotificationButton" customModule="Panther" customModuleProvider="target">
+                                <rect key="frame" x="47" y="232" width="226" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="A6w-Sh-GOA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
+                                <state key="normal" title="ADD NOTIFICATION">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.086274509803921567" green="0.10980392156862745" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="jqz-OP-0EI" firstAttribute="centerX" secondItem="F8V-t6-mXH" secondAttribute="centerX" id="98K-tU-KZJ"/>
+                            <constraint firstItem="jqz-OP-0EI" firstAttribute="centerY" secondItem="F8V-t6-mXH" secondAttribute="centerY" id="Grz-py-jGV"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Xqy-zP-hcB" secondAttribute="leading" id="Ip7-L9-byD"/>
+                            <constraint firstItem="jqz-OP-0EI" firstAttribute="leading" secondItem="F8V-t6-mXH" secondAttribute="leadingMargin" constant="31" id="PKY-X0-tu6"/>
+                            <constraint firstItem="Xqy-zP-hcB" firstAttribute="centerX" secondItem="F8V-t6-mXH" secondAttribute="centerX" id="S3v-tH-V6D"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jqz-OP-0EI" secondAttribute="trailing" constant="31" id="iea-wx-gO5"/>
+                            <constraint firstItem="jqz-OP-0EI" firstAttribute="top" secondItem="Xqy-zP-hcB" secondAttribute="bottom" constant="8" id="mNh-v4-DVe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Xqy-zP-hcB" secondAttribute="trailing" id="vES-45-76K"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EfF-6H-5yA"/>
                 </viewController>
@@ -171,6 +194,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="iDu-Es-XTc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
