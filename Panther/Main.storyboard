@@ -293,24 +293,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wT7-p7-4Kg">
-                                <rect key="frame" x="197" y="54" width="15" height="23.5"/>
-                                <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:30AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3N-H0-YZG">
-                                <rect key="frame" x="218" y="54" width="70" height="23.5"/>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Mondays" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agt-Hi-Jec">
-                                <rect key="frame" x="120" y="54" width="73" height="23.5"/>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6D-Vs-SjZ">
                                 <rect key="frame" x="0.0" y="206" width="320" height="298"/>
                                 <subviews>
@@ -390,8 +372,26 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="Get notified  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X72-a9-PJn">
-                                <rect key="frame" x="21" y="54" width="98.5" height="23.5"/>
+                                <rect key="frame" x="27" y="53" width="98.5" height="23.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wT7-p7-4Kg">
+                                <rect key="frame" x="202" y="53" width="15" height="23.5"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:30AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3N-H0-YZG">
+                                <rect key="frame" x="220" y="53" width="70" height="23.5"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Mondays" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agt-Hi-Jec">
+                                <rect key="frame" x="124" y="53" width="73" height="23.5"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -399,18 +399,19 @@
                         <color key="backgroundColor" red="0.16862745098039217" green="0.19215686274509802" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="s6D-Vs-SjZ" secondAttribute="trailing" id="0AP-Vq-rHW"/>
-                            <constraint firstItem="U3N-H0-YZG" firstAttribute="top" secondItem="1MN-lR-DxM" secondAttribute="bottom" constant="54" id="0iM-yP-Q4w"/>
-                            <constraint firstItem="wT7-p7-4Kg" firstAttribute="leading" secondItem="agt-Hi-Jec" secondAttribute="trailing" constant="4" id="2Ji-qY-deN"/>
+                            <constraint firstItem="U3N-H0-YZG" firstAttribute="top" secondItem="1MN-lR-DxM" secondAttribute="bottom" constant="53" id="0iM-yP-Q4w"/>
+                            <constraint firstItem="wT7-p7-4Kg" firstAttribute="leading" secondItem="agt-Hi-Jec" secondAttribute="trailing" constant="5" id="2Ji-qY-deN"/>
                             <constraint firstItem="s6D-Vs-SjZ" firstAttribute="bottom" secondItem="7tE-PT-AIK" secondAttribute="top" id="7Ac-mh-gZY"/>
                             <constraint firstItem="O6L-dq-yyn" firstAttribute="centerX" secondItem="s6D-Vs-SjZ" secondAttribute="centerX" id="Bw7-bY-dLh"/>
-                            <constraint firstItem="agt-Hi-Jec" firstAttribute="leading" secondItem="X72-a9-PJn" secondAttribute="trailing" id="NqJ-Kz-YGu"/>
+                            <constraint firstItem="agt-Hi-Jec" firstAttribute="leading" secondItem="X72-a9-PJn" secondAttribute="trailing" constant="-1.5" id="NqJ-Kz-YGu"/>
                             <constraint firstItem="s6D-Vs-SjZ" firstAttribute="top" secondItem="ZpM-8l-qKO" secondAttribute="top" constant="206" id="UE1-Sw-Bhf"/>
-                            <constraint firstItem="U3N-H0-YZG" firstAttribute="leading" secondItem="wT7-p7-4Kg" secondAttribute="trailing" constant="6" id="VTo-fI-fES"/>
+                            <constraint firstItem="U3N-H0-YZG" firstAttribute="leading" secondItem="wT7-p7-4Kg" secondAttribute="trailing" constant="3" id="VTo-fI-fES"/>
+                            <constraint firstItem="agt-Hi-Jec" firstAttribute="centerX" secondItem="ZpM-8l-qKO" secondAttribute="centerX" constant="0.5" id="lun-GF-wgA"/>
                             <constraint firstItem="s6D-Vs-SjZ" firstAttribute="top" secondItem="O6L-dq-yyn" secondAttribute="bottom" constant="90" id="nT8-wT-em6"/>
-                            <constraint firstItem="agt-Hi-Jec" firstAttribute="leading" secondItem="ZpM-8l-qKO" secondAttribute="leadingMargin" constant="104" id="nYL-Zg-NFD"/>
-                            <constraint firstItem="agt-Hi-Jec" firstAttribute="top" secondItem="1MN-lR-DxM" secondAttribute="bottom" constant="54" id="tct-8U-nzu"/>
-                            <constraint firstItem="X72-a9-PJn" firstAttribute="top" secondItem="1MN-lR-DxM" secondAttribute="bottom" constant="54" id="uym-pt-Zqu"/>
-                            <constraint firstItem="wT7-p7-4Kg" firstAttribute="top" secondItem="1MN-lR-DxM" secondAttribute="bottom" constant="54" id="vqQ-Fy-fCU"/>
+                            <constraint firstItem="774-fP-NDd" firstAttribute="top" secondItem="agt-Hi-Jec" secondAttribute="bottom" constant="9.5" id="r8K-hO-tl3"/>
+                            <constraint firstItem="agt-Hi-Jec" firstAttribute="top" secondItem="1MN-lR-DxM" secondAttribute="bottom" constant="53" id="tct-8U-nzu"/>
+                            <constraint firstItem="X72-a9-PJn" firstAttribute="top" secondItem="1MN-lR-DxM" secondAttribute="bottom" constant="53" id="uym-pt-Zqu"/>
+                            <constraint firstItem="wT7-p7-4Kg" firstAttribute="top" secondItem="1MN-lR-DxM" secondAttribute="bottom" constant="53" id="vqQ-Fy-fCU"/>
                             <constraint firstItem="s6D-Vs-SjZ" firstAttribute="leading" secondItem="ZpM-8l-qKO" secondAttribute="leading" id="zGO-Ba-VHN"/>
                         </constraints>
                     </view>
