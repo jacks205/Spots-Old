@@ -9,12 +9,40 @@
 import UIKit
 import BGTableViewRowActionWithImage
 
-class AlertsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class Alert {
+    let day : String
+    let time : NSDate
+    
+    var enabled : Bool
+    
+    init(day: String, time: NSDate){
+        self.day = day
+        self.time = time
+        self.enabled = true
+    }
+    
+    func getTimeString() -> String{
+        return Alert.getTimeString(time)
+    }
+    
+    static func getTimeString(date: NSDate) -> String{
+        let dateFormat : NSDateFormatter = NSDateFormatter()
+        dateFormat.dateFormat = "h:mma"
+        return dateFormat.stringFromDate(date)
+    }
+    
+}
+
+protocol AddAlertProtocol{
+    func addAlert(day : String, forTime time: NSDate)
+}
+
+class AlertsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AddAlertProtocol{
     
     @IBOutlet weak var emptyAlertsView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
-    var alerts : [Int] = [4,4,4]
+    var alerts : [Alert] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +57,30 @@ class AlertsViewController: UIViewController, UITableViewDataSource, UITableView
 //        localNotification.alertBody = "It works!"
 //        localNotification.fireDate = NSDate(timeIntervalSinceNow: 60)
 //        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+        checkIfTableViewIsEmpty()
         
+    }
+    @IBAction func back(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func addNotification() {
+        performSegueWithIdentifier("addNotification", sender: self)
         
-        
+    }
+    
+    func addAlert(day : String, forTime time: NSDate){
+        let newAlert = Alert(day: day, time: time)
+        alerts.append(newAlert)
+        checkIfTableViewIsEmpty()
+    }
+    
+    func checkIfTableViewIsEmpty(){
         if(alerts.count > 0){
             //Show table
             tableView.hidden = false
@@ -47,22 +96,15 @@ class AlertsViewController: UIViewController, UITableViewDataSource, UITableView
             tableView.hidden = true
             emptyAlertsView.hidden = false
         }
-        
 
-        
-    }
-    @IBAction func back(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func addNotification() {
-        performSegueWithIdentifier("addNotification", sender: self)
-        
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "addNotification"){
+            let nav : UINavigationController = segue.destinationViewController as! UINavigationController
+            let amc : AddAlertModalViewController =  nav.topViewController as! AddAlertModalViewController
+            amc.delegate = self
+        }
     }
 
     // MARK: - Table view data source
@@ -79,8 +121,11 @@ class AlertsViewController: UIViewController, UITableViewDataSource, UITableView
 
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("AlertCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("AlertCell", forIndexPath: indexPath) as! AlertTableViewCell
         // Configure the cell...
+        if let alert : Alert = alerts.get(indexPath.row){
+            cell.setAlert(alert)
+        }
 
         return cell
     }
@@ -99,11 +144,7 @@ class AlertsViewController: UIViewController, UITableViewDataSource, UITableView
         let deleteBtn = BGTableViewRowActionWithImage.rowActionWithStyle(.Normal, title: "    ", backgroundColor: tableView.backgroundColor, image: UIImage(named: "delete.png"), forCellHeight: 95) { (_, _) -> Void in
             self.alerts.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            if(self.alerts.count == 0){
-                tableView.hidden = true
-                self.emptyAlertsView.hidden = false
-            }
-
+            self.checkIfTableViewIsEmpty()
         }
         return [deleteBtn]
     }

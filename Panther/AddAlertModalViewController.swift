@@ -19,9 +19,10 @@ class ColoredDatePicker: UIDatePicker {
     }
 }
 
-
 class AddAlertModalViewController: UIViewController {
 
+    var delegate : AddAlertProtocol?
+    
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
@@ -40,7 +41,7 @@ class AddAlertModalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        
         if let font = UIFont(name: "OpenSans", size: 15) {
             if let smallerFont = UIFont(name: "OpenSans", size: 11){
                 self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: smallerFont, NSForegroundColorAttributeName: UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)]
@@ -48,6 +49,7 @@ class AddAlertModalViewController: UIViewController {
             saveBarBtn.setTitleTextAttributes([NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.whiteColor()], forState: UIControlState.Normal)
             cancelBarBtn.setTitleTextAttributes([NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.whiteColor()], forState: UIControlState.Normal)
         }
+        timeLabel.text = getTimeStringFromDatePicker()
         
         setArrowButtonEnabled(dayPickerLeftBtn, enabled: false)
         
@@ -58,12 +60,15 @@ class AddAlertModalViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+
     @IBAction func saveAlert(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true) { () -> Void in
+            self.delegate?.addAlert(self.days.get(self.daysSelectedIndex)!, forTime: self.datePicker.date)
+        }
     }
     
     @IBAction func cancelModal(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func switchDay(sender: AnyObject) {
@@ -105,6 +110,15 @@ class AddAlertModalViewController: UIViewController {
         }
     }
     
+    @IBAction func timeChanged(sender: AnyObject) {
+        timeLabel.text = getTimeStringFromDatePicker()
+    }
+    
+    func getTimeStringFromDatePicker() -> String{
+        let date : NSDate = datePicker.date
+        let dateStr : String = Alert.getTimeString(date)
+        return dateStr
+    }
 
     /*
     // MARK: - Navigation
