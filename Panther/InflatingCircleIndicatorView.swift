@@ -46,13 +46,13 @@ import UIKit
         let outerColor : UIColor = baseColor
         outerColor.setFill()
         
-        let basePath : UIBezierPath = UIBezierPath(ovalInRect: CGRectInset(self.frame, 1, 1))
+        let basePath : UIBezierPath = UIBezierPath(ovalInRect: CGRectInset(rect, 1, 1))
         basePath.fill()
         
         let innerColor : UIColor = fillColor
         innerColor.setFill()
         
-        let innerPath : UIBezierPath = UIBezierPath(ovalInRect: CGRectInset(self.frame, amountFilled, amountFilled))
+        let innerPath : UIBezierPath = UIBezierPath(ovalInRect: CGRectInset(rect, amountFilled, amountFilled))
         innerPath.fill()
         
 //

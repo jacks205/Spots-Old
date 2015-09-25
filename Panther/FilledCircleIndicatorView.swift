@@ -63,7 +63,7 @@ import UIKit
         let chosenColor : UIColor = color
         chosenColor.setFill()
         
-        let path : UIBezierPath = UIBezierPath(arcCenter: CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)), radius: CGRectGetMidX(self.frame) - circleLineWidth / 2 - 1, startAngle: degreesToRadians(270 + angleOffset), endAngle: degreesToRadians(270 - angleOffset), clockwise: true)
+        let path : UIBezierPath = UIBezierPath(arcCenter: CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect)), radius: CGRectGetMidX(rect) - circleLineWidth / 2 - 1, startAngle: degreesToRadians(270 + angleOffset), endAngle: degreesToRadians(270 - angleOffset), clockwise: true)
         
         
 //        let path : UIBezierPath = UIBezierPath()
@@ -73,7 +73,7 @@ import UIKit
         
         path.fill()
         
-        let strokePath : UIBezierPath = UIBezierPath(roundedRect: CGRectInset(self.bounds, circleLineWidth / 2, circleLineWidth / 2), cornerRadius: 100)
+        let strokePath : UIBezierPath = UIBezierPath(roundedRect: CGRectInset(rect, circleLineWidth / 2, circleLineWidth / 2), cornerRadius: 100)
         strokePath.lineWidth = circleLineWidth
         chosenColor.setStroke()
         strokePath.stroke()

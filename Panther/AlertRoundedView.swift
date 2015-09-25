@@ -15,11 +15,11 @@ import UIKit
     override func drawRect(rect: CGRect) {
         // Drawing code
         
-        let color : UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        let color : UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.17)
         
         color.setFill()
         
-        let path : UIBezierPath = UIBezierPath(roundedRect: CGRectInset(self.frame, 0, 0), cornerRadius: 20)
+        let path : UIBezierPath = UIBezierPath(roundedRect: CGRectInset(rect, 1, 1), cornerRadius: 4)
         
         path.fill()
         
