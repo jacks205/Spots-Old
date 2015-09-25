@@ -7,31 +7,31 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CircleDataCollectionViewCell" customModule="Panther" customModuleProvider="target">
             <connections>
-                <outlet property="circleDataView" destination="vN6-Ea-xZz" id="6rm-T6-0Az"/>
+                <outlet property="inflatingCircleDataView" destination="vN6-Ea-xZz" id="0gK-xn-TW5"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="40" height="62"/>
+            <rect key="frame" x="0.0" y="0.0" width="50" height="84"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vN6-Ea-xZz" customClass="CircleDataView" customModule="Panther" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="40" height="62"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vN6-Ea-xZz" customClass="InflatingCircleDataView" customModule="Panther" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="84"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="62" id="LSx-go-QZx"/>
-                        <constraint firstAttribute="width" constant="40" id="etW-sl-79A"/>
-                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="vN6-Ea-xZz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="116-NR-xq2"/>
-                <constraint firstItem="vN6-Ea-xZz" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="YMf-8m-85I"/>
+                <constraint firstItem="vN6-Ea-xZz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2lK-m1-wZ2"/>
+                <constraint firstItem="vN6-Ea-xZz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="GRD-R9-hpB"/>
+                <constraint firstItem="vN6-Ea-xZz" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Sg4-Qi-lVy"/>
+                <constraint firstAttribute="bottom" secondItem="vN6-Ea-xZz" secondAttribute="bottom" id="WJl-lr-jbT"/>
+                <constraint firstItem="vN6-Ea-xZz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="c1u-s0-6Be"/>
+                <constraint firstAttribute="trailing" secondItem="vN6-Ea-xZz" secondAttribute="trailing" id="lof-Af-apg"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="351" y="511"/>
+            <point key="canvasLocation" x="370" y="546"/>
         </view>
     </objects>
 </document>

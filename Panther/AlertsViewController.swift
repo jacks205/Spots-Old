@@ -9,6 +9,9 @@
 import UIKit
 
 class AlertsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+    
+    @IBOutlet weak var emptyAlertsView: UIView!
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +26,29 @@ class AlertsViewController: UIViewController, UITableViewDataSource, UITableView
 //        localNotification.alertBody = "It works!"
 //        localNotification.fireDate = NSDate(timeIntervalSinceNow: 60)
 //        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+        
+        var alerts : [Int] = [4, 6, 3, 4]
+        
+        if(alerts.count > 0){
+            //Show table
+            tableView.hidden = false
+            emptyAlertsView.hidden = true
+            
+            tableView.delegate = self
+            tableView.dataSource = self
+            tableView.allowsSelection = false
+            tableView.reloadData()
+        }else{
+            //Show empty view
+            tableView.hidden = true
+            emptyAlertsView.hidden = false
+        }
+        
 
         
+    }
+    @IBAction func back(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,18 +61,18 @@ class AlertsViewController: UIViewController, UITableViewDataSource, UITableView
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 4
     }
 
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("AlertCell", forIndexPath: indexPath)
+        print(cell)
         // Configure the cell...
 
         return cell

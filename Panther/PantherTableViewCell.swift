@@ -26,9 +26,7 @@ class PantherIndexedCollectionView: UICollectionView {
 }
 
 class PantherTableViewCell: UITableViewCell {
-    
-    var row : Int = 0
-    
+        
     @IBOutlet weak var collectionView: PantherIndexedCollectionView!
     
     @IBOutlet weak var title: UILabel!

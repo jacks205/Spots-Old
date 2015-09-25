@@ -1,18 +1,21 @@
 //
-//  CircleDataCollectionViewCell.swift
+//  InflatingCircleDataView.swift
 //  Panther
 //
-//  Created by Mark Jackson on 9/22/15.
+//  Created by Mark Jackson on 9/24/15.
 //  Copyright © 2015 Mark Jackson. All rights reserved.
 //
 
 import UIKit
 
-@IBDesignable class CircleDataCollectionViewCell: UICollectionViewCell {
+@IBDesignable class InflatingCircleDataView: UIView {
+    
     // Our custom view from the XIB file
     var view: UIView!
-    @IBOutlet weak var inflatingCircleDataView: InflatingCircleDataView!
-    
+    @IBOutlet weak var inflatingCircleIndicatorView: InflatingCircleIndicatorView!
+
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var countLabel: UILabel!
     override init(frame: CGRect) {
         // 1. setup any properties here
         
@@ -49,7 +52,7 @@ import UIKit
     func loadViewFromNib() -> UIView {
         
         let bundle = NSBundle(forClass: self.dynamicType)
-        let nib = UINib(nibName: "CircleDataCollectionViewCell", bundle: bundle)
+        let nib = UINib(nibName: "InflatingCircleDataView", bundle: bundle)
         let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
         
         return view
@@ -65,5 +68,5 @@ import UIKit
     }
     */
 
-    
+
 }

@@ -16,6 +16,9 @@ class PantherViewController: UITableViewController, UICollectionViewDelegate, UI
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        if let smallerFont = UIFont(name: "OpenSans", size: 11){
+            self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: smallerFont, NSForegroundColorAttributeName: UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)]
+        }
         navigationController!.navigationBar.barTintColor = Constants.Colors.DARK_BLUE_COLOR
         
         self.refreshControl = UIRefreshControl()
@@ -52,7 +55,7 @@ class PantherViewController: UITableViewController, UICollectionViewDelegate, UI
         
         if let structure : ParkingStructure = parkingStructures.get(indexPath.row){
             cell.title.text = structure.name
-            cell.totalSpots.text = "\(structure.available)"
+            cell.totalSpots.text = "\(structure.available) spots available"
         }
         
         return cell
@@ -69,11 +72,17 @@ class PantherViewController: UITableViewController, UICollectionViewDelegate, UI
     
     //MARK: CollectionView Data source methods
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let ratioSmallWidth : CGFloat = 40/273
-        let ratioSmallHeight : CGFloat = 40/62
-        let newWidth : CGFloat = ratioSmallWidth * collectionView.frame.width
-        return CGSize(width: newWidth, height: newWidth / ratioSmallHeight)
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+//        let ratioSmallWidth : CGFloat = 50/304
+//        let ratioSmallHeight : CGFloat = 50/84
+//        let newWidth : CGFloat = ratioSmallWidth * collectionView.frame.width
+//        print(collectionView.frame)
+//        return CGSize(width: newWidth, height: newWidth / ratioSmallHeight)
+//    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+        let cvWidth = collectionView.bounds.width / 5
+        return cvWidth - 50
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -86,10 +95,11 @@ class PantherViewController: UITableViewController, UICollectionViewDelegate, UI
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell : CircleDataCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionCell", forIndexPath: indexPath) as! CircleDataCollectionViewCell
         let level : ParkingLevel = parkingStructures.get((collectionView as! PantherIndexedCollectionView).indexPath.row)!.levels.get(indexPath.row)!
-        cell.circleDataView.circleIndicatorView.setCapacityLevel(CGFloat(level.available), outOfTotalCapacity: CGFloat(level.total))
-        cell.circleDataView.titleLabel.text = "Level \(level.number)"
-        cell.circleDataView.countLabel.text = "\(level.available)"
-        cell.circleDataView.circleIndicatorView.setNeedsDisplay()
+        cell.inflatingCircleDataView.inflatingCircleIndicatorView.setCapacityLevel(CGFloat(level.available), outOfTotalCapacity: CGFloat(level.total))
+        cell.inflatingCircleDataView.titleLabel.text = "Level \(level.number)"
+        cell.inflatingCircleDataView.countLabel.text = "\(level.available)"
+        cell.inflatingCircleDataView.inflatingCircleIndicatorView.setNeedsDisplay()
+        print(cell.frame)
         return cell
     }
     
