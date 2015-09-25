@@ -99,7 +99,6 @@ class PantherViewController: UITableViewController, UICollectionViewDelegate, UI
         cell.inflatingCircleDataView.titleLabel.text = "Level \(level.number)"
         cell.inflatingCircleDataView.countLabel.text = "\(level.available)"
         cell.inflatingCircleDataView.inflatingCircleIndicatorView.setNeedsDisplay()
-        print(cell.frame)
         return cell
     }
     

@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import BGTableViewRowActionWithImage
 
 class AlertsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet weak var emptyAlertsView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
-    var alerts : [Int] = [4]
+    var alerts : [Int] = [4,4,4]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +60,10 @@ class AlertsViewController: UIViewController, UITableViewDataSource, UITableView
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func addNotification() {
+        performSegueWithIdentifier("addNotification", sender: self)
+        
+    }
 
     // MARK: - Table view data source
 
@@ -88,21 +93,19 @@ class AlertsViewController: UIViewController, UITableViewDataSource, UITableView
         return true
     }
     
-
     
-    // Override to support editing the table view.
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            alerts.removeAtIndex(indexPath.row)
+    //http://stackoverflow.com/a/26079874/4684652
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let deleteBtn = BGTableViewRowActionWithImage.rowActionWithStyle(.Normal, title: "    ", backgroundColor: tableView.backgroundColor, image: UIImage(named: "delete.png"), forCellHeight: 95) { (_, _) -> Void in
+            self.alerts.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            if(alerts.count == 0){
+            if(self.alerts.count == 0){
                 tableView.hidden = true
-                emptyAlertsView.hidden = false
+                self.emptyAlertsView.hidden = false
             }
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+
+        }
+        return [deleteBtn]
     }
     
 

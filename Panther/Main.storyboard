@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -12,6 +13,7 @@
             <string>OpenSans-Light</string>
         </mutableArray>
         <mutableArray key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
@@ -155,6 +157,9 @@
                                         <state key="normal" title="ADD NOTIFICATION">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addNotification" destination="SZp-G5-4QB" eventType="touchUpInside" id="q3X-Gc-CLv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -167,7 +172,7 @@
                                     <constraint firstItem="jqz-OP-0EI" firstAttribute="top" secondItem="Xqy-zP-hcB" secondAttribute="bottom" id="lA5-dA-HXV"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CHS-BT-Dv9">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CHS-BT-Dv9">
                                 <rect key="frame" x="-4" y="0.0" width="328" height="504"/>
                                 <color key="backgroundColor" red="0.086274509803921567" green="0.10980392156862745" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.098039215690000001" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -263,7 +268,7 @@
                         <barButtonItem key="rightBarButtonItem" image="plus" id="OrX-Ap-AH9">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="Hvu-3e-aeP" kind="modal" id="iGa-6p-rVb"/>
+                                <segue destination="Hvu-3e-aeP" kind="modal" identifier="addNotification" id="iGa-6p-rVb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -288,45 +293,122 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="e8T-81-TR8" customClass="ColoredDatePicker" customModule="Panther" customModuleProvider="target">
-                                <rect key="frame" x="16" y="237" width="288" height="247"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <date key="date" timeIntervalSinceReferenceDate="464854435.11173201">
-                                    <!--2015-09-25 06:13:55 +0000-->
-                                </date>
-                            </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Get notified  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X72-a9-PJn">
-                                <rect key="frame" x="36" y="55" width="91" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wT7-p7-4Kg">
+                                <rect key="frame" x="197" y="54" width="15" height="23.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wT7-p7-4Kg">
-                                <rect key="frame" x="206" y="54" width="15" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:30AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3N-H0-YZG">
+                                <rect key="frame" x="218" y="54" width="70" height="23.5"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Mondays" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agt-Hi-Jec">
+                                <rect key="frame" x="120" y="54" width="73" height="23.5"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6D-Vs-SjZ">
+                                <rect key="frame" x="0.0" y="206" width="320" height="298"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="RT2-dN-cWc" customClass="ColoredDatePicker" customModule="Panther" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="8" width="304" height="282"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="464902149.10560399">
+                                            <!--2015-09-25 19:29:09 +0000-->
+                                        </date>
+                                    </datePicker>
+                                </subviews>
+                                <color key="backgroundColor" red="0.086274509803921567" green="0.10980392156862745" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="RT2-dN-cWc" firstAttribute="trailing" secondItem="s6D-Vs-SjZ" secondAttribute="trailingMargin" id="C9g-uJ-foW"/>
+                                    <constraint firstItem="RT2-dN-cWc" firstAttribute="bottom" secondItem="s6D-Vs-SjZ" secondAttribute="bottomMargin" id="VR2-vA-m8j"/>
+                                    <constraint firstItem="RT2-dN-cWc" firstAttribute="leading" secondItem="s6D-Vs-SjZ" secondAttribute="leadingMargin" id="cu1-LE-2MJ"/>
+                                    <constraint firstItem="RT2-dN-cWc" firstAttribute="top" secondItem="s6D-Vs-SjZ" secondAttribute="topMargin" id="sW3-0h-RRq"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O6L-dq-yyn">
+                                <rect key="frame" x="96" y="86" width="129" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="774-fP-NDd" customClass="UINotificationButton" customModule="Panther" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="129" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="3EM-6o-OoZ"/>
+                                            <constraint firstAttribute="width" constant="129" id="e2I-S5-efj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
+                                        <state key="normal" title="MONDAY">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hd6-JL-VE8">
+                                        <rect key="frame" x="104" y="4" width="17" height="22"/>
+                                        <state key="normal" image="arrow"/>
+                                        <connections>
+                                            <action selector="switchDay:" destination="8rG-D7-Zm6" eventType="touchUpInside" id="cKD-DC-BII"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5f-Qy-AsY">
+                                        <rect key="frame" x="8" y="4" width="17" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="17" id="t4u-Me-vJn"/>
+                                        </constraints>
+                                        <state key="normal" image="arrowright"/>
+                                        <connections>
+                                            <action selector="switchDay:" destination="8rG-D7-Zm6" eventType="touchUpInside" id="g6f-hr-xxd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="774-fP-NDd" secondAttribute="bottom" id="1cn-L6-fFU"/>
+                                    <constraint firstItem="774-fP-NDd" firstAttribute="leading" secondItem="O6L-dq-yyn" secondAttribute="leading" id="4DX-qm-Nbg"/>
+                                    <constraint firstItem="774-fP-NDd" firstAttribute="top" secondItem="O6L-dq-yyn" secondAttribute="top" id="5JT-rJ-7kI"/>
+                                    <constraint firstItem="u5f-Qy-AsY" firstAttribute="firstBaseline" secondItem="Hd6-JL-VE8" secondAttribute="firstBaseline" id="5QP-Ez-l3x"/>
+                                    <constraint firstItem="Hd6-JL-VE8" firstAttribute="centerY" secondItem="774-fP-NDd" secondAttribute="centerY" id="9Ei-yK-Hq0"/>
+                                    <constraint firstItem="774-fP-NDd" firstAttribute="centerY" secondItem="O6L-dq-yyn" secondAttribute="centerY" id="Cee-LL-l4E"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hd6-JL-VE8" secondAttribute="trailing" constant="8" id="DWG-hB-dz7"/>
+                                    <constraint firstItem="774-fP-NDd" firstAttribute="top" secondItem="O6L-dq-yyn" secondAttribute="top" id="HRg-e9-Q2o"/>
+                                    <constraint firstAttribute="trailing" secondItem="774-fP-NDd" secondAttribute="trailing" id="HiT-RZ-bUn"/>
+                                    <constraint firstItem="u5f-Qy-AsY" firstAttribute="leading" secondItem="O6L-dq-yyn" secondAttribute="leadingMargin" id="Hwi-PY-ieV"/>
+                                    <constraint firstItem="774-fP-NDd" firstAttribute="leading" secondItem="O6L-dq-yyn" secondAttribute="leading" id="IQq-KM-fnI"/>
+                                    <constraint firstAttribute="trailing" secondItem="774-fP-NDd" secondAttribute="trailing" id="IWQ-bn-Nfg"/>
+                                    <constraint firstItem="774-fP-NDd" firstAttribute="top" secondItem="O6L-dq-yyn" secondAttribute="top" id="Icf-u9-fk9"/>
+                                    <constraint firstAttribute="bottom" secondItem="774-fP-NDd" secondAttribute="bottom" id="aTX-rD-06y"/>
+                                    <constraint firstItem="774-fP-NDd" firstAttribute="leading" secondItem="O6L-dq-yyn" secondAttribute="leading" id="jOs-HG-F6x"/>
+                                    <constraint firstItem="Hd6-JL-VE8" firstAttribute="baseline" secondItem="774-fP-NDd" secondAttribute="baseline" id="o0T-NN-W2G"/>
+                                    <constraint firstItem="u5f-Qy-AsY" firstAttribute="baseline" secondItem="Hd6-JL-VE8" secondAttribute="baseline" id="pMz-M7-xMZ"/>
+                                    <constraint firstItem="774-fP-NDd" firstAttribute="top" secondItem="O6L-dq-yyn" secondAttribute="top" id="pkw-SY-KNm"/>
+                                    <constraint firstItem="Hd6-JL-VE8" firstAttribute="leading" secondItem="u5f-Qy-AsY" secondAttribute="trailing" constant="79" id="qfp-Fu-Am4"/>
+                                    <constraint firstItem="774-fP-NDd" firstAttribute="leading" secondItem="O6L-dq-yyn" secondAttribute="leading" id="rW8-RL-KD4"/>
+                                    <constraint firstItem="774-fP-NDd" firstAttribute="centerX" secondItem="O6L-dq-yyn" secondAttribute="centerX" id="s8A-s6-w1V"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="Get notified  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X72-a9-PJn">
+                                <rect key="frame" x="21" y="54" width="98.5" height="23.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9:30AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3N-H0-YZG">
-                                <rect key="frame" x="224" y="54" width="61" height="24"/>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mondays" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agt-Hi-Jec">
-                                <rect key="frame" x="129" y="54" width="75" height="24"/>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.14117647058823529" green="0.18823529411764706" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.16862745098039217" green="0.19215686274509802" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="e8T-81-TR8" firstAttribute="trailing" secondItem="ZpM-8l-qKO" secondAttribute="trailingMargin" id="24N-77-LDP"/>
-                            <constraint firstItem="e8T-81-TR8" firstAttribute="centerY" secondItem="ZpM-8l-qKO" secondAttribute="centerY" constant="108.5" id="K1Z-iO-eSl"/>
-                            <constraint firstItem="e8T-81-TR8" firstAttribute="leading" secondItem="ZpM-8l-qKO" secondAttribute="leadingMargin" id="KvC-Pk-hKn"/>
-                            <constraint firstItem="7tE-PT-AIK" firstAttribute="top" secondItem="e8T-81-TR8" secondAttribute="bottom" constant="20" id="jbc-fe-ZGy"/>
-                            <constraint firstItem="e8T-81-TR8" firstAttribute="centerX" secondItem="ZpM-8l-qKO" secondAttribute="centerX" id="lVQ-hC-8dA"/>
+                            <constraint firstAttribute="trailing" secondItem="s6D-Vs-SjZ" secondAttribute="trailing" id="0AP-Vq-rHW"/>
+                            <constraint firstItem="U3N-H0-YZG" firstAttribute="top" secondItem="1MN-lR-DxM" secondAttribute="bottom" constant="54" id="0iM-yP-Q4w"/>
+                            <constraint firstItem="wT7-p7-4Kg" firstAttribute="leading" secondItem="agt-Hi-Jec" secondAttribute="trailing" constant="4" id="2Ji-qY-deN"/>
+                            <constraint firstItem="s6D-Vs-SjZ" firstAttribute="bottom" secondItem="7tE-PT-AIK" secondAttribute="top" id="7Ac-mh-gZY"/>
+                            <constraint firstItem="O6L-dq-yyn" firstAttribute="centerX" secondItem="s6D-Vs-SjZ" secondAttribute="centerX" id="Bw7-bY-dLh"/>
+                            <constraint firstItem="agt-Hi-Jec" firstAttribute="leading" secondItem="X72-a9-PJn" secondAttribute="trailing" id="NqJ-Kz-YGu"/>
+                            <constraint firstItem="s6D-Vs-SjZ" firstAttribute="top" secondItem="ZpM-8l-qKO" secondAttribute="top" constant="206" id="UE1-Sw-Bhf"/>
+                            <constraint firstItem="U3N-H0-YZG" firstAttribute="leading" secondItem="wT7-p7-4Kg" secondAttribute="trailing" constant="6" id="VTo-fI-fES"/>
+                            <constraint firstItem="s6D-Vs-SjZ" firstAttribute="top" secondItem="O6L-dq-yyn" secondAttribute="bottom" constant="90" id="nT8-wT-em6"/>
+                            <constraint firstItem="agt-Hi-Jec" firstAttribute="leading" secondItem="ZpM-8l-qKO" secondAttribute="leadingMargin" constant="104" id="nYL-Zg-NFD"/>
+                            <constraint firstItem="agt-Hi-Jec" firstAttribute="top" secondItem="1MN-lR-DxM" secondAttribute="bottom" constant="54" id="tct-8U-nzu"/>
+                            <constraint firstItem="X72-a9-PJn" firstAttribute="top" secondItem="1MN-lR-DxM" secondAttribute="bottom" constant="54" id="uym-pt-Zqu"/>
+                            <constraint firstItem="wT7-p7-4Kg" firstAttribute="top" secondItem="1MN-lR-DxM" secondAttribute="bottom" constant="54" id="vqQ-Fy-fCU"/>
+                            <constraint firstItem="s6D-Vs-SjZ" firstAttribute="leading" secondItem="ZpM-8l-qKO" secondAttribute="leading" id="zGO-Ba-VHN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="NEW NOTIFICATION" id="L5Z-4L-gq7">
@@ -343,8 +425,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cancelBarBtn" destination="SQQ-pd-fe2" id="FK1-tn-5bZ"/>
-                        <outlet property="datePicker" destination="e8T-81-TR8" id="MYY-NB-djv"/>
+                        <outlet property="datePicker" destination="RT2-dN-cWc" id="Hud-lJ-SfN"/>
+                        <outlet property="dayBtn" destination="774-fP-NDd" id="WoB-oC-9CZ"/>
+                        <outlet property="dayLabel" destination="agt-Hi-Jec" id="wQM-Ye-SHO"/>
+                        <outlet property="dayPickerLeftBtn" destination="u5f-Qy-AsY" id="rjb-Hn-gQi"/>
+                        <outlet property="dayPickerRightBtn" destination="Hd6-JL-VE8" id="Rq5-W9-Ui5"/>
                         <outlet property="saveBarBtn" destination="cSS-aC-BbI" id="d5l-Pn-bwr"/>
+                        <outlet property="timeLabel" destination="U3N-H0-YZG" id="5rv-fa-7eO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJC-jL-dPR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -388,7 +475,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.14117647058823529" green="0.18823529411764706" blue="0.2627450980392157" alpha="0.0" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.14117647058823529" green="0.18823529411764706" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.16862745098039217" green="0.19215686274509802" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="11"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="0.47999999999999998" colorSpace="calibratedRGB"/>
@@ -405,6 +492,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow" width="6" height="10"/>
+        <image name="arrowright" width="6" height="10"/>
         <image name="back" width="25" height="19"/>
         <image name="bell-1" width="17" height="19"/>
         <image name="plus" width="15" height="15"/>

@@ -28,3 +28,5 @@ p#od 'Swift-Prompts', '~> 1.0.0'
 #pod 'LXReorderableCollectionViewFlowLayout'
 #Alamofire for Images
 #pod 'AlamofireImage', '~> 1.0'
+#Custom table view cell swipe
+pod 'BGTableViewRowActionWithImage'

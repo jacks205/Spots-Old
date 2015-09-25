@@ -19,12 +19,24 @@ class ColoredDatePicker: UIDatePicker {
     }
 }
 
+
 class AddAlertModalViewController: UIViewController {
 
+    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    
     @IBOutlet weak var saveBarBtn: UIBarButtonItem!
     @IBOutlet weak var cancelBarBtn: UIBarButtonItem!
     
     @IBOutlet weak var datePicker: ColoredDatePicker!
+    
+    @IBOutlet weak var dayPickerLeftBtn: UIButton!
+    @IBOutlet weak var dayPickerRightBtn: UIButton!
+    @IBOutlet weak var dayBtn: UINotificationButton!
+    let days : [String] = ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"]
+    var daysSelectedIndex = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,7 +49,8 @@ class AddAlertModalViewController: UIViewController {
             cancelBarBtn.setTitleTextAttributes([NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.whiteColor()], forState: UIControlState.Normal)
         }
         
-//        datePicker.backgroundColor = UIColor.blackColor()
+        setArrowButtonEnabled(dayPickerLeftBtn, enabled: false)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,6 +65,46 @@ class AddAlertModalViewController: UIViewController {
     @IBAction func cancelModal(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    @IBAction func switchDay(sender: AnyObject) {
+        //Change title of day button
+        if((sender as! UIButton) == dayPickerRightBtn && daysSelectedIndex < (days.count - 1)){
+            daysSelectedIndex += 1
+            dayBtn.setTitle(days.get(daysSelectedIndex)!, forState: UIControlState.Normal)
+            
+        }else if ((sender as! UIButton) == dayPickerLeftBtn && daysSelectedIndex > 0){
+            daysSelectedIndex -= 1
+            dayBtn.setTitle(days.get(daysSelectedIndex)!, forState: UIControlState.Normal)
+        }
+        if var dayStr = days.get(daysSelectedIndex){
+            dayStr = dayStr.lowercaseString.capitalizedString +  "s"
+            dayLabel.text = dayStr
+        }
+        
+        
+        //Set button enabled based on day index
+        if(daysSelectedIndex == days.count - 1){
+            setArrowButtonEnabled(dayPickerRightBtn, enabled: false)
+        }else{
+            setArrowButtonEnabled(dayPickerRightBtn, enabled: true)
+        }
+        if(daysSelectedIndex == 0){
+            setArrowButtonEnabled(dayPickerLeftBtn, enabled: false)
+        }else{
+            setArrowButtonEnabled(dayPickerLeftBtn, enabled: true)
+        }
+    }
+    
+    func setArrowButtonEnabled(button: UIButton, enabled: Bool){
+        if(!enabled){
+            button.alpha = 0.33
+            button.adjustsImageWhenHighlighted = false
+        }else{
+            button.alpha = 1
+            button.adjustsImageWhenHighlighted = true
+        }
+    }
+    
 
     /*
     // MARK: - Navigation

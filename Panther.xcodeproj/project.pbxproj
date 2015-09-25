@@ -36,6 +36,7 @@
 		EAA9298E1BB34F2A0031315B /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAA929841BB34EDF0031315B /* OpenSans-SemiboldItalic.ttf */; };
 		EAA929901BB355AD0031315B /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA9298F1BB355AD0031315B /* AlertsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		EAA929931BB49E6F0031315B /* UINotificationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA929921BB49E6F0031315B /* UINotificationButton.swift */; settings = {ASSET_TAGS = (); }; };
+		EAC1F4741BB5D119005FE2C3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC1F4731BB5D119005FE2C3 /* QuartzCore.framework */; };
 		EACA6B9E1BB0DEF800ACBBEB /* PantherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACA6B9D1BB0DEF800ACBBEB /* PantherTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		EACA6BA41BB0EE2100ACBBEB /* FilledCircleIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACA6BA31BB0EE2100ACBBEB /* FilledCircleIndicatorView.swift */; settings = {ASSET_TAGS = (); }; };
 		EACA6BA61BB0EEC400ACBBEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACA6BA51BB0EEC400ACBBEB /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
@@ -97,6 +98,7 @@
 		EAA929841BB34EDF0031315B /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-SemiboldItalic.ttf"; path = "Fonts/OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		EAA9298F1BB355AD0031315B /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
 		EAA929921BB49E6F0031315B /* UINotificationButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINotificationButton.swift; sourceTree = "<group>"; };
+		EAC1F4731BB5D119005FE2C3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EACA6B9D1BB0DEF800ACBBEB /* PantherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantherTableViewCell.swift; sourceTree = "<group>"; };
 		EACA6BA31BB0EE2100ACBBEB /* FilledCircleIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledCircleIndicatorView.swift; sourceTree = "<group>"; };
 		EACA6BA51BB0EEC400ACBBEB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAC1F4741BB5D119005FE2C3 /* QuartzCore.framework in Frameworks */,
 				710AB3B64942BACA8088EAE6 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,6 +146,7 @@
 		A0B9E394566BC32551A13BEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EAC1F4731BB5D119005FE2C3 /* QuartzCore.framework */,
 				899B00B332544EC49D5C361B /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -332,6 +336,7 @@
 		EA897C651BB0C138001D3326 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Mark Jackson";
 				TargetAttributes = {
@@ -614,12 +619,15 @@
 			baseConfigurationReference = 8E162CCE87B8D346E919B24F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Mark Jackson (5Q75R4DMFJ)";
 				INFOPLIST_FILE = Panther/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacks205.panther;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -628,12 +636,14 @@
 			baseConfigurationReference = EEA65EDA0DCA7EC750B6CC46 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Mark Jackson (5Q75R4DMFJ)";
 				INFOPLIST_FILE = Panther/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacks205.panther;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
