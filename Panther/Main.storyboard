@@ -174,7 +174,7 @@
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AlertCell" rowHeight="68" id="Kpz-4P-iOl">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AlertCell" rowHeight="68" id="Kpz-4P-iOl" customClass="AlertTableViewCell" customModule="Panther" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="328" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kpz-4P-iOl" id="Gh9-gN-TsJ">
@@ -192,6 +192,10 @@
                                                         </imageView>
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AQF-GD-Iuk">
                                                             <rect key="frame" x="239" y="10" width="51" height="31"/>
+                                                            <color key="onTintColor" red="0.098039215690000001" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <connections>
+                                                                <action selector="switchChanged:" destination="Kpz-4P-iOl" eventType="valueChanged" id="Isa-2q-aUa"/>
+                                                            </connections>
                                                         </switch>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mondays @ 1:30 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpm-wM-H7i">
                                                             <rect key="frame" x="41" y="16" width="190" height="20"/>
@@ -223,6 +227,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.086274509803921567" green="0.10980392156862745" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="bellImage" destination="08S-fu-kGI" id="Mek-PE-t4l"/>
+                                            <outlet property="roundedView" destination="zBc-qt-oE5" id="KlO-Ez-RMc"/>
+                                            <outlet property="switchBtn" destination="AQF-GD-Iuk" id="2Wu-dR-jDU"/>
+                                            <outlet property="titleLabel" destination="Hpm-wM-H7i" id="kB4-p1-6mF"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>

@@ -12,6 +12,8 @@ class AlertsViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var emptyAlertsView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    
+    var alerts : [Int] = [4]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,7 @@ class AlertsViewController: UIViewController, UITableViewDataSource, UITableView
 //        localNotification.fireDate = NSDate(timeIntervalSinceNow: 60)
 //        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
         
-        var alerts : [Int] = [4, 6, 3, 4]
+        
         
         if(alerts.count > 0){
             //Show table
@@ -37,6 +39,7 @@ class AlertsViewController: UIViewController, UITableViewDataSource, UITableView
             tableView.delegate = self
             tableView.dataSource = self
             tableView.allowsSelection = false
+            tableView.allowsMultipleSelectionDuringEditing = false
             tableView.reloadData()
         }else{
             //Show empty view
@@ -66,38 +69,42 @@ class AlertsViewController: UIViewController, UITableViewDataSource, UITableView
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 4
+        return alerts.count
     }
 
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("AlertCell", forIndexPath: indexPath)
-        print(cell)
         // Configure the cell...
 
         return cell
     }
     
 
-    /*
+    
     // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+    
 
-    /*
+    
     // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
+            alerts.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            if(alerts.count == 0){
+                tableView.hidden = true
+                emptyAlertsView.hidden = false
+            }
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
