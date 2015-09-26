@@ -187,7 +187,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBc-qt-oE5" customClass="AlertRoundedView" customModule="Panther" customModuleProvider="target">
-                                                    <rect key="frame" x="19" y="8" width="300" height="52"/>
+                                                    <rect key="frame" x="14" y="8" width="300" height="52"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell-1" translatesAutoresizingMaskIntoConstraints="NO" id="08S-fu-kGI">
                                                             <rect key="frame" x="16" y="16" width="17" height="20"/>
@@ -225,9 +225,9 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="zBc-qt-oE5" firstAttribute="leading" secondItem="Gh9-gN-TsJ" secondAttribute="leadingMargin" constant="11" id="KDS-jG-PFZ"/>
+                                                <constraint firstItem="zBc-qt-oE5" firstAttribute="leading" secondItem="Gh9-gN-TsJ" secondAttribute="leadingMargin" constant="6" id="KDS-jG-PFZ"/>
                                                 <constraint firstItem="zBc-qt-oE5" firstAttribute="centerY" secondItem="Gh9-gN-TsJ" secondAttribute="centerY" id="jwY-xY-HDl"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="zBc-qt-oE5" secondAttribute="trailing" constant="1" id="pZX-fj-9Jx"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="zBc-qt-oE5" secondAttribute="trailing" constant="6" id="pZX-fj-9Jx"/>
                                                 <constraint firstItem="zBc-qt-oE5" firstAttribute="top" secondItem="Gh9-gN-TsJ" secondAttribute="topMargin" id="s8H-OO-YJE"/>
                                             </constraints>
                                         </tableViewCellContentView>

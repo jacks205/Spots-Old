@@ -57,6 +57,9 @@ class AlertsViewController: UIViewController, UITableViewDataSource, UITableView
 //        localNotification.alertBody = "It works!"
 //        localNotification.fireDate = NSDate(timeIntervalSinceNow: 60)
 //        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+        
+        
+        
         checkIfTableViewIsEmpty()
         
     }

@@ -41,6 +41,9 @@ class AddAlertModalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        
         
         if let font = UIFont(name: "OpenSans", size: 15) {
             if let smallerFont = UIFont(name: "OpenSans", size: 11){
