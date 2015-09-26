@@ -17,6 +17,7 @@ class PantherViewController: UITableViewController, UICollectionViewDelegate, UI
         // Do any additional setup after loading the view, typically from a nib.
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navigationController?.interactivePopGestureRecognizer?.enabled = true
         
         if let smallerFont = UIFont(name: "OpenSans", size: 11){
             self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: smallerFont, NSForegroundColorAttributeName: UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)]

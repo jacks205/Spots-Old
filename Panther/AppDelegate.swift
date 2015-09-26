@@ -13,10 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+        application.setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
         
         //For background gradient
 //        let top : UIColor = UIColor(red:0.14, green:0.18, blue:0.25, alpha:1.0)
@@ -30,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [UIUserNotificationType.Sound,
             UIUserNotificationType.Alert, UIUserNotificationType.Badge], categories: nil))
+        application.registerForRemoteNotifications()
         
         return true
     }
