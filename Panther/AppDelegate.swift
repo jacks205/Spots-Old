@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        print("Token: \(deviceToken.base64EncodedStringWithOptions(.Encoding64CharacterLineLength))")
+        print("Token: \(deviceToken.hexadecimalString())")
         NSUserDefaults.standardUserDefaults().setObject(deviceToken, forKey: Constants.DEVICE_TOKEN_KEY)
     }
     
@@ -66,5 +66,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+extension NSData {
+    
+    /// Create hexadecimal string representation of NSData object.
+    ///
+    /// :returns: String representation of this NSData object.
+    
+    func hexadecimalString() -> String {
+        let string = NSMutableString(capacity: length * 2)
+        var byte: UInt8 = 0
+        
+        for i in 0 ..< length {
+            getBytes(&byte, range: NSMakeRange(i, 1))
+            string.appendFormat("%02x", byte)
+        }
+        
+        return string as String
+    }
 }
 

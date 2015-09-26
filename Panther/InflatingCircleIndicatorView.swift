@@ -27,6 +27,10 @@ import UIKit
         let percentage = currentCapacity / totalCapacity
         //original: amountFilled = percentage * self.frame.width / 2
         amountFilled = (1 - percentage) * self.frame.width / 2
+        print(1 - percentage)
+        if(percentage < 0.1){
+            amountFilled = 0.9 * self.frame.width / 2
+        }
         //TODO: Fix so that the colors are customizable
         if(1 - percentage >= 0.85){
             fillColor = Constants.Colors.RED_COLOR
