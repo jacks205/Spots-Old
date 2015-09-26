@@ -27,6 +27,8 @@ class PantherViewController: UITableViewController, UICollectionViewDelegate, UI
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.addTarget(self, action: "reloadData:", forControlEvents: UIControlEvents.ValueChanged)
         
+        print(NSUserDefaults.standardUserDefaults().objectForKey(Constants.DEVICE_TOKEN_KEY))
+        
         reloadData(self)
     }
 

@@ -25,7 +25,8 @@ import UIKit
     
     func setCapacityLevel(currentCapacity : CGFloat, outOfTotalCapacity totalCapacity : CGFloat){
         let percentage = currentCapacity / totalCapacity
-        amountFilled = percentage * self.frame.width / 2
+        //original: amountFilled = percentage * self.frame.width / 2
+        amountFilled = (1 - percentage) * self.frame.width / 2
         //TODO: Fix so that the colors are customizable
         if(1 - percentage >= 0.85){
             fillColor = Constants.Colors.RED_COLOR
