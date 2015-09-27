@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </mutableArray>
+        <mutableArray key="OpenSans-Semibold.ttf">
+            <string>OpenSans-Semibold</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="Parking_Availability" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ft6-oW-KC0"/>
+                        <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="202"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9gO-OW-4wQ">
+                                <rect key="frame" x="20" y="66" width="280" height="116"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="116" id="GjK-ME-Dnf"/>
+                                    <constraint firstAttribute="width" constant="280" id="v6C-kd-Cqw"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="CKk-t9-ikL">
+                                    <size key="itemSize" width="137" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCell" id="fgZ-Fw-drx" customClass="TodayCollectionViewCell" customModule="Parking_Availability" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="137" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="137" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BARRERA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9s-rn-rtP">
+                                                    <rect key="frame" x="58" y="8" width="79" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="79" id="gyT-rI-z3n"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="0.47999999999999998" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="137 spots" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8L-WI-UQc">
+                                                    <rect key="frame" x="58" y="26" width="79" height="17"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="12"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NqU-9q-SE3" customClass="TodayView" customModule="Parking_Availability" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="H9s-rn-rtP" secondAttribute="trailing" id="2JZ-t8-vTk"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="H9s-rn-rtP" secondAttribute="bottom" constant="11" id="5m0-p4-hho"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="P8L-WI-UQc" secondAttribute="bottom" constant="-1" id="7tz-Jo-Ilw"/>
+                                            <constraint firstItem="NqU-9q-SE3" firstAttribute="leading" secondItem="fgZ-Fw-drx" secondAttribute="leading" id="DAZ-OW-Kvc"/>
+                                            <constraint firstItem="H9s-rn-rtP" firstAttribute="leading" secondItem="P8L-WI-UQc" secondAttribute="leading" id="TOI-Wc-Ed2"/>
+                                            <constraint firstItem="NqU-9q-SE3" firstAttribute="top" secondItem="fgZ-Fw-drx" secondAttribute="top" id="VbM-BX-QZJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="NqU-9q-SE3" secondAttribute="bottom" id="Xjw-my-7Xq"/>
+                                            <constraint firstItem="H9s-rn-rtP" firstAttribute="top" secondItem="fgZ-Fw-drx" secondAttribute="topMargin" id="b1G-sd-cdd"/>
+                                            <constraint firstItem="H9s-rn-rtP" firstAttribute="leading" secondItem="NqU-9q-SE3" secondAttribute="trailing" constant="8" symbolic="YES" id="kjl-8y-ylx"/>
+                                            <constraint firstItem="H9s-rn-rtP" firstAttribute="trailing" secondItem="P8L-WI-UQc" secondAttribute="trailing" id="rry-oe-Uqd"/>
+                                            <constraint firstItem="P8L-WI-UQc" firstAttribute="top" secondItem="fgZ-Fw-drx" secondAttribute="topMargin" constant="18" id="yln-wf-l90"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="amountLabel" destination="P8L-WI-UQc" id="YHh-wc-ZRp"/>
+                                            <outlet property="inflatingView" destination="NqU-9q-SE3" id="JpV-Hq-P0F"/>
+                                            <outlet property="titleLabel" destination="H9s-rn-rtP" id="V2O-7Q-GDS"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmptyCell" id="d36-EP-1Su" customClass="TodayEmptyCollectionViewCell" customModule="Parking_Availability" customModuleProvider="target">
+                                        <rect key="frame" x="143" y="0.0" width="137" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="137" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Dq-XO-wzk" customClass="EmptyCircleView" customModule="Parking_Availability" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="0Dq-XO-wzk" secondAttribute="bottom" id="KQu-cq-liN"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="0Dq-XO-wzk" secondAttribute="trailing" constant="79" id="ej8-HZ-XoU"/>
+                                            <constraint firstItem="0Dq-XO-wzk" firstAttribute="leading" secondItem="d36-EP-1Su" secondAttribute="leading" id="fVY-zD-oci"/>
+                                            <constraint firstItem="0Dq-XO-wzk" firstAttribute="top" secondItem="d36-EP-1Su" secondAttribute="top" id="v2V-jr-xei"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking Structures" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djB-PR-syf">
+                                <rect key="frame" x="20" y="20" width="280" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="bag-eK-vIJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14.5"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Updated just now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NC-bf-PEL">
+                                <rect key="frame" x="20" y="37" width="280" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.25" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="9gO-OW-4wQ" firstAttribute="leading" secondItem="9NC-bf-PEL" secondAttribute="leading" id="35z-yo-0AG"/>
+                            <constraint firstItem="djB-PR-syf" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="20" symbolic="YES" id="8QU-6F-Qta"/>
+                            <constraint firstItem="djB-PR-syf" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="4" id="H6S-iv-cQg"/>
+                            <constraint firstItem="djB-PR-syf" firstAttribute="leading" secondItem="9NC-bf-PEL" secondAttribute="leading" id="HCa-zO-eQX"/>
+                            <constraint firstItem="9gO-OW-4wQ" firstAttribute="trailing" secondItem="9NC-bf-PEL" secondAttribute="trailing" id="Hhd-aV-4d2"/>
+                            <constraint firstItem="9gO-OW-4wQ" firstAttribute="top" secondItem="9NC-bf-PEL" secondAttribute="bottom" constant="8" symbolic="YES" id="n1x-rV-895"/>
+                            <constraint firstAttribute="bottom" secondItem="9gO-OW-4wQ" secondAttribute="bottom" constant="20" symbolic="YES" id="uvJ-p7-TTk"/>
+                            <constraint firstItem="9NC-bf-PEL" firstAttribute="trailing" secondItem="djB-PR-syf" secondAttribute="trailing" id="xEJ-vK-j0M"/>
+                            <constraint firstItem="9NC-bf-PEL" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="37" id="y83-SY-s3r"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="202"/>
+                    <connections>
+                        <outlet property="collectionView" destination="9gO-OW-4wQ" id="eME-hu-qxb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="516" y="285"/>
+        </scene>
+    </scenes>
+</document>

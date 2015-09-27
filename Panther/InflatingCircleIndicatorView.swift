@@ -27,7 +27,6 @@ import UIKit
         let percentage = currentCapacity / totalCapacity
         //original: amountFilled = percentage * self.frame.width / 2
         amountFilled = (1 - percentage) * self.frame.width / 2
-        print(1 - percentage)
         if(percentage < 0.1){
             amountFilled = 0.9 * self.frame.width / 2
         }
