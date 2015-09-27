@@ -31,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UIUserNotificationType.Alert, UIUserNotificationType.Badge], categories: nil))
         application.registerForRemoteNotifications()
         
+        application.applicationIconBadgeNumber = 0
+        
         return true
     }
 
