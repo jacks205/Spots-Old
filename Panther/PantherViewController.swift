@@ -20,13 +20,15 @@ class PantherViewController: UITableViewController, UICollectionViewDelegate, UI
         navigationController?.interactivePopGestureRecognizer?.enabled = true
         
         if let smallerFont = UIFont(name: "OpenSans", size: 11){
-            self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: smallerFont, NSForegroundColorAttributeName: UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)]
+            navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: smallerFont, NSForegroundColorAttributeName: UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)]
         }
         navigationController!.navigationBar.barTintColor = Constants.Colors.DARK_BLUE_COLOR
         
-        self.refreshControl = UIRefreshControl()
-        self.refreshControl?.addTarget(self, action: "reloadData:", forControlEvents: UIControlEvents.ValueChanged)
-        
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: "reloadData:", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl?.attributedTitle = NSAttributedString(string: "Updated ",
+            attributes: [NSFontAttributeName: UIFont(name: "OpenSans", size: 11)!,
+                NSForegroundColorAttributeName: UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)])
         print(NSUserDefaults.standardUserDefaults().objectForKey(Constants.DEVICE_TOKEN_KEY))
         
         reloadData(self)
@@ -42,8 +44,12 @@ class PantherViewController: UITableViewController, UICollectionViewDelegate, UI
             if let _ = error{
                 //alert
             }else{
-                print(lastUpdated)
                 self.parkingStructures = data!
+                if let validDate = lastUpdated{
+                    self.refreshControl?.attributedTitle = NSAttributedString(string: "Updated " + timeAgoSinceDate(validDate, numericDates: true),
+                        attributes: [NSFontAttributeName: UIFont(name: "OpenSans", size: 11)!,
+                            NSForegroundColorAttributeName: UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)])
+                }
                 self.tableView.reloadData()
             }
             self.refreshControl?.endRefreshing()

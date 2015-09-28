@@ -53,6 +53,9 @@
 		EAE6DBF91BB7C15700B8D138 /* InflatingCircleIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C34D51BB4AF1B002D1F0A /* InflatingCircleIndicatorView.swift */; settings = {ASSET_TAGS = (); }; };
 		EAE6DBFC1BB7C15D00B8D138 /* InflatingCircleDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C34D71BB4B0F2002D1F0A /* InflatingCircleDataView.swift */; settings = {ASSET_TAGS = (); }; };
 		EAEB86971BB923EC008D50C6 /* Panther.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C9F1BB0C540001D3326 /* Panther.swift */; settings = {ASSET_TAGS = (); }; };
+		EAEB869A1BB92ED8008D50C6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAEB86981BB92ED8008D50C6 /* Alamofire.framework */; };
+		EAEB869B1BB92ED8008D50C6 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAEB86991BB92ED8008D50C6 /* SwiftyJSON.framework */; };
+		EAEB869D1BB9EBE3008D50C6 /* NSDate_TimeAgo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAEB869C1BB9EBE3008D50C6 /* NSDate_TimeAgo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +151,10 @@
 		EACA6BA51BB0EEC400ACBBEB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		EACA6BA71BB1D6B900ACBBEB /* CircleDataCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleDataCollectionViewCell.xib; sourceTree = "<group>"; };
 		EACC214F1BB1DC2900B912B6 /* CircleDataCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleDataCollectionViewCell.swift; sourceTree = "<group>"; };
+		EAEB86981BB92ED8008D50C6 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
+		EAEB86991BB92ED8008D50C6 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		EAEB869C1BB9EBE3008D50C6 /* NSDate_TimeAgo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NSDate_TimeAgo.framework; path = "Pods/../build/Debug-iphoneos/NSDate_TimeAgo.framework"; sourceTree = "<group>"; };
+		EAEB869E1BB9ECC8008D50C6 /* Parking Availability-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Parking Availability-Bridging-Header.h"; sourceTree = "<group>"; };
 		EEA65EDA0DCA7EC750B6CC46 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,6 +163,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAEB869D1BB9EBE3008D50C6 /* NSDate_TimeAgo.framework in Frameworks */,
+				EAEB869A1BB92ED8008D50C6 /* Alamofire.framework in Frameworks */,
+				EAEB869B1BB92ED8008D50C6 /* SwiftyJSON.framework in Frameworks */,
 				EA3407151BB843B800E368EC /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +208,9 @@
 		A0B9E394566BC32551A13BEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EAEB869C1BB9EBE3008D50C6 /* NSDate_TimeAgo.framework */,
+				EAEB86981BB92ED8008D50C6 /* Alamofire.framework */,
+				EAEB86991BB92ED8008D50C6 /* SwiftyJSON.framework */,
 				EA5D61F01BB7D1E100F48089 /* Alamofire.framework */,
 				EA5D61F11BB7D1E100F48089 /* SwiftyJSON.framework */,
 				EA5D61EE1BB7D10700F48089 /* Pods.framework */,
@@ -227,6 +240,7 @@
 				EA3407171BB843B800E368EC /* TodayViewController.swift */,
 				EA3407191BB843B800E368EC /* MainInterface.storyboard */,
 				EA34071C1BB843B800E368EC /* Info.plist */,
+				EAEB869E1BB9ECC8008D50C6 /* Parking Availability-Bridging-Header.h */,
 			);
 			path = "Parking Availability";
 			sourceTree = "<group>";
@@ -675,28 +689,41 @@
 		EA3407201BB843B800E368EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = "Parking Availability/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jacks205.panther.Parking-Availability";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Parking Availability/Parking Availability-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		EA3407211BB843B800E368EC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = "Parking Availability/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jacks205.panther.Parking-Availability";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Parking Availability/Parking Availability-Bridging-Header.h";
 			};
 			name = Release;
 		};

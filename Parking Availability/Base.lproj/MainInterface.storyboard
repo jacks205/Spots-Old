@@ -146,6 +146,7 @@
                     <size key="freeformSize" width="320" height="202"/>
                     <connections>
                         <outlet property="collectionView" destination="9gO-OW-4wQ" id="eME-hu-qxb"/>
+                        <outlet property="updatedLabel" destination="9NC-bf-PEL" id="Hf6-Pc-IvB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>

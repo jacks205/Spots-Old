@@ -11,9 +11,11 @@ import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var updatedLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var parkingStructures : [ParkingStructure] = []
+    var latestUpdate : NSDate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,16 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
         collectionView.dataSource = self
         
         reloadData(self)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let timeUpdated = latestUpdate {
+            updatedLabel.text = "Updated " + timeAgoSinceDate(timeUpdated, numericDates: true)
+        }
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -37,7 +49,12 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
             }else{
 //                print(lastUpdated)
                 self.parkingStructures = data!
-                self.collectionView.reloadData()
+                print(lastUpdated)
+                if let validDate = lastUpdated{
+                    self.latestUpdate = validDate
+                    self.updatedLabel.text = "Updated " + timeAgoSinceDate(validDate, numericDates: true)
+                }
+                    self.collectionView.reloadData()
             }
         }
     }
@@ -53,7 +70,6 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
     }
     
     func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
-        print(view.bounds)
         if(view.bounds.width > 320){
             return UIEdgeInsetsMake(0, 45, 0, 0)
         }
