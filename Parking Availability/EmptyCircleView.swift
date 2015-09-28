@@ -8,6 +8,8 @@
 import UIKit
 
 @IBDesignable class EmptyCircleView: UIView {
+    
+    @IBInspectable var lineColor : UIColor = UIColor(white: 1, alpha: 0.09)
 
     
     // Only override drawRect: if you perform custom drawing.
@@ -16,7 +18,7 @@ import UIKit
         // Drawing code
         let clip : UIBezierPath = UIBezierPath(ovalInRect: CGRectInset(rect, 6, 6))
         clip.addClip()
-        UIColor(white: 1, alpha: 0.09).setStroke()
+        lineColor.setStroke()
         let path : UIBezierPath = UIBezierPath()
         path.lineWidth = 1
         let increments: CGFloat = rect.height / 8

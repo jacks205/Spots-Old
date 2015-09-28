@@ -12,17 +12,34 @@ import NotificationCenter
 class TodayViewController: UIViewController, NCWidgetProviding, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    var parkingStructures : [ParkingStructure] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
         self.preferredContentSize = CGSizeMake(0, 202)
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        reloadData(self)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func reloadData(sender : AnyObject){
+        Panther.sharedInstance.fetchParkingData { (lastUpdated, data, error) -> Void in
+            if let _ = error{
+                //alert
+            }else{
+//                print(lastUpdated)
+                self.parkingStructures = data!
+                self.collectionView.reloadData()
+            }
+        }
     }
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
@@ -49,17 +66,36 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell : UICollectionViewCell
-        if(indexPath.row > 2){
-            cell = collectionView.dequeueReusableCellWithReuseIdentifier("EmptyCell", forIndexPath: indexPath) as! TodayEmptyCollectionViewCell
-        }else{
+        
+        if let structure: ParkingStructure = parkingStructures.get(indexPath.row){
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionCell", forIndexPath: indexPath) as! TodayCollectionViewCell
+            let tc : TodayCollectionViewCell = cell as! TodayCollectionViewCell
+            tc.titleLabel.text = structure.name.capitalizedString
+            tc.amountLabel.text = "\(structure.available) spots"
+            tc.inflatingView.setCapacityLevel(CGFloat(structure.available), outOfTotalCapacity: CGFloat(structure.total))
+        }else{
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("EmptyCell", forIndexPath: indexPath) as! TodayEmptyCollectionViewCell
         }
         //        cell.titleLabel.text = "Test"
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        let count = parkingStructures.count
+        return (count % 2) == 1 ? count + 1 : count
     }
     
+}
+
+extension Array {
+    
+    // Safely lookup an index that might be out of bounds,
+    // returning nil if it does not exist
+    func get(index: Int) -> Element? {
+        if 0 <= index && index < count {
+            return self[index]
+        } else {
+            return nil
+        }
+    }
 }

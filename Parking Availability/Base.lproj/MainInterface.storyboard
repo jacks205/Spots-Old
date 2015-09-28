@@ -95,17 +95,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Dq-XO-wzk" customClass="EmptyCircleView" customModule="Parking_Availability" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <rect key="frame" x="-5" y="-5" width="60" height="60"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="0Dq-XO-wzk" secondAttribute="bottom" id="KQu-cq-liN"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="0Dq-XO-wzk" secondAttribute="trailing" constant="79" id="ej8-HZ-XoU"/>
-                                            <constraint firstItem="0Dq-XO-wzk" firstAttribute="leading" secondItem="d36-EP-1Su" secondAttribute="leading" id="fVY-zD-oci"/>
-                                            <constraint firstItem="0Dq-XO-wzk" firstAttribute="top" secondItem="d36-EP-1Su" secondAttribute="top" id="v2V-jr-xei"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="0Dq-XO-wzk" secondAttribute="trailing" constant="74" id="8vf-GE-YHj"/>
+                                            <constraint firstItem="0Dq-XO-wzk" firstAttribute="leading" secondItem="d36-EP-1Su" secondAttribute="leadingMargin" constant="-13" id="Hmg-nN-sBH"/>
+                                            <constraint firstItem="0Dq-XO-wzk" firstAttribute="centerY" secondItem="d36-EP-1Su" secondAttribute="centerY" id="emi-i8-dR5"/>
+                                            <constraint firstItem="0Dq-XO-wzk" firstAttribute="top" secondItem="d36-EP-1Su" secondAttribute="topMargin" constant="-13" id="ged-bR-smw"/>
                                         </constraints>
                                     </collectionViewCell>
                                 </cells>

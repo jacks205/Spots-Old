@@ -38,10 +38,11 @@ class PantherViewController: UITableViewController, UICollectionViewDelegate, UI
     }
     
     func reloadData(sender : AnyObject){
-        Panther.sharedInstance.fetchParkingData { (data, error) -> Void in
-            if let err = error{
+        Panther.sharedInstance.fetchParkingData { (lastUpdated, data, error) -> Void in
+            if let _ = error{
                 //alert
             }else{
+                print(lastUpdated)
                 self.parkingStructures = data!
                 self.tableView.reloadData()
             }
@@ -59,7 +60,7 @@ class PantherViewController: UITableViewController, UICollectionViewDelegate, UI
         let cell : PantherTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! PantherTableViewCell
         
         if let structure : ParkingStructure = parkingStructures.get(indexPath.row){
-            cell.title.text = structure.name
+            cell.title.text = structure.name.capitalizedString
             cell.totalSpots.text = "\(structure.available) spots available"
         }
         
@@ -91,19 +92,25 @@ class PantherViewController: UITableViewController, UICollectionViewDelegate, UI
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let structure = parkingStructures.get((collectionView as! PantherIndexedCollectionView).indexPath.row){
-            return structure.levels.count
-        }
-        return 0
+//        if let structure = parkingStructures.get((collectionView as! PantherIndexedCollectionView).indexPath.row){
+//            return structure.levels.count
+//        }
+        return 5
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell : CircleDataCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionCell", forIndexPath: indexPath) as! CircleDataCollectionViewCell
-        let level : ParkingLevel = parkingStructures.get((collectionView as! PantherIndexedCollectionView).indexPath.row)!.levels.get(indexPath.row)!
-        cell.inflatingCircleDataView.inflatingCircleIndicatorView.setCapacityLevel(CGFloat(level.available), outOfTotalCapacity: CGFloat(level.total))
-        cell.inflatingCircleDataView.titleLabel.text = "Level \(level.number)"
-        cell.inflatingCircleDataView.countLabel.text = "\(level.available)"
-        cell.inflatingCircleDataView.inflatingCircleIndicatorView.setNeedsDisplay()
+        var cell : UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionCell", forIndexPath: indexPath)
+        if let structure : ParkingStructure = parkingStructures.get((collectionView as! PantherIndexedCollectionView).indexPath.row){
+            if let level : ParkingLevel = structure.levels.get(indexPath.row){
+                let cdCell : CircleDataCollectionViewCell = cell as! CircleDataCollectionViewCell
+                cdCell.inflatingCircleDataView.inflatingCircleIndicatorView.setCapacityLevel(CGFloat(level.available), outOfTotalCapacity: CGFloat(level.total))
+                cdCell.inflatingCircleDataView.titleLabel.text = "Level \(level.number)"
+                cdCell.inflatingCircleDataView.countLabel.text = "\(level.available)"
+                cdCell.inflatingCircleDataView.inflatingCircleIndicatorView.setNeedsDisplay()
+            }else{
+                cell = collectionView.dequeueReusableCellWithReuseIdentifier("EmptyCell", forIndexPath: indexPath)
+            }
+        }
         return cell
     }
     

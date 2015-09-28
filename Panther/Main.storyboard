@@ -81,6 +81,33 @@
                                                     </view>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </collectionViewCell>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmptyCell" id="IY3-sQ-SAZ">
+                                                    <rect key="frame" x="77.5" y="0.0" width="50" height="84"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="84"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Pk-JJ-J2A" customClass="EmptyCircleView" customModule="Panther" customModuleProvider="target">
+                                                                <rect key="frame" x="-5" y="-5" width="60" height="60"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                                        <color key="value" red="0.30588235294117649" green="0.36862745098039218" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="0Pk-JJ-J2A" firstAttribute="top" secondItem="IY3-sQ-SAZ" secondAttribute="topMargin" constant="-13" id="J2D-MF-Nol"/>
+                                                        <constraint firstItem="0Pk-JJ-J2A" firstAttribute="centerX" secondItem="IY3-sQ-SAZ" secondAttribute="centerX" id="R7y-if-qoG"/>
+                                                        <constraint firstItem="0Pk-JJ-J2A" firstAttribute="leading" secondItem="IY3-sQ-SAZ" secondAttribute="leadingMargin" constant="-13" id="Wrs-ft-h1a"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="0Pk-JJ-J2A" secondAttribute="bottom" constant="21" id="vVb-Gd-sDn"/>
+                                                    </constraints>
+                                                </collectionViewCell>
                                             </cells>
                                         </collectionView>
                                     </subviews>
@@ -183,6 +210,7 @@
                                         <rect key="frame" x="0.0" y="28" width="328" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kpz-4P-iOl" id="Gh9-gN-TsJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="328" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBc-qt-oE5" customClass="AlertRoundedView" customModule="Panther" customModuleProvider="target">

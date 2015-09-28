@@ -52,6 +52,7 @@
 		EAE6DBF71BB7C15400B8D138 /* Panther.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C9F1BB0C540001D3326 /* Panther.swift */; settings = {ASSET_TAGS = (); }; };
 		EAE6DBF91BB7C15700B8D138 /* InflatingCircleIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C34D51BB4AF1B002D1F0A /* InflatingCircleIndicatorView.swift */; settings = {ASSET_TAGS = (); }; };
 		EAE6DBFC1BB7C15D00B8D138 /* InflatingCircleDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C34D71BB4B0F2002D1F0A /* InflatingCircleDataView.swift */; settings = {ASSET_TAGS = (); }; };
+		EAEB86971BB923EC008D50C6 /* Panther.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C9F1BB0C540001D3326 /* Panther.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -584,6 +585,7 @@
 			files = (
 				EA34072A1BB8494700E368EC /* Constants.swift in Sources */,
 				EA3407271BB8444500E368EC /* TodayCollectionViewCell.swift in Sources */,
+				EAEB86971BB923EC008D50C6 /* Panther.swift in Sources */,
 				EA3407261BB8444500E368EC /* EmptyCircleView.swift in Sources */,
 				EA3407281BB8444500E368EC /* TodayView.swift in Sources */,
 				EA3407181BB843B800E368EC /* TodayViewController.swift in Sources */,
@@ -878,6 +880,7 @@
 				EA3407211BB843B800E368EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA897C681BB0C138001D3326 /* Build configuration list for PBXProject "Panther" */ = {
 			isa = XCConfigurationList;
