@@ -20,7 +20,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
-        self.preferredContentSize = CGSizeMake(0, 202)
+        self.preferredContentSize = CGSizeMake(0, 173)
         collectionView.delegate = self
         collectionView.dataSource = self
         
