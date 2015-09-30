@@ -119,7 +119,8 @@ class PantherViewController: UITableViewController, UICollectionViewDelegate, UI
                 cdCell.inflatingCircleDataView.inflatingCircleIndicatorView.setCapacityLevel(CGFloat(level.available), outOfTotalCapacity: CGFloat(level.total))
                 cdCell.inflatingCircleDataView.titleLabel.text = "Level \(level.number)"
                 cdCell.inflatingCircleDataView.countLabel.text = "\(level.available)"
-                cdCell.inflatingCircleDataView.inflatingCircleIndicatorView.setNeedsDisplay()
+                cdCell.inflatingCircleDataView.inflatingCircleIndicatorView.animateCircle()
+//                cdCell.inflatingCircleDataView.inflatingCircleIndicatorView.setNeedsDisplay()
             }else{
                 cell = collectionView.dequeueReusableCellWithReuseIdentifier("EmptyCell", forIndexPath: indexPath)
             }

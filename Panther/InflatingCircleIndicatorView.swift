@@ -13,7 +13,11 @@ import UIKit
     var baseColor : UIColor = Constants.Colors.BASE_COLOR
     var fillColor : UIColor = Constants.Colors.GREEN_COLOR
     
-    private var amountFilled : CGFloat = 10
+    private var amountFilled : CGFloat = 25
+    
+    var circleLayer : CAShapeLayer?
+    var firstPath : UIBezierPath?
+    var secondPath : UIBezierPath?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,6 +25,25 @@ import UIKit
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    func animateCircle(){
+        circleLayer!.frame = bounds
+        circleLayer!.fillColor = fillColor.CGColor
+        circleLayer!.path = firstPath!.CGPath
+//        firstPath = UIBezierPath(CGPath: (secondPath?.CGPath)!)
+        
+        let anim : CABasicAnimation = CABasicAnimation(keyPath: "path")
+        //        anim2.repeatCount = 0
+        anim.duration = 1
+        anim.toValue = secondPath!.CGPath
+        anim.removedOnCompletion = false
+        anim.fillMode = kCAFillModeBoth
+        
+        anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        circleLayer!.addAnimation(anim, forKey: anim.keyPath)
+        
+        
     }
     
     func setCapacityLevel(currentCapacity : CGFloat, outOfTotalCapacity totalCapacity : CGFloat){
@@ -38,29 +61,55 @@ import UIKit
         }else{
             fillColor = Constants.Colors.GREEN_COLOR
         }
-        
+        secondPath = UIBezierPath(ovalInRect: CGRectInset(bounds, amountFilled, amountFilled))
     }
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
         // Drawing code
-//        let ref  = UIGraphicsGetCurrentContext()
-        
+        //Outer Circle
         let outerColor : UIColor = baseColor
         outerColor.setFill()
-        
         let basePath : UIBezierPath = UIBezierPath(ovalInRect: CGRectInset(rect, 1, 1))
         basePath.fill()
         
+        //Inner circle
         let innerColor : UIColor = fillColor
-        innerColor.setFill()
+        if let _ = firstPath {
+        }else{
+            firstPath = UIBezierPath(ovalInRect: CGRectInset(rect, rect.width / 2, rect.height / 2))
+        }
         
-        let innerPath : UIBezierPath = UIBezierPath(ovalInRect: CGRectInset(rect, amountFilled, amountFilled))
-        innerPath.fill()
+        if let _ = circleLayer {
+        }else{
+            circleLayer = CAShapeLayer()
+//            circleLayer?.name = "circle"
+            layer.addSublayer(circleLayer!)
+        }
         
-//
-//        CGContextRestoreGState(ref)
+        circleLayer!.frame = bounds
+        circleLayer!.fillColor = innerColor.CGColor
+        circleLayer!.path = firstPath!.CGPath
+        
+        if let _ = secondPath {
+        }else{
+            secondPath = UIBezierPath(ovalInRect: CGRectInset(bounds, amountFilled, amountFilled))
+        }
+        //        animateCircle()
+//        let anim : CABasicAnimation = CABasicAnimation(keyPath: "path")
+//        //        anim2.repeatCount = 0
+//        anim.duration = 2
+//        anim.toValue = secondPath?.CGPath
+//        anim.removedOnCompletion = false
+//        anim.fillMode = kCAFillModeBoth
+//        
+//        anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+//        
+//        circleLayer!.addAnimation(anim, forKey: anim.keyPath)
+        
+//        firstPath = UIBezierPath(CGPath: secondPath!.CGPath)
+        
     }
 
 

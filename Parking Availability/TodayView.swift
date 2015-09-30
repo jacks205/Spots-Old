@@ -13,7 +13,11 @@ import UIKit
     var baseColor : UIColor = UIColor(white: 1, alpha: 0.1)
     var fillColor : UIColor = UIColor(red:0.10, green:0.74, blue:0.61, alpha:1.0)
     
-    private var amountFilled : CGFloat = 10
+    private var amountFilled : CGFloat = 25
+    
+    var circleLayer : CAShapeLayer?
+    var firstPath : UIBezierPath?
+    var secondPath : UIBezierPath?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,17 +49,47 @@ import UIKit
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
         // Drawing code
+        //Outer Circle
         let outerColor : UIColor = baseColor
         outerColor.setFill()
-        
         let basePath : UIBezierPath = UIBezierPath(ovalInRect: CGRectInset(rect, 1, 1))
         basePath.fill()
         
+        //Inner circle
         let innerColor : UIColor = fillColor
-        innerColor.setFill()
+        if let _ = firstPath {
+        }else{
+            firstPath = UIBezierPath(ovalInRect: CGRectInset(rect, rect.width / 2, rect.height / 2))
+        }
         
-        let innerPath : UIBezierPath = UIBezierPath(ovalInRect: CGRectInset(rect, amountFilled, amountFilled))
-        innerPath.fill()
+        if let _ = circleLayer {
+        }else{
+            circleLayer = CAShapeLayer()
+            layer.addSublayer(circleLayer!)
+        }
+        
+        circleLayer!.frame = bounds
+        circleLayer!.fillColor = innerColor.CGColor
+        circleLayer!.path = firstPath?.CGPath
+        
+        if let _ = secondPath {
+        }else{
+            secondPath = UIBezierPath(ovalInRect: CGRectInset(bounds, amountFilled, amountFilled))
+        }
+        //        animateCircle()
+        let anim : CABasicAnimation = CABasicAnimation(keyPath: "path")
+        //        anim2.repeatCount = 0
+        anim.duration = 2
+        anim.toValue = secondPath?.CGPath
+        anim.removedOnCompletion = false
+        anim.fillMode = kCAFillModeBoth
+        
+        anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        
+        circleLayer!.addAnimation(anim, forKey: anim.keyPath)
+                
+//        firstPath = UIBezierPath(CGPath: secondPath!.CGPath)
+
     }
 
 
