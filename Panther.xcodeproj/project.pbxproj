@@ -17,9 +17,10 @@
 		EA3407271BB8444500E368EC /* TodayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3407241BB8444500E368EC /* TodayCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		EA3407281BB8444500E368EC /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3407251BB8444500E368EC /* TodayView.swift */; settings = {ASSET_TAGS = (); }; };
 		EA3407291BB8482800E368EC /* EmptyCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3407231BB8444500E368EC /* EmptyCircleView.swift */; settings = {ASSET_TAGS = (); }; };
-		EA34072A1BB8494700E368EC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897CA11BB0C704001D3326 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
 		EA34072B1BB8494C00E368EC /* InflatingCircleIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C34D51BB4AF1B002D1F0A /* InflatingCircleIndicatorView.swift */; settings = {ASSET_TAGS = (); }; };
 		EA38D2C71BB51BC500CEDB92 /* AddAlertModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA38D2C61BB51BC500CEDB92 /* AddAlertModalViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		EA4CF8211BBB6B38003600CD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CF8201BBB6B38003600CD /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
+		EA4CF8221BBB6B40003600CD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CF8201BBB6B38003600CD /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
 		EA780F0C1BB4DEB10010D57C /* AlertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA780F0B1BB4DEB10010D57C /* AlertTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		EA780F0E1BB4E4830010D57C /* AlertRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA780F0D1BB4E4830010D57C /* AlertRoundedView.swift */; settings = {ASSET_TAGS = (); }; };
 		EA897C711BB0C138001D3326 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C701BB0C138001D3326 /* AppDelegate.swift */; };
@@ -48,14 +49,12 @@
 		EACA6BA61BB0EEC400ACBBEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACA6BA51BB0EEC400ACBBEB /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		EACA6BA81BB1D6B900ACBBEB /* CircleDataCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EACA6BA71BB1D6B900ACBBEB /* CircleDataCollectionViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		EACC21501BB1DC2900B912B6 /* CircleDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC214F1BB1DC2900B912B6 /* CircleDataCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		EAE6DBF51BB7C15000B8D138 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897CA11BB0C704001D3326 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
 		EAE6DBF71BB7C15400B8D138 /* Panther.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C9F1BB0C540001D3326 /* Panther.swift */; settings = {ASSET_TAGS = (); }; };
 		EAE6DBF91BB7C15700B8D138 /* InflatingCircleIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C34D51BB4AF1B002D1F0A /* InflatingCircleIndicatorView.swift */; settings = {ASSET_TAGS = (); }; };
 		EAE6DBFC1BB7C15D00B8D138 /* InflatingCircleDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C34D71BB4B0F2002D1F0A /* InflatingCircleDataView.swift */; settings = {ASSET_TAGS = (); }; };
 		EAEB86971BB923EC008D50C6 /* Panther.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C9F1BB0C540001D3326 /* Panther.swift */; settings = {ASSET_TAGS = (); }; };
 		EAEB869A1BB92ED8008D50C6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAEB86981BB92ED8008D50C6 /* Alamofire.framework */; };
 		EAEB869B1BB92ED8008D50C6 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAEB86991BB92ED8008D50C6 /* SwiftyJSON.framework */; };
-		EAEB869D1BB9EBE3008D50C6 /* NSDate_TimeAgo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAEB869C1BB9EBE3008D50C6 /* NSDate_TimeAgo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +110,7 @@
 		EA3407251BB8444500E368EC /* TodayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		EA38D2C61BB51BC500CEDB92 /* AddAlertModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAlertModalViewController.swift; sourceTree = "<group>"; };
 		EA3F8D461BB790E900E7487F /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		EA4CF8201BBB6B38003600CD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Panther/Constants.swift; sourceTree = "<group>"; };
 		EA5D61EE1BB7D10700F48089 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		EA5D61F01BB7D1E100F48089 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		EA5D61F11BB7D1E100F48089 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
@@ -130,7 +130,6 @@
 		EA897C901BB0C138001D3326 /* PantherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantherUITests.swift; sourceTree = "<group>"; };
 		EA897C921BB0C138001D3326 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA897C9F1BB0C540001D3326 /* Panther.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Panther.swift; sourceTree = "<group>"; };
-		EA897CA11BB0C704001D3326 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Panther/Constants.swift; sourceTree = "<group>"; };
 		EA8DC4211BB1DA9A0056ACC1 /* CircleDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleDataView.xib; sourceTree = "<group>"; };
 		EA8DC4231BB1DABC0056ACC1 /* CircleDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleDataView.swift; sourceTree = "<group>"; };
 		EAA9297B1BB34EDF0031315B /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "Fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -163,7 +162,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAEB869D1BB9EBE3008D50C6 /* NSDate_TimeAgo.framework in Frameworks */,
 				EAEB869A1BB92ED8008D50C6 /* Alamofire.framework in Frameworks */,
 				EAEB869B1BB92ED8008D50C6 /* SwiftyJSON.framework in Frameworks */,
 				EA3407151BB843B800E368EC /* NotificationCenter.framework in Frameworks */,
@@ -275,7 +273,7 @@
 		EA897C641BB0C138001D3326 = {
 			isa = PBXGroup;
 			children = (
-				EA897CA11BB0C704001D3326 /* Constants.swift */,
+				EA4CF8201BBB6B38003600CD /* Constants.swift */,
 				EA7C97DB1BB1EA0700FA562E /* Fonts */,
 				EA897C9E1BB0C512001D3326 /* PantherRequests */,
 				EAA929911BB49BC80031315B /* FilledCircleIndicatorView */,
@@ -597,11 +595,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA34072A1BB8494700E368EC /* Constants.swift in Sources */,
 				EA3407271BB8444500E368EC /* TodayCollectionViewCell.swift in Sources */,
 				EAEB86971BB923EC008D50C6 /* Panther.swift in Sources */,
 				EA3407261BB8444500E368EC /* EmptyCircleView.swift in Sources */,
 				EA3407281BB8444500E368EC /* TodayView.swift in Sources */,
+				EA4CF8221BBB6B40003600CD /* Constants.swift in Sources */,
 				EA3407181BB843B800E368EC /* TodayViewController.swift in Sources */,
 				EA34072B1BB8494C00E368EC /* InflatingCircleIndicatorView.swift in Sources */,
 			);
@@ -618,6 +616,7 @@
 				EACA6B9E1BB0DEF800ACBBEB /* PantherTableViewCell.swift in Sources */,
 				EA780F0E1BB4E4830010D57C /* AlertRoundedView.swift in Sources */,
 				EAE6DBF71BB7C15400B8D138 /* Panther.swift in Sources */,
+				EA4CF8211BBB6B38003600CD /* Constants.swift in Sources */,
 				EAA929901BB355AD0031315B /* AlertsViewController.swift in Sources */,
 				EA897C711BB0C138001D3326 /* AppDelegate.swift in Sources */,
 				EA8DC4241BB1DABC0056ACC1 /* CircleDataView.swift in Sources */,
@@ -626,7 +625,6 @@
 				EA3407291BB8482800E368EC /* EmptyCircleView.swift in Sources */,
 				EAA929931BB49E6F0031315B /* UINotificationButton.swift in Sources */,
 				EACA6BA41BB0EE2100ACBBEB /* FilledCircleIndicatorView.swift in Sources */,
-				EAE6DBF51BB7C15000B8D138 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
