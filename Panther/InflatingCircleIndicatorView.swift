@@ -27,7 +27,7 @@ import UIKit
         super.init(coder: aDecoder)
     }
     
-    func animateCircle(){
+    func animateCircle(delay: CFTimeInterval){
         circleLayer!.frame = bounds
         circleLayer!.fillColor = fillColor.CGColor
         circleLayer!.path = firstPath!.CGPath
@@ -35,12 +35,13 @@ import UIKit
         
         let anim : CABasicAnimation = CABasicAnimation(keyPath: "path")
         //        anim2.repeatCount = 0
-        anim.duration = 1
+        anim.duration = 0.35
         anim.toValue = secondPath!.CGPath
         anim.removedOnCompletion = false
         anim.fillMode = kCAFillModeBoth
+        anim.beginTime = CACurrentMediaTime() + delay
         
-        anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        anim.timingFunction = CAMediaTimingFunction(controlPoints: 0.23, 1.0, 0.32, 1.0)
         circleLayer!.addAnimation(anim, forKey: anim.keyPath)
         
         

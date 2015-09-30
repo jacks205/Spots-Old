@@ -83,8 +83,8 @@ import UIKit
         anim.toValue = secondPath?.CGPath
         anim.removedOnCompletion = false
         anim.fillMode = kCAFillModeBoth
-        
-        anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+
+        anim.timingFunction = CAMediaTimingFunction(controlPoints: 0.23, 1.0, 0.32, 1.0)
         
         circleLayer!.addAnimation(anim, forKey: anim.keyPath)
                 

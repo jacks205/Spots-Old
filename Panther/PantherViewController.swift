@@ -113,13 +113,14 @@ class PantherViewController: UITableViewController, UICollectionViewDelegate, UI
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell : UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionCell", forIndexPath: indexPath)
-        if let structure : ParkingStructure = parkingStructures.get((collectionView as! PantherIndexedCollectionView).indexPath.row){
+        let pantherCollectionViewCell : PantherIndexedCollectionView = collectionView as! PantherIndexedCollectionView
+        if let structure : ParkingStructure = parkingStructures.get((pantherCollectionViewCell).indexPath.row){
             if let level : ParkingLevel = structure.levels.get(indexPath.row){
                 let cdCell : CircleDataCollectionViewCell = cell as! CircleDataCollectionViewCell
                 cdCell.inflatingCircleDataView.inflatingCircleIndicatorView.setCapacityLevel(CGFloat(level.available), outOfTotalCapacity: CGFloat(level.total))
                 cdCell.inflatingCircleDataView.titleLabel.text = "Level \(level.number)"
                 cdCell.inflatingCircleDataView.countLabel.text = "\(level.available)"
-                cdCell.inflatingCircleDataView.inflatingCircleIndicatorView.animateCircle()
+                cdCell.inflatingCircleDataView.inflatingCircleIndicatorView.animateCircle(Double(pantherCollectionViewCell.indexPath.row) * 0.35)
 //                cdCell.inflatingCircleDataView.inflatingCircleIndicatorView.setNeedsDisplay()
             }else{
                 cell = collectionView.dequeueReusableCellWithReuseIdentifier("EmptyCell", forIndexPath: indexPath)
