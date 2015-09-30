@@ -31,6 +31,13 @@ class PantherViewController: UITableViewController, UICollectionViewDelegate, UI
                 NSForegroundColorAttributeName: UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)])
         print(NSUserDefaults.standardUserDefaults().objectForKey(Constants.DEVICE_TOKEN_KEY))
         
+        if let _ = NSUserDefaults.standardUserDefaults().objectForKey(Constants.SCHOOL_KEY){
+
+        }else{
+            performSegueWithIdentifier("SelectSchool", sender: self)
+        }
+        
+        
         reloadData(self)
     }
 

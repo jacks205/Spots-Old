@@ -11,8 +11,11 @@
             <string>OpenSans-Light</string>
             <string>OpenSans-Light</string>
             <string>OpenSans-Light</string>
+            <string>OpenSans-Light</string>
         </mutableArray>
         <mutableArray key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+            <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
@@ -146,10 +149,95 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <segue destination="IoR-CV-jSM" kind="modal" identifier="SelectSchool" id="2M0-mc-BjW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9pq-mq-R2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="248"/>
+        </scene>
+        <!--Select View Controller-->
+        <scene sceneID="Fbl-e1-gje">
+            <objects>
+                <viewController id="IoR-CV-jSM" customClass="SelectViewController" customModule="Panther" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UwJ-vA-hbY"/>
+                        <viewControllerLayoutGuide type="bottom" id="b2a-2K-VFs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Ig-iN-3s5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0b-tx-wSk">
+                                <rect key="frame" x="-4" y="270" width="328" height="298"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4UN-WQ-QAK">
+                                        <rect key="frame" x="8" y="8" width="312" height="282"/>
+                                    </pickerView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.086274509803921567" green="0.10980392156862745" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="4UN-WQ-QAK" firstAttribute="leading" secondItem="D0b-tx-wSk" secondAttribute="leadingMargin" id="fFc-gW-LbO"/>
+                                    <constraint firstItem="4UN-WQ-QAK" firstAttribute="bottom" secondItem="D0b-tx-wSk" secondAttribute="bottomMargin" id="kOK-Mg-57P"/>
+                                    <constraint firstItem="4UN-WQ-QAK" firstAttribute="top" secondItem="D0b-tx-wSk" secondAttribute="topMargin" id="vJu-l7-aky"/>
+                                    <constraint firstItem="4UN-WQ-QAK" firstAttribute="trailing" secondItem="D0b-tx-wSk" secondAttribute="trailingMargin" id="wOD-ns-9hl"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spots" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVN-XK-5Aa">
+                                <rect key="frame" x="16" y="62" width="288" height="45"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="33"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chapman University" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIk-0r-bBx">
+                                <rect key="frame" x="16" y="140" width="288" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="K0F-W4-hum"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RE0-iu-VgP" customClass="UINotificationButton" customModule="Panther" customModuleProvider="target">
+                                <rect key="frame" x="76" y="171" width="169" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="eYB-kZ-g6m"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
+                                <state key="normal" title="SELECT">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectedClick:" destination="IoR-CV-jSM" eventType="touchUpInside" id="7Sn-Mk-cKh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16862745098039217" green="0.19215686274509802" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="GIk-0r-bBx" firstAttribute="top" secondItem="qVN-XK-5Aa" secondAttribute="bottom" constant="33" id="2BO-1f-C1b"/>
+                            <constraint firstItem="D0b-tx-wSk" firstAttribute="leading" secondItem="4Ig-iN-3s5" secondAttribute="leadingMargin" constant="-20" id="3xT-Sn-rI6"/>
+                            <constraint firstItem="GIk-0r-bBx" firstAttribute="leading" secondItem="qVN-XK-5Aa" secondAttribute="leading" id="JbP-NQ-pLr"/>
+                            <constraint firstItem="qVN-XK-5Aa" firstAttribute="leading" secondItem="4Ig-iN-3s5" secondAttribute="leadingMargin" id="P0s-Su-U14"/>
+                            <constraint firstItem="GIk-0r-bBx" firstAttribute="trailing" secondItem="qVN-XK-5Aa" secondAttribute="trailing" id="PS8-3I-my9"/>
+                            <constraint firstItem="qVN-XK-5Aa" firstAttribute="top" secondItem="UwJ-vA-hbY" secondAttribute="bottom" constant="42" id="ZeP-bn-9p2"/>
+                            <constraint firstItem="D0b-tx-wSk" firstAttribute="bottom" secondItem="b2a-2K-VFs" secondAttribute="top" id="aqM-39-1Bz"/>
+                            <constraint firstItem="qVN-XK-5Aa" firstAttribute="trailing" secondItem="4Ig-iN-3s5" secondAttribute="trailingMargin" id="dp2-Eu-PWF"/>
+                            <constraint firstItem="RE0-iu-VgP" firstAttribute="top" secondItem="GIk-0r-bBx" secondAttribute="bottom" constant="7" id="iuW-bN-cyd"/>
+                            <constraint firstItem="RE0-iu-VgP" firstAttribute="leading" secondItem="4Ig-iN-3s5" secondAttribute="leadingMargin" constant="60" id="mKx-8z-C30"/>
+                            <constraint firstItem="D0b-tx-wSk" firstAttribute="top" secondItem="RE0-iu-VgP" secondAttribute="bottom" constant="61" id="mUa-PG-5hd"/>
+                            <constraint firstItem="D0b-tx-wSk" firstAttribute="centerX" secondItem="RE0-iu-VgP" secondAttribute="centerX" id="wbA-hQ-rSx"/>
+                            <constraint firstItem="RE0-iu-VgP" firstAttribute="centerX" secondItem="GIk-0r-bBx" secondAttribute="centerX" id="ygi-cu-ayx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="picker" destination="4UN-WQ-QAK" id="h2q-Sj-QJ6"/>
+                        <outlet property="schoolLabel" destination="GIk-0r-bBx" id="6Ks-b2-HoV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NHX-Wp-nR8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="746" y="1029"/>
         </scene>
         <!--NOTIFICATIONS-->
         <scene sceneID="CL3-ba-IND">
@@ -320,27 +408,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6D-Vs-SjZ">
-                                <rect key="frame" x="0.0" y="206" width="320" height="298"/>
-                                <subviews>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="RT2-dN-cWc" customClass="ColoredDatePicker" customModule="Panther" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="8" width="304" height="282"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="464902149.10560399">
-                                            <!--2015-09-25 19:29:09 +0000-->
-                                        </date>
-                                        <connections>
-                                            <action selector="timeChanged:" destination="8rG-D7-Zm6" eventType="valueChanged" id="Dy2-eG-SWK"/>
-                                        </connections>
-                                    </datePicker>
-                                </subviews>
-                                <color key="backgroundColor" red="0.086274509803921567" green="0.10980392156862745" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="RT2-dN-cWc" firstAttribute="trailing" secondItem="s6D-Vs-SjZ" secondAttribute="trailingMargin" id="C9g-uJ-foW"/>
-                                    <constraint firstItem="RT2-dN-cWc" firstAttribute="bottom" secondItem="s6D-Vs-SjZ" secondAttribute="bottomMargin" id="VR2-vA-m8j"/>
-                                    <constraint firstItem="RT2-dN-cWc" firstAttribute="leading" secondItem="s6D-Vs-SjZ" secondAttribute="leadingMargin" id="cu1-LE-2MJ"/>
-                                    <constraint firstItem="RT2-dN-cWc" firstAttribute="top" secondItem="s6D-Vs-SjZ" secondAttribute="topMargin" id="sW3-0h-RRq"/>
-                                </constraints>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="Get notified  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X72-a9-PJn">
                                 <rect key="frame" x="27" y="53" width="99" height="24"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="17"/>
@@ -415,6 +482,27 @@
                                     <constraint firstItem="u5f-Qy-AsY" firstAttribute="leading" secondItem="O6L-dq-yyn" secondAttribute="leading" id="nMP-s8-pYU"/>
                                     <constraint firstItem="u5f-Qy-AsY" firstAttribute="leading" secondItem="O6L-dq-yyn" secondAttribute="leading" id="oni-xS-UKA"/>
                                     <constraint firstItem="u5f-Qy-AsY" firstAttribute="leading" secondItem="O6L-dq-yyn" secondAttribute="leading" id="qJn-7Q-vMT"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6D-Vs-SjZ">
+                                <rect key="frame" x="0.0" y="206" width="320" height="298"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="RT2-dN-cWc" customClass="ColoredDatePicker" customModule="Panther" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="8" width="304" height="282"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="464902149.10560399">
+                                            <!--2015-09-25 19:29:09 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="timeChanged:" destination="8rG-D7-Zm6" eventType="valueChanged" id="Dy2-eG-SWK"/>
+                                        </connections>
+                                    </datePicker>
+                                </subviews>
+                                <color key="backgroundColor" red="0.086274509803921567" green="0.10980392156862745" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="RT2-dN-cWc" firstAttribute="trailing" secondItem="s6D-Vs-SjZ" secondAttribute="trailingMargin" id="C9g-uJ-foW"/>
+                                    <constraint firstItem="RT2-dN-cWc" firstAttribute="bottom" secondItem="s6D-Vs-SjZ" secondAttribute="bottomMargin" id="VR2-vA-m8j"/>
+                                    <constraint firstItem="RT2-dN-cWc" firstAttribute="leading" secondItem="s6D-Vs-SjZ" secondAttribute="leadingMargin" id="cu1-LE-2MJ"/>
+                                    <constraint firstItem="RT2-dN-cWc" firstAttribute="top" secondItem="s6D-Vs-SjZ" secondAttribute="topMargin" id="sW3-0h-RRq"/>
                                 </constraints>
                             </view>
                         </subviews>

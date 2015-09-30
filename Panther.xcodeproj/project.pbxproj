@@ -21,6 +21,7 @@
 		EA38D2C71BB51BC500CEDB92 /* AddAlertModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA38D2C61BB51BC500CEDB92 /* AddAlertModalViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		EA4CF8211BBB6B38003600CD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CF8201BBB6B38003600CD /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
 		EA4CF8221BBB6B40003600CD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CF8201BBB6B38003600CD /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
+		EA4CF8241BBB6CBE003600CD /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CF8231BBB6CBE003600CD /* SelectViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		EA780F0C1BB4DEB10010D57C /* AlertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA780F0B1BB4DEB10010D57C /* AlertTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		EA780F0E1BB4E4830010D57C /* AlertRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA780F0D1BB4E4830010D57C /* AlertRoundedView.swift */; settings = {ASSET_TAGS = (); }; };
 		EA897C711BB0C138001D3326 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C701BB0C138001D3326 /* AppDelegate.swift */; };
@@ -111,6 +112,7 @@
 		EA38D2C61BB51BC500CEDB92 /* AddAlertModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAlertModalViewController.swift; sourceTree = "<group>"; };
 		EA3F8D461BB790E900E7487F /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		EA4CF8201BBB6B38003600CD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Panther/Constants.swift; sourceTree = "<group>"; };
+		EA4CF8231BBB6CBE003600CD /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		EA5D61EE1BB7D10700F48089 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		EA5D61F01BB7D1E100F48089 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		EA5D61F11BB7D1E100F48089 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 				EACA6BA51BB0EEC400ACBBEB /* Main.storyboard */,
 				EA780F081BB4DE5B0010D57C /* AlertTableViewCell */,
 				EA897C701BB0C138001D3326 /* AppDelegate.swift */,
+				EA4CF8231BBB6CBE003600CD /* SelectViewController.swift */,
 				EA897C721BB0C138001D3326 /* PantherViewController.swift */,
 				EAA9298F1BB355AD0031315B /* AlertsViewController.swift */,
 				EA38D2C61BB51BC500CEDB92 /* AddAlertModalViewController.swift */,
@@ -609,6 +612,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA4CF8241BBB6CBE003600CD /* SelectViewController.swift in Sources */,
 				EACC21501BB1DC2900B912B6 /* CircleDataCollectionViewCell.swift in Sources */,
 				EA897C731BB0C138001D3326 /* PantherViewController.swift in Sources */,
 				EA38D2C71BB51BC500CEDB92 /* AddAlertModalViewController.swift in Sources */,
