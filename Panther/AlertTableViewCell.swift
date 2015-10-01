@@ -38,6 +38,7 @@ import UIKit
             applyAlphaToAllViews(0.57)
         }
     }
+
     
     func applyAlphaToAllViews(alpha: CGFloat){
         switchBtn.alpha = alpha

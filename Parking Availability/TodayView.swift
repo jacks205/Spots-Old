@@ -79,7 +79,7 @@ import UIKit
         //        animateCircle()
         let anim : CABasicAnimation = CABasicAnimation(keyPath: "path")
         //        anim2.repeatCount = 0
-        anim.duration = 2
+        anim.duration = 0.35
         anim.toValue = secondPath?.CGPath
         anim.removedOnCompletion = false
         anim.fillMode = kCAFillModeBoth
