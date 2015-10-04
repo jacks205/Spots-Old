@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PantherIndexedCollectionView: UICollectionView {
+class SpotsIndexedCollectionView: UICollectionView {
     
     var indexPath: NSIndexPath!
     
@@ -25,9 +25,9 @@ class PantherIndexedCollectionView: UICollectionView {
     }
 }
 
-class PantherTableViewCell: UITableViewCell {
+class SpotsTableViewCell: UITableViewCell {
         
-    @IBOutlet weak var collectionView: PantherIndexedCollectionView!
+    @IBOutlet weak var collectionView: SpotsIndexedCollectionView!
     
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var totalSpots: UILabel!

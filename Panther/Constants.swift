@@ -12,6 +12,7 @@ class Constants{
     static let IP_ADDRESS = "http://104.236.148.60:8000/latest-availabilities"
     static let DEVICE_TOKEN_KEY = "token"
     static let SCHOOL_KEY = "school"
+    static let SUITE_NAME = "group.com.jacks205.panther"
     
     struct Colors {
 //        static let GREEN_COLOR : UIColor = UIColor(red:0.16, green:0.93, blue:0.70, alpha:1.0)

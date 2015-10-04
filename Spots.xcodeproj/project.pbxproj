@@ -25,7 +25,7 @@
 		EA780F0C1BB4DEB10010D57C /* AlertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA780F0B1BB4DEB10010D57C /* AlertTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		EA780F0E1BB4E4830010D57C /* AlertRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA780F0D1BB4E4830010D57C /* AlertRoundedView.swift */; settings = {ASSET_TAGS = (); }; };
 		EA897C711BB0C138001D3326 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C701BB0C138001D3326 /* AppDelegate.swift */; };
-		EA897C731BB0C138001D3326 /* PantherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C721BB0C138001D3326 /* PantherViewController.swift */; };
+		EA897C731BB0C138001D3326 /* SpotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C721BB0C138001D3326 /* SpotsViewController.swift */; };
 		EA897C781BB0C138001D3326 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA897C771BB0C138001D3326 /* Assets.xcassets */; };
 		EA897C7B1BB0C138001D3326 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA897C791BB0C138001D3326 /* LaunchScreen.storyboard */; };
 		EA897C861BB0C138001D3326 /* PantherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C851BB0C138001D3326 /* PantherTests.swift */; };
@@ -44,16 +44,17 @@
 		EAA9298E1BB34F2A0031315B /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAA929841BB34EDF0031315B /* OpenSans-SemiboldItalic.ttf */; };
 		EAA929901BB355AD0031315B /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA9298F1BB355AD0031315B /* AlertsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		EAA929931BB49E6F0031315B /* UINotificationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA929921BB49E6F0031315B /* UINotificationButton.swift */; settings = {ASSET_TAGS = (); }; };
+		EAB666891BC0F41F0064C8C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA897C771BB0C138001D3326 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		EAC1F4741BB5D119005FE2C3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC1F4731BB5D119005FE2C3 /* QuartzCore.framework */; };
-		EACA6B9E1BB0DEF800ACBBEB /* PantherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACA6B9D1BB0DEF800ACBBEB /* PantherTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		EACA6B9E1BB0DEF800ACBBEB /* SpotsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACA6B9D1BB0DEF800ACBBEB /* SpotsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		EACA6BA41BB0EE2100ACBBEB /* FilledCircleIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACA6BA31BB0EE2100ACBBEB /* FilledCircleIndicatorView.swift */; settings = {ASSET_TAGS = (); }; };
 		EACA6BA61BB0EEC400ACBBEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACA6BA51BB0EEC400ACBBEB /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		EACA6BA81BB1D6B900ACBBEB /* CircleDataCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EACA6BA71BB1D6B900ACBBEB /* CircleDataCollectionViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		EACC21501BB1DC2900B912B6 /* CircleDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC214F1BB1DC2900B912B6 /* CircleDataCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		EAE6DBF71BB7C15400B8D138 /* Panther.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C9F1BB0C540001D3326 /* Panther.swift */; settings = {ASSET_TAGS = (); }; };
+		EAE6DBF71BB7C15400B8D138 /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C9F1BB0C540001D3326 /* Spots.swift */; settings = {ASSET_TAGS = (); }; };
 		EAE6DBF91BB7C15700B8D138 /* InflatingCircleIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C34D51BB4AF1B002D1F0A /* InflatingCircleIndicatorView.swift */; settings = {ASSET_TAGS = (); }; };
 		EAE6DBFC1BB7C15D00B8D138 /* InflatingCircleDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C34D71BB4B0F2002D1F0A /* InflatingCircleDataView.swift */; settings = {ASSET_TAGS = (); }; };
-		EAEB86971BB923EC008D50C6 /* Panther.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C9F1BB0C540001D3326 /* Panther.swift */; settings = {ASSET_TAGS = (); }; };
+		EAEB86971BB923EC008D50C6 /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C9F1BB0C540001D3326 /* Spots.swift */; settings = {ASSET_TAGS = (); }; };
 		EAEB869A1BB92ED8008D50C6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAEB86981BB92ED8008D50C6 /* Alamofire.framework */; };
 		EAEB869B1BB92ED8008D50C6 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAEB86991BB92ED8008D50C6 /* SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
@@ -116,22 +117,21 @@
 		EA5D61EE1BB7D10700F48089 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		EA5D61F01BB7D1E100F48089 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		EA5D61F11BB7D1E100F48089 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
-		EA5D61F51BB7D2DE00F48089 /* Panther.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Panther.entitlements; sourceTree = "<group>"; };
 		EA780F0B1BB4DEB10010D57C /* AlertTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertTableViewCell.swift; sourceTree = "<group>"; };
 		EA780F0D1BB4E4830010D57C /* AlertRoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertRoundedView.swift; sourceTree = "<group>"; };
-		EA897C6D1BB0C138001D3326 /* Panther.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Panther.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA897C6D1BB0C138001D3326 /* Spots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA897C701BB0C138001D3326 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EA897C721BB0C138001D3326 /* PantherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantherViewController.swift; sourceTree = "<group>"; };
+		EA897C721BB0C138001D3326 /* SpotsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotsViewController.swift; sourceTree = "<group>"; };
 		EA897C771BB0C138001D3326 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA897C7A1BB0C138001D3326 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA897C7C1BB0C138001D3326 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA897C811BB0C138001D3326 /* PantherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PantherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA897C811BB0C138001D3326 /* Spots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Spots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA897C851BB0C138001D3326 /* PantherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantherTests.swift; sourceTree = "<group>"; };
 		EA897C871BB0C138001D3326 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA897C8C1BB0C138001D3326 /* PantherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PantherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA897C8C1BB0C138001D3326 /* Spots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Spots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA897C901BB0C138001D3326 /* PantherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantherUITests.swift; sourceTree = "<group>"; };
 		EA897C921BB0C138001D3326 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA897C9F1BB0C540001D3326 /* Panther.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Panther.swift; sourceTree = "<group>"; };
+		EA897C9F1BB0C540001D3326 /* Spots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spots.swift; sourceTree = "<group>"; };
 		EA8DC4211BB1DA9A0056ACC1 /* CircleDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleDataView.xib; sourceTree = "<group>"; };
 		EA8DC4231BB1DABC0056ACC1 /* CircleDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleDataView.swift; sourceTree = "<group>"; };
 		EAA9297B1BB34EDF0031315B /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "Fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -146,8 +146,10 @@
 		EAA929841BB34EDF0031315B /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-SemiboldItalic.ttf"; path = "Fonts/OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		EAA9298F1BB355AD0031315B /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
 		EAA929921BB49E6F0031315B /* UINotificationButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINotificationButton.swift; sourceTree = "<group>"; };
+		EAB666871BC0F28F0064C8C8 /* Spots.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Spots.entitlements; sourceTree = SOURCE_ROOT; };
+		EAB666881BC0F2990064C8C8 /* Parking Availability.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Parking Availability.entitlements"; sourceTree = "<group>"; };
 		EAC1F4731BB5D119005FE2C3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		EACA6B9D1BB0DEF800ACBBEB /* PantherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantherTableViewCell.swift; sourceTree = "<group>"; };
+		EACA6B9D1BB0DEF800ACBBEB /* SpotsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotsTableViewCell.swift; sourceTree = "<group>"; };
 		EACA6BA31BB0EE2100ACBBEB /* FilledCircleIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledCircleIndicatorView.swift; sourceTree = "<group>"; };
 		EACA6BA51BB0EEC400ACBBEB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		EACA6BA71BB1D6B900ACBBEB /* CircleDataCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleDataCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -155,7 +157,6 @@
 		EAEB86981BB92ED8008D50C6 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		EAEB86991BB92ED8008D50C6 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		EAEB869C1BB9EBE3008D50C6 /* NSDate_TimeAgo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NSDate_TimeAgo.framework; path = "Pods/../build/Debug-iphoneos/NSDate_TimeAgo.framework"; sourceTree = "<group>"; };
-		EAEB869E1BB9ECC8008D50C6 /* Parking Availability-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Parking Availability-Bridging-Header.h"; sourceTree = "<group>"; };
 		EEA65EDA0DCA7EC750B6CC46 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -235,12 +236,12 @@
 		EA3407161BB843B800E368EC /* Parking Availability */ = {
 			isa = PBXGroup;
 			children = (
+				EAB666881BC0F2990064C8C8 /* Parking Availability.entitlements */,
 				EA3407241BB8444500E368EC /* TodayCollectionViewCell.swift */,
 				EA3407251BB8444500E368EC /* TodayView.swift */,
 				EA3407171BB843B800E368EC /* TodayViewController.swift */,
 				EA3407191BB843B800E368EC /* MainInterface.storyboard */,
 				EA34071C1BB843B800E368EC /* Info.plist */,
-				EAEB869E1BB9ECC8008D50C6 /* Parking Availability-Bridging-Header.h */,
 			);
 			path = "Parking Availability";
 			sourceTree = "<group>";
@@ -277,12 +278,12 @@
 			children = (
 				EA4CF8201BBB6B38003600CD /* Constants.swift */,
 				EA7C97DB1BB1EA0700FA562E /* Fonts */,
-				EA897C9E1BB0C512001D3326 /* PantherRequests */,
+				EA897C9E1BB0C512001D3326 /* SpotsRequests */,
 				EAA929911BB49BC80031315B /* FilledCircleIndicatorView */,
 				EA0C34D41BB4ADF8002D1F0A /* InflatingCircleIndicatorView */,
-				EA897C6F1BB0C138001D3326 /* Panther */,
-				EA897C841BB0C138001D3326 /* PantherTests */,
-				EA897C8F1BB0C138001D3326 /* PantherUITests */,
+				EA897C6F1BB0C138001D3326 /* Spots */,
+				EA897C841BB0C138001D3326 /* SpotsTests */,
+				EA897C8F1BB0C138001D3326 /* SpotsUITests */,
 				EA3407161BB843B800E368EC /* Parking Availability */,
 				EA897C6E1BB0C138001D3326 /* Products */,
 				24938BD470313996C4AC4934 /* Pods */,
@@ -293,26 +294,26 @@
 		EA897C6E1BB0C138001D3326 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EA897C6D1BB0C138001D3326 /* Panther.app */,
-				EA897C811BB0C138001D3326 /* PantherTests.xctest */,
-				EA897C8C1BB0C138001D3326 /* PantherUITests.xctest */,
+				EA897C6D1BB0C138001D3326 /* Spots.app */,
+				EA897C811BB0C138001D3326 /* Spots.xctest */,
+				EA897C8C1BB0C138001D3326 /* Spots.xctest */,
 				EA3407141BB843B800E368EC /* Parking Availability.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EA897C6F1BB0C138001D3326 /* Panther */ = {
+		EA897C6F1BB0C138001D3326 /* Spots */ = {
 			isa = PBXGroup;
 			children = (
-				EA5D61F51BB7D2DE00F48089 /* Panther.entitlements */,
+				EAB666871BC0F28F0064C8C8 /* Spots.entitlements */,
 				EACA6BA51BB0EEC400ACBBEB /* Main.storyboard */,
 				EA780F081BB4DE5B0010D57C /* AlertTableViewCell */,
 				EA897C701BB0C138001D3326 /* AppDelegate.swift */,
 				EA4CF8231BBB6CBE003600CD /* SelectViewController.swift */,
-				EA897C721BB0C138001D3326 /* PantherViewController.swift */,
+				EA897C721BB0C138001D3326 /* SpotsViewController.swift */,
 				EAA9298F1BB355AD0031315B /* AlertsViewController.swift */,
 				EA38D2C61BB51BC500CEDB92 /* AddAlertModalViewController.swift */,
-				EACA6B9D1BB0DEF800ACBBEB /* PantherTableViewCell.swift */,
+				EACA6B9D1BB0DEF800ACBBEB /* SpotsTableViewCell.swift */,
 				EA897C771BB0C138001D3326 /* Assets.xcassets */,
 				EA897C791BB0C138001D3326 /* LaunchScreen.storyboard */,
 				EA897C7C1BB0C138001D3326 /* Info.plist */,
@@ -320,33 +321,36 @@
 				EACC214F1BB1DC2900B912B6 /* CircleDataCollectionViewCell.swift */,
 				EAA929921BB49E6F0031315B /* UINotificationButton.swift */,
 			);
+			name = Spots;
 			path = Panther;
 			sourceTree = "<group>";
 		};
-		EA897C841BB0C138001D3326 /* PantherTests */ = {
+		EA897C841BB0C138001D3326 /* SpotsTests */ = {
 			isa = PBXGroup;
 			children = (
 				EA897C851BB0C138001D3326 /* PantherTests.swift */,
 				EA897C871BB0C138001D3326 /* Info.plist */,
 			);
+			name = SpotsTests;
 			path = PantherTests;
 			sourceTree = "<group>";
 		};
-		EA897C8F1BB0C138001D3326 /* PantherUITests */ = {
+		EA897C8F1BB0C138001D3326 /* SpotsUITests */ = {
 			isa = PBXGroup;
 			children = (
 				EA897C901BB0C138001D3326 /* PantherUITests.swift */,
 				EA897C921BB0C138001D3326 /* Info.plist */,
 			);
+			name = SpotsUITests;
 			path = PantherUITests;
 			sourceTree = "<group>";
 		};
-		EA897C9E1BB0C512001D3326 /* PantherRequests */ = {
+		EA897C9E1BB0C512001D3326 /* SpotsRequests */ = {
 			isa = PBXGroup;
 			children = (
-				EA897C9F1BB0C540001D3326 /* Panther.swift */,
+				EA897C9F1BB0C540001D3326 /* Spots.swift */,
 			);
-			name = PantherRequests;
+			name = SpotsRequests;
 			path = Panther;
 			sourceTree = "<group>";
 		};
@@ -382,9 +386,9 @@
 			productReference = EA3407141BB843B800E368EC /* Parking Availability.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		EA897C6C1BB0C138001D3326 /* Panther */ = {
+		EA897C6C1BB0C138001D3326 /* Spots */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EA897C951BB0C138001D3326 /* Build configuration list for PBXNativeTarget "Panther" */;
+			buildConfigurationList = EA897C951BB0C138001D3326 /* Build configuration list for PBXNativeTarget "Spots" */;
 			buildPhases = (
 				E7B9677A945E56A2F6B3CEA1 /* Check Pods Manifest.lock */,
 				EA897C691BB0C138001D3326 /* Sources */,
@@ -399,14 +403,14 @@
 			dependencies = (
 				EA34071E1BB843B800E368EC /* PBXTargetDependency */,
 			);
-			name = Panther;
+			name = Spots;
 			productName = Panther;
-			productReference = EA897C6D1BB0C138001D3326 /* Panther.app */;
+			productReference = EA897C6D1BB0C138001D3326 /* Spots.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EA897C801BB0C138001D3326 /* PantherTests */ = {
+		EA897C801BB0C138001D3326 /* SpotsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EA897C981BB0C138001D3326 /* Build configuration list for PBXNativeTarget "PantherTests" */;
+			buildConfigurationList = EA897C981BB0C138001D3326 /* Build configuration list for PBXNativeTarget "SpotsTests" */;
 			buildPhases = (
 				EA897C7D1BB0C138001D3326 /* Sources */,
 				EA897C7E1BB0C138001D3326 /* Frameworks */,
@@ -417,14 +421,14 @@
 			dependencies = (
 				EA897C831BB0C138001D3326 /* PBXTargetDependency */,
 			);
-			name = PantherTests;
+			name = SpotsTests;
 			productName = PantherTests;
-			productReference = EA897C811BB0C138001D3326 /* PantherTests.xctest */;
+			productReference = EA897C811BB0C138001D3326 /* Spots.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		EA897C8B1BB0C138001D3326 /* PantherUITests */ = {
+		EA897C8B1BB0C138001D3326 /* SpotsUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EA897C9B1BB0C138001D3326 /* Build configuration list for PBXNativeTarget "PantherUITests" */;
+			buildConfigurationList = EA897C9B1BB0C138001D3326 /* Build configuration list for PBXNativeTarget "SpotsUITests" */;
 			buildPhases = (
 				EA897C881BB0C138001D3326 /* Sources */,
 				EA897C891BB0C138001D3326 /* Frameworks */,
@@ -435,9 +439,9 @@
 			dependencies = (
 				EA897C8E1BB0C138001D3326 /* PBXTargetDependency */,
 			);
-			name = PantherUITests;
+			name = SpotsUITests;
 			productName = PantherUITests;
-			productReference = EA897C8C1BB0C138001D3326 /* PantherUITests.xctest */;
+			productReference = EA897C8C1BB0C138001D3326 /* Spots.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -453,6 +457,11 @@
 					EA3407131BB843B800E368EC = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = 23KKLX956K;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					EA897C6C1BB0C138001D3326 = {
 						CreatedOnToolsVersion = 7.0;
@@ -476,7 +485,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EA897C681BB0C138001D3326 /* Build configuration list for PBXProject "Panther" */;
+			buildConfigurationList = EA897C681BB0C138001D3326 /* Build configuration list for PBXProject "Spots" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -489,9 +498,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EA897C6C1BB0C138001D3326 /* Panther */,
-				EA897C801BB0C138001D3326 /* PantherTests */,
-				EA897C8B1BB0C138001D3326 /* PantherUITests */,
+				EA897C6C1BB0C138001D3326 /* Spots */,
+				EA897C801BB0C138001D3326 /* SpotsTests */,
+				EA897C8B1BB0C138001D3326 /* SpotsUITests */,
 				EA3407131BB843B800E368EC /* Parking Availability */,
 			);
 		};
@@ -502,6 +511,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAB666891BC0F41F0064C8C8 /* Assets.xcassets in Resources */,
 				EA34071B1BB843B800E368EC /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -599,7 +609,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA3407271BB8444500E368EC /* TodayCollectionViewCell.swift in Sources */,
-				EAEB86971BB923EC008D50C6 /* Panther.swift in Sources */,
+				EAEB86971BB923EC008D50C6 /* Spots.swift in Sources */,
 				EA3407261BB8444500E368EC /* EmptyCircleView.swift in Sources */,
 				EA3407281BB8444500E368EC /* TodayView.swift in Sources */,
 				EA4CF8221BBB6B40003600CD /* Constants.swift in Sources */,
@@ -614,12 +624,12 @@
 			files = (
 				EA4CF8241BBB6CBE003600CD /* SelectViewController.swift in Sources */,
 				EACC21501BB1DC2900B912B6 /* CircleDataCollectionViewCell.swift in Sources */,
-				EA897C731BB0C138001D3326 /* PantherViewController.swift in Sources */,
+				EA897C731BB0C138001D3326 /* SpotsViewController.swift in Sources */,
 				EA38D2C71BB51BC500CEDB92 /* AddAlertModalViewController.swift in Sources */,
 				EAE6DBF91BB7C15700B8D138 /* InflatingCircleIndicatorView.swift in Sources */,
-				EACA6B9E1BB0DEF800ACBBEB /* PantherTableViewCell.swift in Sources */,
+				EACA6B9E1BB0DEF800ACBBEB /* SpotsTableViewCell.swift in Sources */,
 				EA780F0E1BB4E4830010D57C /* AlertRoundedView.swift in Sources */,
-				EAE6DBF71BB7C15400B8D138 /* Panther.swift in Sources */,
+				EAE6DBF71BB7C15400B8D138 /* Spots.swift in Sources */,
 				EA4CF8211BBB6B38003600CD /* Constants.swift in Sources */,
 				EAA929901BB355AD0031315B /* AlertsViewController.swift in Sources */,
 				EA897C711BB0C138001D3326 /* AppDelegate.swift in Sources */,
@@ -658,12 +668,12 @@
 		};
 		EA897C831BB0C138001D3326 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EA897C6C1BB0C138001D3326 /* Panther */;
+			target = EA897C6C1BB0C138001D3326 /* Spots */;
 			targetProxy = EA897C821BB0C138001D3326 /* PBXContainerItemProxy */;
 		};
 		EA897C8E1BB0C138001D3326 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EA897C6C1BB0C138001D3326 /* Panther */;
+			target = EA897C6C1BB0C138001D3326 /* Spots */;
 			targetProxy = EA897C8D1BB0C138001D3326 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -691,7 +701,9 @@
 		EA3407201BB843B800E368EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Parking Availability/Parking Availability.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -699,12 +711,11 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "Parking Availability/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jacks205.panther.Parking-Availability";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Parking Availability/Parking Availability-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -712,7 +723,9 @@
 		EA3407211BB843B800E368EC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Parking Availability/Parking Availability.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -720,12 +733,11 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "Parking Availability/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jacks205.panther.Parking-Availability";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Parking Availability/Parking Availability-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -816,7 +828,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Panther/Panther.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Spots.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -824,10 +836,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacks205.panther;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Spots;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -837,7 +850,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Panther/Panther.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Spots.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -845,9 +858,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacks205.panther;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Spots;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -858,8 +872,8 @@
 				INFOPLIST_FILE = PantherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jacks205.PantherTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Panther.app/Panther";
+				PRODUCT_NAME = Spots;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spots.app/Spots";
 			};
 			name = Debug;
 		};
@@ -870,8 +884,8 @@
 				INFOPLIST_FILE = PantherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jacks205.PantherTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Panther.app/Panther";
+				PRODUCT_NAME = Spots;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spots.app/Spots";
 			};
 			name = Release;
 		};
@@ -881,7 +895,7 @@
 				INFOPLIST_FILE = PantherUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jacks205.PantherUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Spots;
 				TEST_TARGET_NAME = Panther;
 				USES_XCTRUNNER = YES;
 			};
@@ -893,7 +907,7 @@
 				INFOPLIST_FILE = PantherUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jacks205.PantherUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Spots;
 				TEST_TARGET_NAME = Panther;
 				USES_XCTRUNNER = YES;
 			};
@@ -911,7 +925,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EA897C681BB0C138001D3326 /* Build configuration list for PBXProject "Panther" */ = {
+		EA897C681BB0C138001D3326 /* Build configuration list for PBXProject "Spots" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EA897C931BB0C138001D3326 /* Debug */,
@@ -920,7 +934,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EA897C951BB0C138001D3326 /* Build configuration list for PBXNativeTarget "Panther" */ = {
+		EA897C951BB0C138001D3326 /* Build configuration list for PBXNativeTarget "Spots" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EA897C961BB0C138001D3326 /* Debug */,
@@ -929,7 +943,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EA897C981BB0C138001D3326 /* Build configuration list for PBXNativeTarget "PantherTests" */ = {
+		EA897C981BB0C138001D3326 /* Build configuration list for PBXNativeTarget "SpotsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EA897C991BB0C138001D3326 /* Debug */,
@@ -938,7 +952,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EA897C9B1BB0C138001D3326 /* Build configuration list for PBXNativeTarget "PantherUITests" */ = {
+		EA897C9B1BB0C138001D3326 /* Build configuration list for PBXNativeTarget "SpotsUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EA897C9C1BB0C138001D3326 /* Debug */,

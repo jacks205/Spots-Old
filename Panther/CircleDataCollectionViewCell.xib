@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8191"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CircleDataCollectionViewCell" customModule="Panther" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CircleDataCollectionViewCell" customModule="Spots" customModuleProvider="target">
             <connections>
                 <outlet property="inflatingCircleDataView" destination="vN6-Ea-xZz" id="0gK-xn-TW5"/>
             </connections>
@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="50" height="84"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vN6-Ea-xZz" customClass="InflatingCircleDataView" customModule="Panther" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vN6-Ea-xZz" customClass="InflatingCircleDataView" customModule="Spots" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="50" height="84"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>

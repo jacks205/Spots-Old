@@ -11,6 +11,7 @@ import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var noSchoolSelectedView: UIView!
     @IBOutlet weak var updatedLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -20,15 +21,37 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
-        self.preferredContentSize = CGSizeMake(0, 173)
-        collectionView.delegate = self
-        collectionView.dataSource = self
+//        if let _ = NSUserDefaults.standardUserDefaults().objectForKey(Constants.SCHOOL_KEY){
+//            noSchoolSelectedView.hidden = true
+//            collectionView.hidden = false
+//            preferredContentSize = CGSizeMake(0, 173)
+//            collectionView.delegate = self
+//            collectionView.dataSource = self
+//            reloadData(self)
+//        }else{
+//            preferredContentSize = CGSizeMake(0, 60)
+//            noSchoolSelectedView.hidden = false
+//            collectionView.hidden = true
+//        }
+//        
         
-        reloadData(self)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        if let _ = Spots.sharedInstance.sharedDefaults.objectForKey(Constants.SCHOOL_KEY){
+            noSchoolSelectedView.hidden = true
+            collectionView.hidden = false
+            preferredContentSize = CGSizeMake(0, 173)
+            collectionView.delegate = self
+            collectionView.dataSource = self
+            reloadData(self)
+        }else{
+            preferredContentSize = CGSizeMake(0, 60)
+            noSchoolSelectedView.hidden = false
+            collectionView.hidden = true
+        }
         
         if let timeUpdated = latestUpdate {
             updatedLabel.text = "Updated " + timeAgoSinceDate(timeUpdated, numericDates: true)
@@ -42,8 +65,12 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func selectSchoolClick(sender: AnyObject) {
+        extensionContext!.openURL(NSURL(string: "AppUrlType://home")!, completionHandler: nil)
+    }
+    
     func reloadData(sender : AnyObject){
-        Panther.sharedInstance.fetchParkingData { (lastUpdated, data, error) -> Void in
+        Spots.sharedInstance.fetchParkingData { (lastUpdated, data, error) -> Void in
             if let _ = error{
                 //alert
             }else{

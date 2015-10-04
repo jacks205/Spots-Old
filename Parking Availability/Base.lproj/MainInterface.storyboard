@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
             <string>OpenSans</string>
         </mutableArray>
         <mutableArray key="OpenSans-Semibold.ttf">
@@ -22,7 +24,7 @@
                         <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="173"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9gO-OW-4wQ">
@@ -120,13 +122,42 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.25" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qsf-jL-6MQ">
+                                <rect key="frame" x="20" y="8" width="280" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VPB-M1-cIs" customClass="TodayButton" customModule="Parking_Availability" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="8" width="264" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="uLV-hh-qw3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
+                                        <state key="normal" title="Please add a school">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectSchoolClick:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="uCl-a8-0ac"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="VPB-M1-cIs" firstAttribute="leading" secondItem="Qsf-jL-6MQ" secondAttribute="leading" constant="8" id="Thx-MV-VgN"/>
+                                    <constraint firstItem="VPB-M1-cIs" firstAttribute="top" secondItem="Qsf-jL-6MQ" secondAttribute="topMargin" id="vXD-Uo-Mu2"/>
+                                    <constraint firstAttribute="trailing" secondItem="VPB-M1-cIs" secondAttribute="trailing" constant="8" id="xJp-5A-vDl"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="9gO-OW-4wQ" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="E3S-cU-yu0"/>
                             <constraint firstItem="9NC-bf-PEL" firstAttribute="top" secondItem="9gO-OW-4wQ" secondAttribute="bottom" constant="8" symbolic="YES" id="Gf8-sM-QqD"/>
                             <constraint firstItem="9gO-OW-4wQ" firstAttribute="trailing" secondItem="9NC-bf-PEL" secondAttribute="trailing" id="TAW-UC-zlF"/>
                             <constraint firstItem="9gO-OW-4wQ" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="4" id="Xhb-A9-Jch"/>
+                            <constraint firstItem="Qsf-jL-6MQ" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="20" id="gmO-Hp-pcc"/>
+                            <constraint firstItem="Qsf-jL-6MQ" firstAttribute="bottom" secondItem="FKl-LY-JtV" secondAttribute="top" constant="-8" id="i8t-N6-bcI"/>
+                            <constraint firstItem="Qsf-jL-6MQ" firstAttribute="centerX" secondItem="9gO-OW-4wQ" secondAttribute="centerX" id="jOF-st-pl3"/>
                             <constraint firstItem="9gO-OW-4wQ" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="20" symbolic="YES" id="lwS-8J-ZbE"/>
+                            <constraint firstItem="Qsf-jL-6MQ" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" id="oTr-U2-Y64"/>
                             <constraint firstItem="9gO-OW-4wQ" firstAttribute="leading" secondItem="9NC-bf-PEL" secondAttribute="leading" id="wMk-2t-oT4"/>
                         </constraints>
                     </view>
@@ -135,15 +166,16 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="173"/>
+                    <size key="freeformSize" width="320" height="60"/>
                     <connections>
                         <outlet property="collectionView" destination="9gO-OW-4wQ" id="eME-hu-qxb"/>
+                        <outlet property="noSchoolSelectedView" destination="Qsf-jL-6MQ" id="xtV-gz-s0d"/>
                         <outlet property="updatedLabel" destination="9NC-bf-PEL" id="Hf6-Pc-IvB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="516" y="285"/>
+            <point key="canvasLocation" x="516" y="284.5"/>
         </scene>
     </scenes>
 </document>

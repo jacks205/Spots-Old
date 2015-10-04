@@ -4,11 +4,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="OpenSans-Light.ttf">
-            <string>OpenSans-Light</string>
-        </mutableArray>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -22,21 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Panther" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7d-4n-irV">
-                                <rect key="frame" x="71" y="168" width="178.5" height="68.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="178.5" id="81h-Xl-npK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="50"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="VvS-Df-L6d">
+                                <rect key="frame" x="100" y="244" width="120" height="79"/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.086274509803921567" green="0.10980392156862745" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Q7d-4n-irV" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="148" id="hyl-VY-doS"/>
-                            <constraint firstItem="Q7d-4n-irV" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="yu6-An-xn4"/>
+                            <constraint firstItem="VvS-Df-L6d" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="JaS-XT-CRB"/>
+                            <constraint firstItem="VvS-Df-L6d" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="yIj-hI-fjx"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -45,4 +34,7 @@
             <point key="canvasLocation" x="0.53333333333333333" y="355"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="car" width="120" height="79"/>
+    </resources>
 </document>

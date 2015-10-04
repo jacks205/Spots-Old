@@ -60,7 +60,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         print("Token: \(deviceToken.hexadecimalString())")
-        NSUserDefaults.standardUserDefaults().setObject(deviceToken, forKey: Constants.DEVICE_TOKEN_KEY)
+        Spots.sharedInstance.sharedDefaults.setObject(deviceToken, forKey: Constants.DEVICE_TOKEN_KEY)
+//        NSUserDefaults.standardUserDefaults().setObject(deviceToken, forKey: Constants.DEVICE_TOKEN_KEY)
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {

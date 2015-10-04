@@ -10,12 +10,14 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class Panther {
+class Spots {
     
-    static let sharedInstance = Panther()
+    static let sharedInstance = Spots()
+    
+    let sharedDefaults: NSUserDefaults
     
     init(){
-        
+        sharedDefaults = NSUserDefaults(suiteName: Constants.SUITE_NAME)!
     }
     
     func fetchParkingData(completion: (NSDate?, [ParkingStructure]?, ErrorType?) -> Void){
@@ -28,7 +30,7 @@ class Panther {
                     return
                 }
                 let json : JSON = JSON(result.value!)
-                PantherParser.parseParkingData(json, completion: { (lastUpdated, structures, error) -> () in
+                SpotParser.parseParkingData(json, completion: { (lastUpdated, structures, error) -> () in
                     completion(lastUpdated, structures, error)
                 })
         }
@@ -36,7 +38,7 @@ class Panther {
     
 }
 
-class PantherParser {
+class SpotParser {
     
     init(){
         

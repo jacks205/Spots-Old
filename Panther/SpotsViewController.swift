@@ -8,10 +8,11 @@
 
 import UIKit
 
-class PantherViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var parkingStructures : [ParkingStructure] = []
 
+    @IBOutlet weak var alertsBarButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -31,14 +32,17 @@ class PantherViewController: UITableViewController, UICollectionViewDelegate, UI
                 NSForegroundColorAttributeName: UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)])
         print(NSUserDefaults.standardUserDefaults().objectForKey(Constants.DEVICE_TOKEN_KEY))
         
-//        if let _ = NSUserDefaults.standardUserDefaults().objectForKey(Constants.SCHOOL_KEY){
-//
-//        }else{
-//            performSegueWithIdentifier("SelectSchool", sender: self)
-//        }
+        alertsBarButton.width = 0.1
         
         
-        reloadData(self)
+        if let _ = Spots.sharedInstance.sharedDefaults.objectForKey(Constants.SCHOOL_KEY){
+
+        }else{
+            performSegueWithIdentifier("SelectSchool", sender: self)
+        }
+        
+        
+        reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +51,11 @@ class PantherViewController: UITableViewController, UICollectionViewDelegate, UI
     }
     
     func reloadData(sender : AnyObject){
-        Panther.sharedInstance.fetchParkingData { (lastUpdated, data, error) -> Void in
+        reloadData()
+    }
+    
+    func reloadData(){
+        Spots.sharedInstance.fetchParkingData { (lastUpdated, data, error) -> Void in
             if let _ = error{
                 //alert
             }else{
@@ -70,7 +78,7 @@ class PantherViewController: UITableViewController, UICollectionViewDelegate, UI
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell : PantherTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! PantherTableViewCell
+        let cell : SpotsTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! SpotsTableViewCell
         
         if let structure : ParkingStructure = parkingStructures.get(indexPath.row){
             cell.title.text = structure.name.capitalizedString
@@ -81,7 +89,7 @@ class PantherViewController: UITableViewController, UICollectionViewDelegate, UI
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        (cell as! PantherTableViewCell).setCollectionViewDataSourceDelegate(self, withDelegate: self, atIndexPath: indexPath)
+        (cell as! SpotsTableViewCell).setCollectionViewDataSourceDelegate(self, withDelegate: self, atIndexPath: indexPath)
         
     }
     
@@ -113,7 +121,7 @@ class PantherViewController: UITableViewController, UICollectionViewDelegate, UI
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell : UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionCell", forIndexPath: indexPath)
-        let pantherCollectionViewCell : PantherIndexedCollectionView = collectionView as! PantherIndexedCollectionView
+        let pantherCollectionViewCell : SpotsIndexedCollectionView = collectionView as! SpotsIndexedCollectionView
         if let structure : ParkingStructure = parkingStructures.get((pantherCollectionViewCell).indexPath.row){
             if let level : ParkingLevel = structure.levels.get(indexPath.row){
                 let cdCell : CircleDataCollectionViewCell = cell as! CircleDataCollectionViewCell
