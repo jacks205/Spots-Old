@@ -15,6 +15,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
     @IBOutlet weak var updatedLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    
     var parkingStructures : [ParkingStructure] = []
     var latestUpdate : NSDate?
     
@@ -34,6 +35,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
 //            collectionView.hidden = true
 //        }
 //        
+        
+        preferredContentSize = CGSizeMake(0, 60)
         
     }
     

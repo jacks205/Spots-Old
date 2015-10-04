@@ -12,18 +12,20 @@ class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICo
     
     var parkingStructures : [ParkingStructure] = []
 
-    @IBOutlet weak var alertsBarButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         navigationController?.interactivePopGestureRecognizer?.enabled = true
+//        navigationController?.toolbar.clipsToBounds = true
+        
         
         if let smallerFont = UIFont(name: "OpenSans", size: 11){
             navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: smallerFont, NSForegroundColorAttributeName: UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)]
         }
         navigationController!.navigationBar.barTintColor = Constants.Colors.DARK_BLUE_COLOR
+//        navigationController?.toolbar.barTintColor = Constants.Colors.DARK_BLUE_COLOR
         
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: "reloadData:", forControlEvents: UIControlEvents.ValueChanged)
@@ -31,9 +33,6 @@ class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICo
             attributes: [NSFontAttributeName: UIFont(name: "OpenSans", size: 11)!,
                 NSForegroundColorAttributeName: UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)])
         print(NSUserDefaults.standardUserDefaults().objectForKey(Constants.DEVICE_TOKEN_KEY))
-        
-        alertsBarButton.width = 0.1
-        
         
         if let _ = Spots.sharedInstance.sharedDefaults.objectForKey(Constants.SCHOOL_KEY){
 

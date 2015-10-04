@@ -27,9 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        self.window!.layer.insertSublayer(gradient, atIndex: 0)
         
         
-        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [UIUserNotificationType.Sound,
-            UIUserNotificationType.Alert, UIUserNotificationType.Badge], categories: nil))
-        application.registerForRemoteNotifications()
+//        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [UIUserNotificationType.Sound,
+//            UIUserNotificationType.Alert, UIUserNotificationType.Badge], categories: nil))
+//        application.registerForRemoteNotifications()
         
         application.applicationIconBadgeNumber = 0
         

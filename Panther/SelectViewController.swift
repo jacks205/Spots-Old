@@ -10,7 +10,10 @@ import UIKit
 
 class SelectViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
  
+    let noSelectionColor: UIColor = UIColor(red:0.20, green:0.22, blue:0.25, alpha:1.0)
+    let selectionColor: UIColor = UIColor(red:0.18, green:0.84, blue:0.51, alpha:1.0)
     
+    @IBOutlet weak var letsGoButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     var schoolChecked = -1
     let schools: [String] = ["Chapman University"]
@@ -43,10 +46,14 @@ class SelectViewController: UIViewController, UITableViewDataSource, UITableView
             schoolChecked = -1
             tableView.deselectRowAtIndexPath(indexPath, animated: false)
             (tableView.cellForRowAtIndexPath(indexPath) as! ChooseSchoolTableViewCell).check(false)
+            letsGoButton.backgroundColor = noSelectionColor
+            letsGoButton.titleLabel?.textColor = UIColor(white: 1, alpha: 0.3)
             
         }else{
             schoolChecked = indexPath.row
             (tableView.cellForRowAtIndexPath(indexPath) as! ChooseSchoolTableViewCell).check(true)
+            letsGoButton.backgroundColor = selectionColor
+            letsGoButton.titleLabel?.textColor = UIColor(white: 1, alpha: 1)
         }
         
     }
