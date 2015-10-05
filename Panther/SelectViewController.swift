@@ -18,6 +18,8 @@ class SelectViewController: UIViewController, UITableViewDataSource, UITableView
     var schoolChecked = -1
     let schools: [String] = ["Chapman University"]
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

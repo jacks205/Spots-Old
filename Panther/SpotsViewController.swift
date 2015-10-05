@@ -35,13 +35,13 @@ class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICo
         print(NSUserDefaults.standardUserDefaults().objectForKey(Constants.DEVICE_TOKEN_KEY))
         
         if let _ = Spots.sharedInstance.sharedDefaults.objectForKey(Constants.SCHOOL_KEY){
-
+            
         }else{
             performSegueWithIdentifier("SelectSchool", sender: self)
         }
         
-        
         reloadData()
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -19,6 +19,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
     var parkingStructures : [ParkingStructure] = []
     var latestUpdate : NSDate?
     
+    var preferredLength = CGSizeMake(0, 60)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
@@ -36,7 +38,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
 //        }
 //        
         
-        preferredContentSize = CGSizeMake(0, 60)
+        preferredContentSize = preferredLength
         
     }
     
@@ -46,12 +48,12 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
         if let _ = Spots.sharedInstance.sharedDefaults.objectForKey(Constants.SCHOOL_KEY){
             noSchoolSelectedView.hidden = true
             collectionView.hidden = false
-            preferredContentSize = CGSizeMake(0, 173)
+            preferredLength = CGSizeMake(0, 173)
             collectionView.delegate = self
             collectionView.dataSource = self
             reloadData(self)
         }else{
-            preferredContentSize = CGSizeMake(0, 60)
+            preferredLength = CGSizeMake(0, 60)
             noSchoolSelectedView.hidden = false
             collectionView.hidden = true
         }
@@ -59,6 +61,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
         if let timeUpdated = latestUpdate {
             updatedLabel.text = "Updated " + timeAgoSinceDate(timeUpdated, numericDates: true)
         }
+        
+        preferredContentSize = preferredLength
         
         
     }
