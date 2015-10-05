@@ -72,7 +72,7 @@ class SelectViewController: UIViewController, UITableViewDataSource, UITableView
 }
 
 
-class ChooseSchoolTableViewCell: UITableViewCell {
+@IBDesignable class ChooseSchoolTableViewCell: UITableViewCell {
     
     @IBOutlet weak var schoolLabel: UILabel!
     @IBOutlet weak var checkImageView: UIImageView!
@@ -85,6 +85,22 @@ class ChooseSchoolTableViewCell: UITableViewCell {
         }else{
             checkImageView.image = UIImage(named: "empty")
         }
+    }
+    
+    override func drawRect(rect: CGRect) {
+        UIColor(white: 1, alpha: 0.09).setStroke()
+        
+        let topPath = UIBezierPath()
+        topPath.lineWidth = 1
+        topPath.moveToPoint(CGPointMake(0, 1))
+        topPath.addLineToPoint(CGPointMake(rect.width, 1))
+        topPath.stroke()
+        
+        let bottomPath = UIBezierPath()
+        bottomPath.lineWidth = 1
+        bottomPath.moveToPoint(CGPointMake(0, rect.height - 1))
+        bottomPath.addLineToPoint(CGPointMake(rect.width, rect.height - 1))
+        bottomPath.stroke()
     }
     
 }
