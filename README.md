@@ -1,5 +1,5 @@
-# Panther
-Chapman University Parking App
+# Spots
+University Parking App
 
 ## Current Design Scheme
 
