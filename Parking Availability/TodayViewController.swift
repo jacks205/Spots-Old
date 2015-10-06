@@ -48,6 +48,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
         if let _ = Spots.sharedInstance.sharedDefaults.objectForKey(Constants.SCHOOL_KEY){
             noSchoolSelectedView.hidden = true
             collectionView.hidden = false
+            updatedLabel.hidden = false
             preferredLength = CGSizeMake(0, 173)
             collectionView.delegate = self
             collectionView.dataSource = self
@@ -55,6 +56,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
         }else{
             preferredLength = CGSizeMake(0, 60)
             noSchoolSelectedView.hidden = false
+            updatedLabel.hidden = true
             collectionView.hidden = true
         }
         
