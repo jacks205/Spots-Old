@@ -25,36 +25,42 @@ import UIKit
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        circleLayer = CAShapeLayer()
+        layer.addSublayer(circleLayer!)
+        firstPath = UIBezierPath(ovalInRect: CGRectInset(bounds, bounds.width / 2, bounds.height / 2))
+        secondPath = UIBezierPath(ovalInRect: CGRectInset(bounds, 0, 0))
     }
     
     func animateCircle(delay: CFTimeInterval){
-        circleLayer!.frame = bounds
-        circleLayer!.fillColor = fillColor.CGColor
-        circleLayer!.path = firstPath!.CGPath
-//        firstPath = UIBezierPath(CGPath: (secondPath?.CGPath)!)
-        
-        let anim : CABasicAnimation = CABasicAnimation(keyPath: "path")
-        //        anim2.repeatCount = 0
-        anim.duration = 0.35
-        anim.toValue = secondPath!.CGPath
-        anim.removedOnCompletion = false
-        anim.fillMode = kCAFillModeBoth
-        anim.beginTime = CACurrentMediaTime() + delay
-        
-        anim.timingFunction = CAMediaTimingFunction(controlPoints: 0.23, 1.0, 0.32, 1.0)
-        circleLayer!.addAnimation(anim, forKey: anim.keyPath)
+        if let cl = circleLayer{
+            cl.frame = bounds
+            cl.fillColor = fillColor.CGColor
+            if let fp = firstPath {
+                cl.path = fp.CGPath
+            }
+            let anim : CABasicAnimation = CABasicAnimation(keyPath: "path")
+            anim.duration = 0.35
+            if let sp = secondPath {
+                anim.toValue = sp.CGPath
+            }
+            anim.removedOnCompletion = false
+            anim.fillMode = kCAFillModeBoth
+            anim.beginTime = CACurrentMediaTime() + delay
+            
+            anim.timingFunction = CAMediaTimingFunction(controlPoints: 0.23, 1.0, 0.32, 1.0)
+            cl.addAnimation(anim, forKey: anim.keyPath)
+
+        }
         
         
     }
     
     func setCapacityLevel(currentCapacity : CGFloat, outOfTotalCapacity totalCapacity : CGFloat){
         let percentage = currentCapacity / totalCapacity
-        //original: amountFilled = percentage * self.frame.width / 2
-        amountFilled = (1 - percentage) * self.frame.width / 2
+        amountFilled = (1 - percentage) * bounds.width / 2
         if(percentage < 0.1){
-            amountFilled = 0.9 * self.frame.width / 2
+            amountFilled = 0.9 * bounds.width / 2
         }
-        //TODO: Fix so that the colors are customizable
         if(1 - percentage >= 0.85){
             fillColor = Constants.Colors.RED_COLOR
         }else if(1 - percentage >= 0.55){
@@ -77,40 +83,11 @@ import UIKit
         
         //Inner circle
         let innerColor : UIColor = fillColor
-        if let _ = firstPath {
-        }else{
-            firstPath = UIBezierPath(ovalInRect: CGRectInset(rect, rect.width / 2, rect.height / 2))
+        if let cl = circleLayer {
+            cl.frame = bounds
+            cl.fillColor = innerColor.CGColor
+            cl.path = firstPath!.CGPath
         }
-        
-        if let _ = circleLayer {
-        }else{
-            circleLayer = CAShapeLayer()
-//            circleLayer?.name = "circle"
-            layer.addSublayer(circleLayer!)
-        }
-        
-        circleLayer!.frame = bounds
-        circleLayer!.fillColor = innerColor.CGColor
-        circleLayer!.path = firstPath!.CGPath
-        
-        if let _ = secondPath {
-        }else{
-            secondPath = UIBezierPath(ovalInRect: CGRectInset(bounds, amountFilled, amountFilled))
-        }
-        //        animateCircle()
-//        let anim : CABasicAnimation = CABasicAnimation(keyPath: "path")
-//        //        anim2.repeatCount = 0
-//        anim.duration = 2
-//        anim.toValue = secondPath?.CGPath
-//        anim.removedOnCompletion = false
-//        anim.fillMode = kCAFillModeBoth
-//        
-//        anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
-//        
-//        circleLayer!.addAnimation(anim, forKey: anim.keyPath)
-        
-//        firstPath = UIBezierPath(CGPath: secondPath!.CGPath)
-        
     }
 
 

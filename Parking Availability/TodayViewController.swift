@@ -24,27 +24,6 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
-//        if let _ = NSUserDefaults.standardUserDefaults().objectForKey(Constants.SCHOOL_KEY){
-//            noSchoolSelectedView.hidden = true
-//            collectionView.hidden = false
-//            preferredContentSize = CGSizeMake(0, 173)
-//            collectionView.delegate = self
-//            collectionView.dataSource = self
-//            reloadData(self)
-//        }else{
-//            preferredContentSize = CGSizeMake(0, 60)
-//            noSchoolSelectedView.hidden = false
-//            collectionView.hidden = true
-//        }
-//        
-        
-        preferredContentSize = preferredLength
-        
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
         if let _ = Spots.sharedInstance.sharedDefaults.objectForKey(Constants.SCHOOL_KEY){
             noSchoolSelectedView.hidden = true
             collectionView.hidden = false
@@ -66,6 +45,11 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
         
         preferredContentSize = preferredLength
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+//        preferredContentSize = preferredLength
         
     }
     

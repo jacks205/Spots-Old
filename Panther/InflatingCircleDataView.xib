@@ -13,7 +13,7 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InflatingCircleDataView" customModule="Panther" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InflatingCircleDataView" customModule="Spots" customModuleProvider="target">
             <connections>
                 <outlet property="countLabel" destination="x5X-I4-Qnc" id="MA1-y5-UQH"/>
                 <outlet property="inflatingCircleIndicatorView" destination="2V3-vZ-mDI" id="v3H-qU-hLT"/>
@@ -25,7 +25,7 @@
             <rect key="frame" x="0.0" y="0.0" width="50" height="84"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2V3-vZ-mDI" customClass="InflatingCircleIndicatorView" customModule="Panther" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2V3-vZ-mDI" customClass="InflatingCircleIndicatorView" customModule="Spots" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
