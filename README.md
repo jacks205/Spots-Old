@@ -1,5 +1,7 @@
-# Panther
-Chapman University Parking App
+# Spots
+University Parking App
+
+<img src="https://devimages.apple.com.edgekey.net/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" href="https://geo.itunes.apple.com/us/app/spots-university-parking/id1043748792?mt=8"/>
 
 ## Current Design Scheme
 
