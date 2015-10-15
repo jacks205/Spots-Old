@@ -10,35 +10,41 @@ import UIKit
 
 class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    //Array of parking structures, will fill tableview
     var parkingStructures : [ParkingStructure] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        //Remove navigation controller shadow (black line)
         navigationController?.navigationBar.shadowImage = UIImage()
+        //Set shadow image as an empty image
         navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        //Allow pull to go back in nvc
         navigationController?.interactivePopGestureRecognizer?.enabled = true
         
-        
+        //Set font of navigation tab bar
         if let smallerFont = UIFont(name: "OpenSans", size: 11){
             navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: smallerFont, NSForegroundColorAttributeName: UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)]
         }
+        //Set the navigation bar color
         navigationController!.navigationBar.barTintColor = Constants.Colors.DARK_BLUE_COLOR
-//        navigationController?.toolbar.barTintColor = Constants.Colors.DARK_BLUE_COLOR
         
+        //Pull to refresh for table view
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: "reloadData:", forControlEvents: UIControlEvents.ValueChanged)
         refreshControl?.attributedTitle = NSAttributedString(string: "Updated ",
             attributes: [NSFontAttributeName: UIFont(name: "OpenSans", size: 11)!,
                 NSForegroundColorAttributeName: UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)])
-        print(NSUserDefaults.standardUserDefaults().objectForKey(Constants.DEVICE_TOKEN_KEY))
         
+        //Check if user has selected a university already if so, load university data, otherwise show modal to select university
         if let _ = Spots.sharedInstance.sharedDefaults.objectForKey(Constants.SCHOOL_KEY){
             
         }else{
+            //choose school modal
             performSegueWithIdentifier("SelectSchool", sender: self)
         }
         
+        //Refresh parking data
         reloadData()
         
     }
@@ -48,11 +54,16 @@ class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICo
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: - Reload data methods
+    
+    //Target for the refresh controller
     func reloadData(sender : AnyObject){
         reloadData()
     }
     
+    //Make network call to get university parking data
     func reloadData(){
+        //Get array of parking structures and last time it was updated
         Spots.sharedInstance.fetchParkingData { (lastUpdated, data, error) -> Void in
             if let _ = error{
                 //alert
@@ -72,7 +83,7 @@ class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICo
     //MARK: - Table view data source/delegate methods
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return parkingStructures.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -89,10 +100,6 @@ class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICo
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         (cell as! SpotsTableViewCell).setCollectionViewDataSourceDelegate(self, withDelegate: self, atIndexPath: indexPath)
         
-    }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-
     }
     
     //MARK: - CollectionView Data source methods
@@ -116,7 +123,6 @@ class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICo
                 cdCell.inflatingCircleDataView.titleLabel.text = "Level \(level.number)"
                 cdCell.inflatingCircleDataView.countLabel.text = "\(level.available)"
                 cdCell.inflatingCircleDataView.inflatingCircleIndicatorView.animateCircle(Double(pantherCollectionViewCell.indexPath.row) * 0.35 + Double(indexPath.row) * 0.15)
-//                cdCell.inflatingCircleDataView.inflatingCircleIndicatorView.setNeedsDisplay()
             }else{
                 cell = collectionView.dequeueReusableCellWithReuseIdentifier("EmptyCell", forIndexPath: indexPath)
             }
@@ -129,6 +135,7 @@ class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICo
 }
 
 
+//MARK - Array Extension
 
 extension Array {
     subscript (safe index: Int) -> Element? {
