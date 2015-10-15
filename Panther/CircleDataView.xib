@@ -13,7 +13,7 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CircleDataView" customModule="Panther" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CircleDataView" customModule="Spots" customModuleProvider="target">
             <connections>
                 <outlet property="circleIndicatorView" destination="xSf-58-bLm" id="t4j-ou-Tgt"/>
                 <outlet property="countLabel" destination="p2T-Kp-hSV" id="WEv-Jx-we1"/>
@@ -25,7 +25,7 @@
             <rect key="frame" x="0.0" y="0.0" width="40" height="62"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xSf-58-bLm" customClass="FilledCircleIndicatorView" customModule="Panther" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xSf-58-bLm" customClass="FilledCircleIndicatorView" customModule="Spots" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="248" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2T-Kp-hSV">

@@ -10,8 +10,18 @@ import UIKit
 
 class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    //MARK: - Fields
+    
     //Array of parking structures, will fill tableview
     var parkingStructures : [ParkingStructure] = []
+    
+    //MARK: Rate Me Fields
+    //Minimum sessions before rate me appears
+    var minSessions = Constants.Review.MIN_SESSIONS
+    //Number of sessions to add to minSessions if they choose "Maybe Later"
+    var tryAgainSessions = Constants.Review.TRY_AGAIN_SESSIONS
+    
+    //MARK: - ViewController Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +48,7 @@ class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICo
         
         //Check if user has selected a university already if so, load university data, otherwise show modal to select university
         if let _ = Spots.sharedInstance.sharedDefaults.objectForKey(Constants.SCHOOL_KEY){
-            
+            rateMe()
         }else{
             //choose school modal
             performSegueWithIdentifier("SelectSchool", sender: self)
@@ -52,6 +62,38 @@ class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICo
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: - Rate Me Methods
+    //Logic to launch alert if they have reached minSessions
+    func rateMe() {
+        let neverRate = NSUserDefaults.standardUserDefaults().boolForKey("neverRate")
+        var numLaunches = NSUserDefaults.standardUserDefaults().integerForKey("numLaunches") + 1
+        
+        if (!neverRate && (numLaunches == minSessions || numLaunches >= (minSessions + tryAgainSessions + 1)))
+        {
+            showRateMe()
+            numLaunches = minSessions + 1
+        }
+        NSUserDefaults.standardUserDefaults().setInteger(numLaunches, forKey: "numLaunches")
+    }
+    
+    //Show alert to rate app
+    func showRateMe() {
+        let alert = UIAlertController(title: "Rate Us", message: "Thanks for using Spots. Please go rate us in the App Store!", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Rate Spots", style: UIAlertActionStyle.Default, handler: { alertAction in
+            UIApplication.sharedApplication().openURL(NSURL(string : Constants.APP_STORE_URL)!)
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "neverRate")
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "No Thanks", style: UIAlertActionStyle.Default, handler: { alertAction in
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "neverRate")
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Maybe Later", style: UIAlertActionStyle.Default, handler: { alertAction in
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     //MARK: - Reload data methods
@@ -135,7 +177,7 @@ class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICo
 }
 
 
-//MARK - Array Extension
+//MARK: - Array Extension
 
 extension Array {
     subscript (safe index: Int) -> Element? {
