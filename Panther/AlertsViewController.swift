@@ -126,7 +126,7 @@ class AlertsViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("AlertCell", forIndexPath: indexPath) as! AlertTableViewCell
         // Configure the cell...
-        if let alert : Alert = alerts.get(indexPath.row){
+        if let alert : Alert = alerts[safe: indexPath.row]{
             cell.setAlert(alert)
         }
 

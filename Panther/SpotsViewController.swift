@@ -18,7 +18,6 @@ class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICo
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         navigationController?.interactivePopGestureRecognizer?.enabled = true
-//        navigationController?.toolbar.clipsToBounds = true
         
         
         if let smallerFont = UIFont(name: "OpenSans", size: 11){
@@ -70,7 +69,7 @@ class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICo
         }
     }
     
-    //MARK: Table view data source/delegate methods
+    //MARK: - Table view data source/delegate methods
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
@@ -79,7 +78,7 @@ class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICo
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell : SpotsTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! SpotsTableViewCell
         
-        if let structure : ParkingStructure = parkingStructures.get(indexPath.row){
+        if let structure : ParkingStructure = parkingStructures[safe: indexPath.row]{
             cell.title.text = structure.name.capitalizedString
             cell.totalSpots.text = "\(structure.available) spots available"
         }
@@ -96,15 +95,7 @@ class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICo
 
     }
     
-    //MARK: CollectionView Data source methods
-    
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-//        let ratioSmallWidth : CGFloat = 50/304
-//        let ratioSmallHeight : CGFloat = 50/84
-//        let newWidth : CGFloat = ratioSmallWidth * collectionView.frame.width
-//        print(collectionView.frame)
-//        return CGSize(width: newWidth, height: newWidth / ratioSmallHeight)
-//    }
+    //MARK: - CollectionView Data source methods
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
         let cvWidth = collectionView.bounds.width / 5
@@ -112,17 +103,14 @@ class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICo
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        if let structure = parkingStructures.get((collectionView as! PantherIndexedCollectionView).indexPath.row){
-//            return structure.levels.count
-//        }
         return 5
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell : UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionCell", forIndexPath: indexPath)
         let pantherCollectionViewCell : SpotsIndexedCollectionView = collectionView as! SpotsIndexedCollectionView
-        if let structure : ParkingStructure = parkingStructures.get((pantherCollectionViewCell).indexPath.row){
-            if let level : ParkingLevel = structure.levels.get(indexPath.row){
+        if let structure : ParkingStructure = parkingStructures[safe: (pantherCollectionViewCell).indexPath.row]{
+            if let level : ParkingLevel = structure.levels[safe: indexPath.row]{
                 let cdCell : CircleDataCollectionViewCell = cell as! CircleDataCollectionViewCell
                 cdCell.inflatingCircleDataView.inflatingCircleIndicatorView.setCapacityLevel(CGFloat(level.available), outOfTotalCapacity: CGFloat(level.total))
                 cdCell.inflatingCircleDataView.titleLabel.text = "Level \(level.number)"
@@ -140,16 +128,11 @@ class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICo
 
 }
 
+
+
 extension Array {
-    
-    // Safely lookup an index that might be out of bounds,
-    // returning nil if it does not exist
-    func get(index: Int) -> Element? {
-        if 0 <= index && index < count {
-            return self[index]
-        } else {
-            return nil
-        }
+    subscript (safe index: Int) -> Element? {
+        return indices ~= index ? self[index] : nil
     }
 }
 

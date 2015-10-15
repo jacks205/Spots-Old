@@ -34,7 +34,7 @@ class SelectViewController: UIViewController, UITableViewDataSource, UITableView
             let nvc = self.presentingViewController as! UINavigationController
             let vc = nvc.topViewController as! SpotsViewController
             dismissViewControllerAnimated(true, completion: { () -> Void in
-                Spots.sharedInstance.sharedDefaults.setObject(self.schools.get(self.schoolChecked)!, forKey: Constants.SCHOOL_KEY)
+                Spots.sharedInstance.sharedDefaults.setObject(self.schools[safe: self.schoolChecked]!, forKey: Constants.SCHOOL_KEY)
                 vc.reloadData()
             })
         }
@@ -66,7 +66,7 @@ class SelectViewController: UIViewController, UITableViewDataSource, UITableView
         cell.selectedBackgroundView?.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:0.04)
         cell.checkImageView.userInteractionEnabled = true
         cell.schoolLabel.userInteractionEnabled = true
-        cell.schoolLabel.text = schools.get(indexPath.row)
+        cell.schoolLabel.text = schools[safe: indexPath.row]
         return cell
     }
 

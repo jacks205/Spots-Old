@@ -66,7 +66,7 @@ class AddAlertModalViewController: UIViewController {
 
     @IBAction func saveAlert(sender: AnyObject) {
         dismissViewControllerAnimated(true) { () -> Void in
-            self.delegate?.addAlert(self.days.get(self.daysSelectedIndex)!, forTime: self.datePicker.date)
+            self.delegate?.addAlert(self.days[safe: self.daysSelectedIndex]!, forTime: self.datePicker.date)
         }
     }
     
@@ -78,13 +78,13 @@ class AddAlertModalViewController: UIViewController {
         //Change title of day button
         if((sender as! UIButton) == dayPickerRightBtn && daysSelectedIndex < (days.count - 1)){
             daysSelectedIndex += 1
-            dayBtn.setTitle(days.get(daysSelectedIndex)!, forState: UIControlState.Normal)
+            dayBtn.setTitle(days[safe: daysSelectedIndex]!, forState: UIControlState.Normal)
             
         }else if ((sender as! UIButton) == dayPickerLeftBtn && daysSelectedIndex > 0){
             daysSelectedIndex -= 1
-            dayBtn.setTitle(days.get(daysSelectedIndex)!, forState: UIControlState.Normal)
+            dayBtn.setTitle(days[safe: daysSelectedIndex]!, forState: UIControlState.Normal)
         }
-        if var dayStr = days.get(daysSelectedIndex){
+        if var dayStr = days[safe: daysSelectedIndex]{
             dayStr = dayStr.lowercaseString.capitalizedString +  "s"
             dayLabel.text = dayStr
         }
