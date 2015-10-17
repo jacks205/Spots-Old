@@ -16,7 +16,7 @@ class Spots {
     
     let sharedDefaults: NSUserDefaults
     
-    init(){
+    private init(){
         sharedDefaults = NSUserDefaults(suiteName: Constants.SUITE_NAME)!
     }
     
