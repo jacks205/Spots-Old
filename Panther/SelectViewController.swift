@@ -9,42 +9,61 @@
 import UIKit
 
 class SelectViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
- 
+    
+    /**
+        Color of self.letsGoButton when a school IS NOT selected from the tableview
+    */
     let noSelectionColor: UIColor = UIColor(red:0.20, green:0.22, blue:0.25, alpha:1.0)
+    /**
+        Color of self.letsGoButton when a school IS selected from the tableview
+    */
     let selectionColor: UIColor = UIColor(red:0.18, green:0.84, blue:0.51, alpha:1.0)
     
     @IBOutlet weak var letsGoButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    
+    /**
+        Index of selected school table view cell.
+    
+        Default: -1
+        Value should be set to a valid index, or if none is selected, set to -1
+    */
     var schoolChecked = -1
+    /**
+        Array of schools.
+    */
     let schools: [String] = ["Chapman University"]
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //Set table view delegate and datasource
         tableView.delegate = self
         tableView.dataSource = self
+        //Allow selection of table
         tableView.allowsSelection = true
         
     }
     
     @IBAction func clickDismiss(sender: AnyObject) {
-        if(schoolChecked > -1){
-            let nvc = self.presentingViewController as! UINavigationController
-            let vc = nvc.topViewController as! SpotsViewController
-            dismissViewControllerAnimated(true, completion: { () -> Void in
-                Spots.sharedInstance.sharedDefaults.setObject(self.schools[safe: self.schoolChecked]!, forKey: Constants.SCHOOL_KEY)
-                vc.reloadData()
-            })
-        }
+        //If a school isn't checked, return
+        guard schoolChecked > -1 else { return }
+        
+        //Dismiss modal and set school in Spots.sharedDefaults
+        let nvc = self.presentingViewController as! UINavigationController
+        let vc = nvc.topViewController as! SpotsViewController
+        dismissViewControllerAnimated(true, completion: { () -> Void in
+            Spots.sharedInstance.sharedDefaults.setObject(self.schools[safe: self.schoolChecked]!, forKey: Constants.SCHOOL_KEY)
+            vc.reloadData()
+        })
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return schools.count
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if(indexPath.row == schoolChecked){
+        if indexPath.row == schoolChecked {
             schoolChecked = -1
             tableView.deselectRowAtIndexPath(indexPath, animated: false)
             (tableView.cellForRowAtIndexPath(indexPath) as! ChooseSchoolTableViewCell).check(false)
@@ -82,7 +101,7 @@ class SelectViewController: UIViewController, UITableViewDataSource, UITableView
     
     func check(checked: Bool){
         self.checked = checked
-        if(checked){
+        if checked {
             checkImageView.image = UIImage(named: "check")
         }else{
             checkImageView.image = UIImage(named: "empty")

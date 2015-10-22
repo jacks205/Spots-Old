@@ -14,12 +14,20 @@ class Spots {
     
     static let sharedInstance = Spots()
     
+    /**
+        Spots.sharedDefaults should be used to keep data available in the app and in the extension. Can't access NSUserDefaults.sharedDefaults on the extension or vise versa.
+    */
     let sharedDefaults: NSUserDefaults
     
     private init(){
         sharedDefaults = NSUserDefaults(suiteName: Constants.SUITE_NAME)!
     }
     
+    /**
+        Fetched parking data from API and calls completion callback once successful or failure occurs.
+        - Parameter completion: Callback that is called once data is retrieved or network call fails.
+        - Returns: (In callback): when the data was last updated, array of parking structure data, and an error variable
+    */
     func fetchParkingData(completion: (NSDate?, [ParkingStructure]?, ErrorType?) -> Void){
         let ip : String = Constants.IP_ADDRESS
         //New iOS 9 http protection: http://stackoverflow.com/questions/31254725/transport-security-has-blocked-a-cleartext-http
@@ -44,12 +52,16 @@ class SpotParser {
         
     }
     
+    /**
+        Parses JSON data from API into ParkingStructure and ParkingLevel struct types.
+        - Parameter data: JSON data from API
+        - Parameter completion: Callback once data is serialized into objects.
+    */
     static func parseParkingData(data: JSON?, completion: (lastUpdated: NSDate?, result: [ParkingStructure], error: NSError?) -> ()){
         if let json = data {
             //implement when data is altered
             var parkingStructures: [ParkingStructure] = []
             for (_,subJson):(String, JSON) in json["structures"] {
-                //Do something you want
                 if let name: String = subJson["name"].string,
                 let available = subJson["available"].int,
                 let total = subJson["total"].int {
@@ -80,16 +92,6 @@ class SpotParser {
                 completion(lastUpdated: nil, result: parkingStructures, error: nil)
             
         }
-//        let lastingerLevels : [ParkingLevel] = [ParkingLevel(number: 1, available: 9, total: 401), ParkingLevel(number: 2, available: 6, total: 470)]
-//        let barreraLevels : [ParkingLevel] = [ParkingLevel(number: 1, available: 5, total: 86), ParkingLevel(number: 2, available: 8, total: 146), ParkingLevel(number: 3, available: 0, total: 150), ParkingLevel(number: 4, available: 5, total: 150), ParkingLevel(number: 5, available: 12, total: 163)]
-//        let westCampusLevels : [ParkingLevel] = [ParkingLevel(number: 1, available: 6, total: 77), ParkingLevel(number: 2, available: 20, total: 77), ParkingLevel(number: 3, available: 15, total: 69), ParkingLevel(number: 4, available: 25, total: 74), ParkingLevel(number: 5, available: 30, total: 64)]
-//        
-//        completion( result: [
-//            ParkingStructure(name: "Lastinger", available: 18, total: 871, totalLevels: 2, levels: lastingerLevels),
-//            ParkingStructure(name: "Barrera", available: 13, total: 695, totalLevels: 5, levels: barreraLevels),
-//            ParkingStructure(name: "West Campus", available: 58, total: 360, totalLevels: 5, levels: westCampusLevels)
-//        ], error: nil)
-        
     }
     
     
@@ -124,6 +126,17 @@ struct ParkingLevel {
     
 }
 
+/**
+    Takes a past NSDate and creates a string representation of it.
+    
+    ex: "1 week ago"
+
+    ex: "Last week"
+
+    - Parameter date: Past date you wish to create a string representation for.
+    - Parameter numericDates: if true, ex: "1 week ago", else ex: "Last week"
+    - Returns: String that represents your date.
+*/
 func timeAgoSinceDate(date:NSDate, numericDates:Bool) -> String {
     let calendar = NSCalendar.currentCalendar()
     let now = NSDate()
@@ -185,4 +198,12 @@ func timeAgoSinceDate(date:NSDate, numericDates:Bool) -> String {
         return "Just now"
     }
     
+}
+
+//MARK: - Array Extension
+
+extension Array {
+    subscript (safe index: Int) -> Element? {
+        return indices ~= index ? self[index] : nil
+    }
 }

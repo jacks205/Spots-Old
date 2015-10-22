@@ -11,38 +11,76 @@ import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    /**
+        View shown when a school hasn't been selected in app yet.
+    
+        The view contains a button to take user to the app.
+    */
     @IBOutlet weak var noSchoolSelectedView: UIView!
+    /**
+        UILabel thats shows how long ago the data has been updated on the server.
+    */
     @IBOutlet weak var updatedLabel: UILabel!
+    /**
+        UICollectionView of the parking data cells.
+    */
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
+    /**
+        Array of parking structures, will fill collection view.
+    */
     var parkingStructures : [ParkingStructure] = []
+    /**
+        Date of last update.
+    */
     var latestUpdate : NSDate?
     
+    /**
+        Width/Height of the content size.
+    
+        The shortest height we deal with is 60, so if a school isn't selected, then we have the correct height. If a school is selected, the view will expand to 173, and fill view.
+    */
     var preferredLength = CGSizeMake(0, 60)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view from its nib.
         if let _ = Spots.sharedInstance.sharedDefaults.objectForKey(Constants.SCHOOL_KEY){
+            //School is chosen
+            //...
+            //Hide: noSchoolSelectedView
+            //Show: collectionView, updateLabel
             noSchoolSelectedView.hidden = true
             collectionView.hidden = false
             updatedLabel.hidden = false
+            
+            //Set preferred length to 173 (largest height we want)
             preferredLength = CGSizeMake(0, 173)
+            
+            //Set collectionView delegate and datasource
             collectionView.delegate = self
             collectionView.dataSource = self
+            
+            //Refresh collection view data
             reloadData(self)
         }else{
-            preferredLength = CGSizeMake(0, 60)
+            //School is not chosen
+            //...
+            //Hide: collectionView, updateLabel
+            //Show: noSchoolSelectedView
             noSchoolSelectedView.hidden = false
             updatedLabel.hidden = true
             collectionView.hidden = true
+            
+            //Set preferred length to 60 (smallest height we want)
+            preferredLength = CGSizeMake(0, 60)
         }
         
+        //Update time label to a "Updated % ago"
         if let timeUpdated = latestUpdate {
             updatedLabel.text = "Updated " + timeAgoSinceDate(timeUpdated, numericDates: true)
         }
         
+        //Set extension content size
         preferredContentSize = preferredLength
         
     }
@@ -59,22 +97,34 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
     }
     
     @IBAction func selectSchoolClick(sender: AnyObject) {
+        //Open app to home screen
         extensionContext!.openURL(NSURL(string: "AppUrlType://home")!, completionHandler: nil)
     }
     
+    /**
+        Make network call to get university parking data
+        
+        Invokes Spots.fetchParkingData, and updates self.parkingStructures. Once complete, it refreshes the collection view.
+        - Returns: Void
+    */
     func reloadData(sender : AnyObject){
         Spots.sharedInstance.fetchParkingData { (lastUpdated, data, error) -> Void in
             if let _ = error{
                 //alert
             }else{
-//                print(lastUpdated)
-                self.parkingStructures = data!
-                print(lastUpdated)
+                //Check if data is non nil
+                guard let data = data else { return }
+                
+                //Update the parkingStructures data
+                self.parkingStructures = data
+                
+                //Update label
                 if let validDate = lastUpdated{
                     self.latestUpdate = validDate
                     self.updatedLabel.text = "Updated " + timeAgoSinceDate(validDate, numericDates: true)
                 }
-                    self.collectionView.reloadData()
+                //Reload collection view cells
+                self.collectionView.reloadData()
             }
         }
     }
@@ -90,6 +140,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
     }
     
     func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
+        //Change inset based on screen size
+        //Must line up to the first letter of the title of extension
         if(view.bounds.width > 320){
             return UIEdgeInsetsMake(0, 45, 0, 0)
         }
@@ -103,7 +155,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell : UICollectionViewCell
         
-        if let structure: ParkingStructure = parkingStructures.get(indexPath.row){
+        if let structure: ParkingStructure = parkingStructures[safe: indexPath.row]{
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionCell", forIndexPath: indexPath) as! TodayCollectionViewCell
             let tc : TodayCollectionViewCell = cell as! TodayCollectionViewCell
             tc.titleLabel.text = structure.name.capitalizedString
@@ -123,15 +175,3 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
     
 }
 
-extension Array {
-    
-    // Safely lookup an index that might be out of bounds,
-    // returning nil if it does not exist
-    func get(index: Int) -> Element? {
-        if 0 <= index && index < count {
-            return self[index]
-        } else {
-            return nil
-        }
-    }
-}

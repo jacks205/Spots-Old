@@ -11,18 +11,22 @@ import UIKit
 class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     //MARK: - Fields
-    
-    //Array of parking structures, will fill tableview
+    /**
+        Array of parking structures, will fill tableview.
+    */
     var parkingStructures : [ParkingStructure] = []
-    
     //MARK: Rate Me Fields
-    //Minimum sessions before rate me appears
+    /**
+        Minimum sessions before rate me appears
+    */
     var minSessions = Constants.Review.MIN_SESSIONS
-    //Number of sessions to add to minSessions if they choose "Maybe Later"
+    /**
+        Number of sessions to add to minSessions if they choose "Maybe Later"
+    */
     var tryAgainSessions = Constants.Review.TRY_AGAIN_SESSIONS
     
     //MARK: - ViewController Methods
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //Remove navigation controller shadow (black line)
@@ -65,7 +69,10 @@ class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICo
     }
     
     //MARK: - Rate Me Methods
-    //Logic to launch alert if they have reached minSessions
+    /**
+        Logic to launch alert if they have reached minSessions
+        - Returns: Void
+    */
     func rateMe() {
         let neverRate = NSUserDefaults.standardUserDefaults().boolForKey("neverRate")
         var numLaunches = NSUserDefaults.standardUserDefaults().integerForKey("numLaunches") + 1
@@ -78,7 +85,10 @@ class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICo
         NSUserDefaults.standardUserDefaults().setInteger(numLaunches, forKey: "numLaunches")
     }
     
-    //Show alert to rate app
+    /**
+        Show alert to rate app
+        - Returns: Void
+    */
     func showRateMe() {
         let alert = UIAlertController(title: "Rate Us", message: "Thanks for using Spots. Please go rate us in the App Store!", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Rate Spots", style: UIAlertActionStyle.Default, handler: { alertAction in
@@ -98,12 +108,19 @@ class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICo
     
     //MARK: - Reload data methods
     
-    //Target for the refresh controller
+    /**
+        Target for the refresh controller
+    */
     func reloadData(sender : AnyObject){
         reloadData()
     }
     
-    //Make network call to get university parking data
+    /**
+        Make network call to get university parking data
+        
+        Invokes Spots.fetchParkingData, and updates self.parkingStructures. Once complete, it refreshes the table view.
+        - Returns: Void
+    */
     func reloadData(){
         //Get array of parking structures and last time it was updated
         Spots.sharedInstance.fetchParkingData { (lastUpdated, data, error) -> Void in
@@ -175,13 +192,3 @@ class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICo
 
 
 }
-
-
-//MARK: - Array Extension
-
-extension Array {
-    subscript (safe index: Int) -> Element? {
-        return indices ~= index ? self[index] : nil
-    }
-}
-
