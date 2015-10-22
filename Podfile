@@ -19,7 +19,7 @@ pod 'SwiftyJSON', '~> 2.3.0'
 #Simple ios animations
 #pod 'Spring', '~> 1.0.3'
 #Custom prompts
-p#od 'Swift-Prompts', '~> 1.0.0'
+#pod 'Swift-Prompts', '~> 1.0.0'
 #Simple GCD
 #pod 'Async', :git => 'https://github.com/duemunk/Async.git'
 #Side menu controller

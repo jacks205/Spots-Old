@@ -22,6 +22,7 @@
 		EA4CF8211BBB6B38003600CD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CF8201BBB6B38003600CD /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
 		EA4CF8221BBB6B40003600CD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CF8201BBB6B38003600CD /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
 		EA4CF8241BBB6CBE003600CD /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CF8231BBB6CBE003600CD /* SelectViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		EA4DED3C1BD8D05800DC5FD4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EA4DED3B1BD8D05800DC5FD4 /* Settings.bundle */; settings = {ASSET_TAGS = (); }; };
 		EA780F0C1BB4DEB10010D57C /* AlertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA780F0B1BB4DEB10010D57C /* AlertTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		EA780F0E1BB4E4830010D57C /* AlertRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA780F0D1BB4E4830010D57C /* AlertRoundedView.swift */; settings = {ASSET_TAGS = (); }; };
 		EA897C711BB0C138001D3326 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C701BB0C138001D3326 /* AppDelegate.swift */; };
@@ -114,6 +115,7 @@
 		EA3F8D461BB790E900E7487F /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		EA4CF8201BBB6B38003600CD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Panther/Constants.swift; sourceTree = "<group>"; };
 		EA4CF8231BBB6CBE003600CD /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
+		EA4DED3B1BD8D05800DC5FD4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		EA5D61EE1BB7D10700F48089 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		EA5D61F01BB7D1E100F48089 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		EA5D61F11BB7D1E100F48089 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				EACA6BA71BB1D6B900ACBBEB /* CircleDataCollectionViewCell.xib */,
 				EACC214F1BB1DC2900B912B6 /* CircleDataCollectionViewCell.swift */,
 				EAA929921BB49E6F0031315B /* UINotificationButton.swift */,
+				EA4DED3B1BD8D05800DC5FD4 /* Settings.bundle */,
 			);
 			name = Spots;
 			path = Panther;
@@ -520,6 +523,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA4DED3C1BD8D05800DC5FD4 /* Settings.bundle in Resources */,
 				EAA929851BB34F2A0031315B /* OpenSans-Bold.ttf in Resources */,
 				EAA929861BB34F2A0031315B /* OpenSans-BoldItalic.ttf in Resources */,
 				EAA929871BB34F2A0031315B /* OpenSans-ExtraBold.ttf in Resources */,
