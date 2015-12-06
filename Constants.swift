@@ -25,7 +25,7 @@ class Constants{
         static let GREEN_COLOR : UIColor = UIColor(red:0.10, green:0.74, blue:0.61, alpha:1.0)
         static let YELLOW_COLOR : UIColor = UIColor(red:1.00, green:0.92, blue:0.25, alpha:1.0)
         static let RED_COLOR : UIColor = UIColor(red:0.89, green:0.26, blue:0.37, alpha:1.0)
-        static let BASE_COLOR : UIColor = UIColor(red:0.14, green:0.19, blue:0.26, alpha:1.0)
+        static let BASE_COLOR : UIColor = UIColor(red:0.15, green:0.17, blue:0.2, alpha:1)
         struct Today{
             static let BASE_COLOR : UIColor = UIColor(white: 1, alpha: 0.1)
         }

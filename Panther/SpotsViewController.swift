@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class SpotsViewController: UITableViewController {
     
     //MARK: - Fields
     /**
@@ -146,49 +146,47 @@ class SpotsViewController: UITableViewController, UICollectionViewDelegate, UICo
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell : SpotsTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! SpotsTableViewCell
-        
         if let structure : ParkingStructure = parkingStructures[safe: indexPath.row]{
-            cell.title.text = structure.name.capitalizedString
-            cell.totalSpots.text = "\(structure.available) spots available"
-        }
-        
-        return cell
-    }
-    
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        (cell as! SpotsTableViewCell).setCollectionViewDataSourceDelegate(self, withDelegate: self, atIndexPath: indexPath)
-        
-    }
-    
-    //MARK: - CollectionView Data source methods
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
-        let cvWidth = collectionView.bounds.width / 5
-        return cvWidth - 50
-    }
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        var cell : UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionCell", forIndexPath: indexPath)
-        let pantherCollectionViewCell : SpotsIndexedCollectionView = collectionView as! SpotsIndexedCollectionView
-        if let structure : ParkingStructure = parkingStructures[safe: (pantherCollectionViewCell).indexPath.row]{
-            if let level : ParkingLevel = structure.levels[safe: indexPath.row]{
-                let cdCell : CircleDataCollectionViewCell = cell as! CircleDataCollectionViewCell
-                cdCell.inflatingCircleDataView.inflatingCircleIndicatorView.setCapacityLevel(CGFloat(level.available), outOfTotalCapacity: CGFloat(level.total))
-                cdCell.inflatingCircleDataView.titleLabel.text = "Level \(level.number)"
-                cdCell.inflatingCircleDataView.countLabel.text = "\(level.available)"
-                cdCell.inflatingCircleDataView.inflatingCircleIndicatorView.animateCircle(Double(pantherCollectionViewCell.indexPath.row) * 0.35 + Double(indexPath.row) * 0.15)
-            }else{
-                cell = collectionView.dequeueReusableCellWithReuseIdentifier("EmptyCell", forIndexPath: indexPath)
+            switch (structure.levels.count){
+            case 2:
+                let cell = tableView.dequeueReusableCellWithIdentifier("Cell2") as! SpotsTableViewCell
+                cell.title.text = structure.name.capitalizedString
+                cell.totalSpots.text = "\(structure.available) spots available"
+                cell.circleView.circlePieView.setSegmentValues(structure.levels)
+                let percent = 100 - (Double(structure.available) / Double(structure.total)) * 100
+                cell.circleView.percentageLabel.text = percent.format(".0") + "%"
+                cell.level1Available.text = "\(structure.levels[0].available) spots"
+                cell.level2Available.text = "\(structure.levels[1].available) spots"
+                return cell
+            case 5:
+                let cell = tableView.dequeueReusableCellWithIdentifier("Cell5") as! SpotsTableViewCell
+                cell.title.text = structure.name.capitalizedString
+                cell.totalSpots.text = "\(structure.available) spots available"
+                cell.circleView.circlePieView.setSegmentValues(structure.levels)
+                let percent = 100 - (Double(structure.available) / Double(structure.total)) * 100
+                cell.circleView.percentageLabel.text = percent.format(".0") + "%"
+                cell.level1Available.text = "\(structure.levels[0].available) spots"
+                cell.level2Available.text = "\(structure.levels[1].available) spots"
+                cell.level3Available.text = "\(structure.levels[2].available) spots"
+                cell.level4Available.text = "\(structure.levels[3].available) spots"
+                cell.level5Available.text = "\(structure.levels[4].available) spots"
+                return cell
+            default:
+                break
             }
+            
+            
+            
         }
-        return cell
+        
+        return tableView.dequeueReusableCellWithIdentifier("Cell2") as! SpotsTableViewCell
     }
     
 
+}
 
+extension Double {
+    func format(f: String) -> String {
+        return NSString(format: "%\(f)f", self) as String
+    }
 }

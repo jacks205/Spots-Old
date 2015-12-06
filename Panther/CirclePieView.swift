@@ -10,6 +10,8 @@ import UIKit
 
 @IBDesignable class CirclePieView: UIView {
     
+    var baseColor : UIColor = Constants.Colors.BASE_COLOR
+    
     //Values for each segment
     private var segmentValues : [Float]
     //Total for each segment
@@ -38,30 +40,32 @@ import UIKit
     }
     
     //Sets all the segment members in order to draw each segment
-    func setSegmentValues(values : [Int], totals : [Int], colors : [UIColor]){
-        //Must be equal lengths
-        if values.count != totals.count && totals.count != colors.count{
-            return;
-        }
+    func setSegmentValues(values : [ParkingLevel]){
         //Set the colors
-        segmentColors = colors
+        segmentColors = []
         segmentTotalAll = 0
-        for total in totals {
-            segmentTotalAll += Float(total)
-            segmentTotals.append(Float(total))
-        }
-        for val in values {
-            segmentValues.append(Float(val))
+        for i in 0...values.count - 1 {
+            segmentTotalAll += Float(values[i].total)
+            segmentTotals.append(Float(values[i].total))
+            segmentValues.append(Float(values[i].available))
+            let percentage = Float(values[i].available) / Float(values[i].total)
+            if(1 - percentage >= 0.85){
+                segmentColors.append(Constants.Colors.RED_COLOR)
+            }else if(1 - percentage >= 0.55){
+                segmentColors.append(Constants.Colors.YELLOW_COLOR)
+            }else{
+                segmentColors.append(Constants.Colors.GREEN_COLOR)
+            }
+
         }
     }
-
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
         // Drawing code
         //Base circle
-        UIColor.blackColor().setFill()
+        baseColor.setFill()
         let outerPath = UIBezierPath(ovalInRect: rect)
         outerPath.fill()
 
@@ -112,19 +116,13 @@ import UIKit
                 centerCircleRadius))
         centerPath.fill()
         
-        UIColor.grayColor().setStroke()
+        UIColor(red: 234.0/255, green:  234.0/255, blue: 234.0/255, alpha: 1).setStroke()
         let lineLength = centerCircleRadius * 0.5
         let strokePath = UIBezierPath()
         strokePath.lineWidth = 2
         strokePath.moveToPoint(CGPointMake(viewCenter.x - lineLength / 2, viewCenter.y))
         strokePath.addLineToPoint(CGPointMake(viewCenter.x + lineLength / 2, viewCenter.y))
         strokePath.stroke()
-    }
-}
-
-extension Array {
-    subscript (safe index: Int) -> Element? {
-        return indices ~= index ? self[index] : nil
     }
 }
 

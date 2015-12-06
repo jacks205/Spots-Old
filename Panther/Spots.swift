@@ -15,7 +15,7 @@ class Spots {
     static let sharedInstance = Spots()
     
     /**
-        Spots.sharedDefaults should be used to keep data available in the app and in the extension. Can't access NSUserDefaults.sharedDefaults on the extension or vise versa.
+        Spots.sharedDefaults should be used to keep data available in the app and in the extension. Can't access NSUserDefaults.sharedDefaults on the extension or vise versaS.
     */
     let sharedDefaults: NSUserDefaults
     
