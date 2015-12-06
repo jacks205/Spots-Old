@@ -8,31 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		710AB3B64942BACA8088EAE6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 899B00B332544EC49D5C361B /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		EA0C34DA1BB4B105002D1F0A /* InflatingCircleDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA0C34D91BB4B105002D1F0A /* InflatingCircleDataView.xib */; settings = {ASSET_TAGS = (); }; };
-		EA3407151BB843B800E368EC /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3F8D461BB790E900E7487F /* NotificationCenter.framework */; settings = {ASSET_TAGS = (); }; };
+		EA0C34DA1BB4B105002D1F0A /* InflatingCircleDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA0C34D91BB4B105002D1F0A /* InflatingCircleDataView.xib */; };
+		EA3407151BB843B800E368EC /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3F8D461BB790E900E7487F /* NotificationCenter.framework */; };
 		EA3407181BB843B800E368EC /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3407171BB843B800E368EC /* TodayViewController.swift */; };
 		EA34071B1BB843B800E368EC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA3407191BB843B800E368EC /* MainInterface.storyboard */; };
 		EA34071F1BB843B800E368EC /* Parking Availability.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EA3407141BB843B800E368EC /* Parking Availability.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		EA3407261BB8444500E368EC /* EmptyCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3407231BB8444500E368EC /* EmptyCircleView.swift */; settings = {ASSET_TAGS = (); }; };
-		EA3407271BB8444500E368EC /* TodayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3407241BB8444500E368EC /* TodayCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		EA3407281BB8444500E368EC /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3407251BB8444500E368EC /* TodayView.swift */; settings = {ASSET_TAGS = (); }; };
-		EA3407291BB8482800E368EC /* EmptyCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3407231BB8444500E368EC /* EmptyCircleView.swift */; settings = {ASSET_TAGS = (); }; };
-		EA34072B1BB8494C00E368EC /* InflatingCircleIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C34D51BB4AF1B002D1F0A /* InflatingCircleIndicatorView.swift */; settings = {ASSET_TAGS = (); }; };
-		EA38D2C71BB51BC500CEDB92 /* AddAlertModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA38D2C61BB51BC500CEDB92 /* AddAlertModalViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		EA4CF8211BBB6B38003600CD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CF8201BBB6B38003600CD /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
-		EA4CF8221BBB6B40003600CD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CF8201BBB6B38003600CD /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
-		EA4CF8241BBB6CBE003600CD /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CF8231BBB6CBE003600CD /* SelectViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		EA4DED3C1BD8D05800DC5FD4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EA4DED3B1BD8D05800DC5FD4 /* Settings.bundle */; settings = {ASSET_TAGS = (); }; };
-		EA780F0C1BB4DEB10010D57C /* AlertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA780F0B1BB4DEB10010D57C /* AlertTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		EA780F0E1BB4E4830010D57C /* AlertRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA780F0D1BB4E4830010D57C /* AlertRoundedView.swift */; settings = {ASSET_TAGS = (); }; };
+		EA3407261BB8444500E368EC /* EmptyCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3407231BB8444500E368EC /* EmptyCircleView.swift */; };
+		EA3407271BB8444500E368EC /* TodayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3407241BB8444500E368EC /* TodayCollectionViewCell.swift */; };
+		EA3407281BB8444500E368EC /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3407251BB8444500E368EC /* TodayView.swift */; };
+		EA3407291BB8482800E368EC /* EmptyCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3407231BB8444500E368EC /* EmptyCircleView.swift */; };
+		EA34072B1BB8494C00E368EC /* InflatingCircleIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C34D51BB4AF1B002D1F0A /* InflatingCircleIndicatorView.swift */; };
+		EA38D2C71BB51BC500CEDB92 /* AddAlertModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA38D2C61BB51BC500CEDB92 /* AddAlertModalViewController.swift */; };
+		EA4CF8241BBB6CBE003600CD /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CF8231BBB6CBE003600CD /* SelectViewController.swift */; };
+		EA4DED3C1BD8D05800DC5FD4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EA4DED3B1BD8D05800DC5FD4 /* Settings.bundle */; };
+		EA780F0C1BB4DEB10010D57C /* AlertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA780F0B1BB4DEB10010D57C /* AlertTableViewCell.swift */; };
+		EA780F0E1BB4E4830010D57C /* AlertRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA780F0D1BB4E4830010D57C /* AlertRoundedView.swift */; };
 		EA897C711BB0C138001D3326 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C701BB0C138001D3326 /* AppDelegate.swift */; };
 		EA897C731BB0C138001D3326 /* SpotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C721BB0C138001D3326 /* SpotsViewController.swift */; };
 		EA897C781BB0C138001D3326 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA897C771BB0C138001D3326 /* Assets.xcassets */; };
 		EA897C7B1BB0C138001D3326 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA897C791BB0C138001D3326 /* LaunchScreen.storyboard */; };
 		EA897C861BB0C138001D3326 /* PantherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C851BB0C138001D3326 /* PantherTests.swift */; };
 		EA897C911BB0C138001D3326 /* PantherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C901BB0C138001D3326 /* PantherUITests.swift */; };
-		EA8DC4221BB1DA9A0056ACC1 /* CircleDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA8DC4211BB1DA9A0056ACC1 /* CircleDataView.xib */; settings = {ASSET_TAGS = (); }; };
-		EA8DC4241BB1DABC0056ACC1 /* CircleDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8DC4231BB1DABC0056ACC1 /* CircleDataView.swift */; settings = {ASSET_TAGS = (); }; };
+		EA8DC4221BB1DA9A0056ACC1 /* CircleDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA8DC4211BB1DA9A0056ACC1 /* CircleDataView.xib */; };
+		EA8DC4241BB1DABC0056ACC1 /* CircleDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8DC4231BB1DABC0056ACC1 /* CircleDataView.swift */; };
 		EAA929851BB34F2A0031315B /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAA9297B1BB34EDF0031315B /* OpenSans-Bold.ttf */; };
 		EAA929861BB34F2A0031315B /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAA9297C1BB34EDF0031315B /* OpenSans-BoldItalic.ttf */; };
 		EAA929871BB34F2A0031315B /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAA9297D1BB34EDF0031315B /* OpenSans-ExtraBold.ttf */; };
@@ -43,19 +41,21 @@
 		EAA9298C1BB34F2A0031315B /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAA929821BB34EDF0031315B /* OpenSans-Regular.ttf */; };
 		EAA9298D1BB34F2A0031315B /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAA929831BB34EDF0031315B /* OpenSans-Semibold.ttf */; };
 		EAA9298E1BB34F2A0031315B /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAA929841BB34EDF0031315B /* OpenSans-SemiboldItalic.ttf */; };
-		EAA929901BB355AD0031315B /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA9298F1BB355AD0031315B /* AlertsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		EAA929931BB49E6F0031315B /* UINotificationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA929921BB49E6F0031315B /* UINotificationButton.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB666891BC0F41F0064C8C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA897C771BB0C138001D3326 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
+		EAA929901BB355AD0031315B /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA9298F1BB355AD0031315B /* AlertsViewController.swift */; };
+		EAA929931BB49E6F0031315B /* UINotificationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA929921BB49E6F0031315B /* UINotificationButton.swift */; };
+		EAB666891BC0F41F0064C8C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA897C771BB0C138001D3326 /* Assets.xcassets */; };
 		EAC1F4741BB5D119005FE2C3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC1F4731BB5D119005FE2C3 /* QuartzCore.framework */; };
-		EACA6B9E1BB0DEF800ACBBEB /* SpotsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACA6B9D1BB0DEF800ACBBEB /* SpotsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		EACA6BA41BB0EE2100ACBBEB /* FilledCircleIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACA6BA31BB0EE2100ACBBEB /* FilledCircleIndicatorView.swift */; settings = {ASSET_TAGS = (); }; };
-		EACA6BA61BB0EEC400ACBBEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACA6BA51BB0EEC400ACBBEB /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
-		EACA6BA81BB1D6B900ACBBEB /* CircleDataCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EACA6BA71BB1D6B900ACBBEB /* CircleDataCollectionViewCell.xib */; settings = {ASSET_TAGS = (); }; };
-		EACC21501BB1DC2900B912B6 /* CircleDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC214F1BB1DC2900B912B6 /* CircleDataCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		EAE6DBF71BB7C15400B8D138 /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C9F1BB0C540001D3326 /* Spots.swift */; settings = {ASSET_TAGS = (); }; };
-		EAE6DBF91BB7C15700B8D138 /* InflatingCircleIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C34D51BB4AF1B002D1F0A /* InflatingCircleIndicatorView.swift */; settings = {ASSET_TAGS = (); }; };
-		EAE6DBFC1BB7C15D00B8D138 /* InflatingCircleDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C34D71BB4B0F2002D1F0A /* InflatingCircleDataView.swift */; settings = {ASSET_TAGS = (); }; };
-		EAEB86971BB923EC008D50C6 /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C9F1BB0C540001D3326 /* Spots.swift */; settings = {ASSET_TAGS = (); }; };
+		EACA6B9E1BB0DEF800ACBBEB /* SpotsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACA6B9D1BB0DEF800ACBBEB /* SpotsTableViewCell.swift */; };
+		EACA6BA41BB0EE2100ACBBEB /* FilledCircleIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACA6BA31BB0EE2100ACBBEB /* FilledCircleIndicatorView.swift */; };
+		EACA6BA61BB0EEC400ACBBEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACA6BA51BB0EEC400ACBBEB /* Main.storyboard */; };
+		EACA6BA81BB1D6B900ACBBEB /* CircleDataCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EACA6BA71BB1D6B900ACBBEB /* CircleDataCollectionViewCell.xib */; };
+		EACC21501BB1DC2900B912B6 /* CircleDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC214F1BB1DC2900B912B6 /* CircleDataCollectionViewCell.swift */; };
+		EADA665A1C13DF3E008BF53F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADA66591C13DF3E008BF53F /* Constants.swift */; };
+		EADA665B1C13DF44008BF53F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADA66591C13DF3E008BF53F /* Constants.swift */; };
+		EAE6DBF71BB7C15400B8D138 /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C9F1BB0C540001D3326 /* Spots.swift */; };
+		EAE6DBF91BB7C15700B8D138 /* InflatingCircleIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C34D51BB4AF1B002D1F0A /* InflatingCircleIndicatorView.swift */; };
+		EAE6DBFC1BB7C15D00B8D138 /* InflatingCircleDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C34D71BB4B0F2002D1F0A /* InflatingCircleDataView.swift */; };
+		EAEB86971BB923EC008D50C6 /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C9F1BB0C540001D3326 /* Spots.swift */; };
 		EAEB869A1BB92ED8008D50C6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAEB86981BB92ED8008D50C6 /* Alamofire.framework */; };
 		EAEB869B1BB92ED8008D50C6 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAEB86991BB92ED8008D50C6 /* SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
@@ -113,7 +113,6 @@
 		EA3407251BB8444500E368EC /* TodayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		EA38D2C61BB51BC500CEDB92 /* AddAlertModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAlertModalViewController.swift; sourceTree = "<group>"; };
 		EA3F8D461BB790E900E7487F /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		EA4CF8201BBB6B38003600CD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Panther/Constants.swift; sourceTree = "<group>"; };
 		EA4CF8231BBB6CBE003600CD /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		EA4DED3B1BD8D05800DC5FD4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		EA5D61EE1BB7D10700F48089 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
@@ -156,6 +155,7 @@
 		EACA6BA51BB0EEC400ACBBEB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		EACA6BA71BB1D6B900ACBBEB /* CircleDataCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleDataCollectionViewCell.xib; sourceTree = "<group>"; };
 		EACC214F1BB1DC2900B912B6 /* CircleDataCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleDataCollectionViewCell.swift; sourceTree = "<group>"; };
+		EADA66591C13DF3E008BF53F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EAEB86981BB92ED8008D50C6 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		EAEB86991BB92ED8008D50C6 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		EAEB869C1BB9EBE3008D50C6 /* NSDate_TimeAgo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NSDate_TimeAgo.framework; path = "Pods/../build/Debug-iphoneos/NSDate_TimeAgo.framework"; sourceTree = "<group>"; };
@@ -278,7 +278,7 @@
 		EA897C641BB0C138001D3326 = {
 			isa = PBXGroup;
 			children = (
-				EA4CF8201BBB6B38003600CD /* Constants.swift */,
+				EADA66591C13DF3E008BF53F /* Constants.swift */,
 				EA7C97DB1BB1EA0700FA562E /* Fonts */,
 				EA897C9E1BB0C512001D3326 /* SpotsRequests */,
 				EAA929911BB49BC80031315B /* FilledCircleIndicatorView */,
@@ -616,7 +616,7 @@
 				EAEB86971BB923EC008D50C6 /* Spots.swift in Sources */,
 				EA3407261BB8444500E368EC /* EmptyCircleView.swift in Sources */,
 				EA3407281BB8444500E368EC /* TodayView.swift in Sources */,
-				EA4CF8221BBB6B40003600CD /* Constants.swift in Sources */,
+				EADA665B1C13DF44008BF53F /* Constants.swift in Sources */,
 				EA3407181BB843B800E368EC /* TodayViewController.swift in Sources */,
 				EA34072B1BB8494C00E368EC /* InflatingCircleIndicatorView.swift in Sources */,
 			);
@@ -634,7 +634,6 @@
 				EACA6B9E1BB0DEF800ACBBEB /* SpotsTableViewCell.swift in Sources */,
 				EA780F0E1BB4E4830010D57C /* AlertRoundedView.swift in Sources */,
 				EAE6DBF71BB7C15400B8D138 /* Spots.swift in Sources */,
-				EA4CF8211BBB6B38003600CD /* Constants.swift in Sources */,
 				EAA929901BB355AD0031315B /* AlertsViewController.swift in Sources */,
 				EA897C711BB0C138001D3326 /* AppDelegate.swift in Sources */,
 				EA8DC4241BB1DABC0056ACC1 /* CircleDataView.swift in Sources */,
@@ -643,6 +642,7 @@
 				EA3407291BB8482800E368EC /* EmptyCircleView.swift in Sources */,
 				EAA929931BB49E6F0031315B /* UINotificationButton.swift in Sources */,
 				EACA6BA41BB0EE2100ACBBEB /* FilledCircleIndicatorView.swift in Sources */,
+				EADA665A1C13DF3E008BF53F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,39 @@
+//
+//  Constants.swift
+//  Panther
+//
+//  Created by Mark Jackson on 9/21/15.
+//  Copyright © 2015 Mark Jackson. All rights reserved.
+//
+import UIKit
+
+class Constants{
+    static let APP_STORE_URL = "itms-apps://itunes.apple.com/us/app/apple-store/id1043748792?mt=8"
+    static let IP_ADDRESS = "http://104.236.148.60:8000/latest-availabilities"
+    static let DEVICE_TOKEN_KEY = "token"
+    static let SCHOOL_KEY = "school"
+    static let SUITE_NAME = "group.com.jacks205.panther"
+    
+    
+    struct Review {
+        static let MIN_SESSIONS = 4
+        static let TRY_AGAIN_SESSIONS = 8
+    }
+    
+    struct Colors {
+//        static let GREEN_COLOR : UIColor = UIColor(red:0.16, green:0.93, blue:0.70, alpha:1.0)
+        static let GREEN_COLOR : UIColor = UIColor(red:0.10, green:0.74, blue:0.61, alpha:1.0)
+        static let YELLOW_COLOR : UIColor = UIColor(red:1.00, green:0.92, blue:0.25, alpha:1.0)
+        static let RED_COLOR : UIColor = UIColor(red:0.89, green:0.26, blue:0.37, alpha:1.0)
+        static let BASE_COLOR : UIColor = UIColor(red:0.15, green:0.17, blue:0.2, alpha:1)
+        struct Today{
+            static let BASE_COLOR : UIColor = UIColor(white: 1, alpha: 0.1)
+        }
+        
+        
+        static let NAVIGATION_BAR_COLOR : UIColor = UIColor(red:0.15, green:0.19, blue:0.26, alpha:1.0)
+        static let DARK_BLUE_COLOR : UIColor = UIColor(red:0.09, green:0.11, blue:0.15, alpha:1.0)
+    }
+    
+    
+}
