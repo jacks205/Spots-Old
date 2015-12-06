@@ -52,6 +52,8 @@
 		EACC21501BB1DC2900B912B6 /* CircleDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC214F1BB1DC2900B912B6 /* CircleDataCollectionViewCell.swift */; };
 		EADA665A1C13DF3E008BF53F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADA66591C13DF3E008BF53F /* Constants.swift */; };
 		EADA665B1C13DF44008BF53F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADA66591C13DF3E008BF53F /* Constants.swift */; };
+		EADA665D1C13DFBD008BF53F /* Spots.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = EADA665C1C13DFBD008BF53F /* Spots.entitlements */; };
+		EADA665F1C13DFCF008BF53F /* Parking Availability.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = EADA665E1C13DFCF008BF53F /* Parking Availability.entitlements */; };
 		EAE6DBF71BB7C15400B8D138 /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA897C9F1BB0C540001D3326 /* Spots.swift */; };
 		EAE6DBF91BB7C15700B8D138 /* InflatingCircleIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C34D51BB4AF1B002D1F0A /* InflatingCircleIndicatorView.swift */; };
 		EAE6DBFC1BB7C15D00B8D138 /* InflatingCircleDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C34D71BB4B0F2002D1F0A /* InflatingCircleDataView.swift */; };
@@ -147,8 +149,6 @@
 		EAA929841BB34EDF0031315B /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-SemiboldItalic.ttf"; path = "Fonts/OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		EAA9298F1BB355AD0031315B /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
 		EAA929921BB49E6F0031315B /* UINotificationButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINotificationButton.swift; sourceTree = "<group>"; };
-		EAB666871BC0F28F0064C8C8 /* Spots.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Spots.entitlements; sourceTree = SOURCE_ROOT; };
-		EAB666881BC0F2990064C8C8 /* Parking Availability.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Parking Availability.entitlements"; sourceTree = "<group>"; };
 		EAC1F4731BB5D119005FE2C3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EACA6B9D1BB0DEF800ACBBEB /* SpotsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotsTableViewCell.swift; sourceTree = "<group>"; };
 		EACA6BA31BB0EE2100ACBBEB /* FilledCircleIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledCircleIndicatorView.swift; sourceTree = "<group>"; };
@@ -156,6 +156,8 @@
 		EACA6BA71BB1D6B900ACBBEB /* CircleDataCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleDataCollectionViewCell.xib; sourceTree = "<group>"; };
 		EACC214F1BB1DC2900B912B6 /* CircleDataCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleDataCollectionViewCell.swift; sourceTree = "<group>"; };
 		EADA66591C13DF3E008BF53F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EADA665C1C13DFBD008BF53F /* Spots.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Spots.entitlements; sourceTree = "<group>"; };
+		EADA665E1C13DFCF008BF53F /* Parking Availability.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Parking Availability.entitlements"; sourceTree = "<group>"; };
 		EAEB86981BB92ED8008D50C6 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		EAEB86991BB92ED8008D50C6 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		EAEB869C1BB9EBE3008D50C6 /* NSDate_TimeAgo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NSDate_TimeAgo.framework; path = "Pods/../build/Debug-iphoneos/NSDate_TimeAgo.framework"; sourceTree = "<group>"; };
@@ -238,7 +240,7 @@
 		EA3407161BB843B800E368EC /* Parking Availability */ = {
 			isa = PBXGroup;
 			children = (
-				EAB666881BC0F2990064C8C8 /* Parking Availability.entitlements */,
+				EADA665E1C13DFCF008BF53F /* Parking Availability.entitlements */,
 				EA3407241BB8444500E368EC /* TodayCollectionViewCell.swift */,
 				EA3407251BB8444500E368EC /* TodayView.swift */,
 				EA3407171BB843B800E368EC /* TodayViewController.swift */,
@@ -307,7 +309,7 @@
 		EA897C6F1BB0C138001D3326 /* Spots */ = {
 			isa = PBXGroup;
 			children = (
-				EAB666871BC0F28F0064C8C8 /* Spots.entitlements */,
+				EADA665C1C13DFBD008BF53F /* Spots.entitlements */,
 				EACA6BA51BB0EEC400ACBBEB /* Main.storyboard */,
 				EA780F081BB4DE5B0010D57C /* AlertTableViewCell */,
 				EA897C701BB0C138001D3326 /* AppDelegate.swift */,
@@ -515,6 +517,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAB666891BC0F41F0064C8C8 /* Assets.xcassets in Resources */,
+				EADA665F1C13DFCF008BF53F /* Parking Availability.entitlements in Resources */,
 				EA34071B1BB843B800E368EC /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,6 +541,7 @@
 				EACA6BA81BB1D6B900ACBBEB /* CircleDataCollectionViewCell.xib in Resources */,
 				EA897C781BB0C138001D3326 /* Assets.xcassets in Resources */,
 				EACA6BA61BB0EEC400ACBBEB /* Main.storyboard in Resources */,
+				EADA665D1C13DFBD008BF53F /* Spots.entitlements in Resources */,
 				EA8DC4221BB1DA9A0056ACC1 /* CircleDataView.xib in Resources */,
 				EA0C34DA1BB4B105002D1F0A /* InflatingCircleDataView.xib in Resources */,
 			);
@@ -832,7 +836,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Spots.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Panther/Spots.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -854,7 +858,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Spots.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Panther/Spots.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
