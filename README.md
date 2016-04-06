@@ -1,3 +1,6 @@
+##Old Implementation
+###For new, hip, and Rx version of Spots checkout out my [Spots-iOS repo](https://github.com/jacks205/Spots-iOS)
+
 # Spots
 University Parking App
 
